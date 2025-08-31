@@ -1,10 +1,10 @@
 import React from 'react';
-import githubLogo from '../images/tools/github.svg';
-import vscodeLogo from '../images/tools/vscode.svg';
-import figmaLogo from '../images/tools/figma.svg';
-import postmanLogo from '../images/tools/postman.svg';
-import dockerLogo from '../images/tools/docker.svg';
-import viteLogo from '../images/tools/vite.svg';
+import githubLogo from '/public/images/tools/github.svg';
+import vscodeLogo from '/public/images/tools/vscode.svg';
+import figmaLogo from '/public/images/tools/figma.svg';
+import postmanLogo from '/public/images/tools/postman.svg';
+import dockerLogo from '/public/images/tools/docker.svg';
+import viteLogo from '/public/images/tools/vite.svg';
 
 interface SkillsProps {
   language: 'fr' | 'en';
