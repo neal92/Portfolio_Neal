@@ -28,31 +28,21 @@ const Skills: React.FC = () => {
     { name: 'VS Code', logo: vscodeLogo },
     { name: 'Figma', logo: figmaLogo },
     { name: 'Postman', logo: postmanLogo },
-    { name: 'Docker', logo: dockerLogo },
-    { name: 'Vite', logo: viteLogo }
+    { name: 'Docker', logo: dockerLogo }
   ];
 
-  const SkillBar = ({ skill }: { skill: typeof frontendSkills[0] }) => (
-    <div className="mb-6 group">
-      <div className="flex justify-between mb-3">
-        <span className="font-semibold text-slate-700 text-lg">{skill.name}</span>
-        <span className="text-slate-500 font-medium">{skill.level}%</span>
-      </div>
-      <div className="w-full bg-slate-200 rounded-full h-3 overflow-hidden">
-        <div
-          className={`h-3 rounded-full bg-gradient-to-r ${skill.color} transition-all duration-1000 ease-out group-hover:shadow-lg`}
-          style={{ width: `${skill.level}%` }}
-        ></div>
-      </div>
+  const SkillCard = ({ skill, icon, borderColor }: { skill: typeof frontendSkills[0], icon: string, borderColor: string }) => (
+    <div className={`group bg-white dark:bg-slate-900 rounded-2xl shadow-lg p-6 flex flex-col items-center transition-all duration-300 hover:-translate-y-2 hover:shadow-blue-500/30 border-2 ${borderColor}`}>
+      <img src={icon} alt={skill.name} className="w-12 h-12 mb-4 object-contain" />
+      <span className="font-bold text-lg text-slate-800 dark:text-white mb-2">{skill.name}</span>
     </div>
   );
 
   return (
-    <div className="py-32 bg-gradient-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-800 relative overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 rounded-full blur-3xl opacity-20"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-pink-100 to-orange-100 dark:from-pink-900 dark:to-orange-900 rounded-full blur-3xl opacity-20"></div>
+  <div className="mt-24 py-32 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 relative overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-200 to-purple-200 dark:from-blue-900 dark:to-purple-900 rounded-full blur-3xl opacity-20"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-pink-200 to-orange-200 dark:from-pink-900 dark:to-orange-900 rounded-full blur-3xl opacity-20"></div>
       </div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
@@ -70,38 +60,48 @@ const Skills: React.FC = () => {
             A comprehensive toolkit spanning the full development spectrum
           </p>
         </div>
-        <div className="relative z-10 grid lg:grid-cols-2 gap-12 mb-20">
-          <div className="group bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-10 rounded-3xl border border-white/20 dark:border-slate-700 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-            <h3 className="text-3xl font-bold text-slate-800 dark:text-white mb-8 flex items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+          <div>
+            <h3 className="text-3xl font-bold text-blue-700 dark:text-blue-400 mb-8 flex items-center">
               <div className="w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mr-4"></div>
               Frontend Development
             </h3>
-            <div className="space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {frontendSkills.map((skill, index) => (
-                <SkillBar key={index} skill={skill} />
+                <SkillCard
+                  key={index}
+                  skill={skill}
+                  icon={index === 0 ? '/images/tools/vite.svg' : index === 1 ? '/images/tools/github.svg' : index === 2 ? '/images/tools/vscode.svg' : index === 3 ? '/images/tools/figma.svg' : '/images/tools/docker.svg'}
+                  borderColor="border-blue-600 dark:border-blue-400"
+                />
               ))}
             </div>
           </div>
-          <div className="group bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-10 rounded-3xl border border-white/20 dark:border-slate-700 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-            <h3 className="text-3xl font-bold text-slate-800 dark:text-white mb-8 flex items-center">
+          <div>
+            <h3 className="text-3xl font-bold text-green-700 dark:text-green-400 mb-8 flex items-center">
               <div className="w-4 h-4 bg-gradient-to-r from-green-500 to-teal-500 rounded-full mr-4"></div>
               Backend Development
             </h3>
-            <div className="space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {backendSkills.map((skill, index) => (
-                <SkillBar key={index} skill={skill} />
+                <SkillCard
+                  key={index}
+                  skill={skill}
+                  icon={index === 0 ? '/images/tools/postman.svg' : index === 1 ? '/images/tools/docker.svg' : index === 2 ? '/images/tools/github.svg' : index === 3 ? '/images/tools/vscode.svg' : '/images/tools/figma.svg'}
+                  borderColor="border-green-600 dark:border-green-400"
+                />
               ))}
             </div>
           </div>
         </div>
-        <div className="relative z-10 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-10 rounded-3xl border border-white/20 dark:border-slate-700 shadow-xl">
+        <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl p-10 rounded-3xl border border-white/20 dark:border-slate-700 shadow-xl mt-10">
           <h3 className="text-3xl font-bold text-slate-800 dark:text-white mb-10 text-center">
             Tools & Technologies
           </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+          <div className="flex flex-wrap justify-center gap-8">
             {tools.map((tool, index) => (
-              <div key={index} className="flex flex-col items-center justify-center p-4 bg-white dark:bg-slate-900 rounded-xl shadow hover:shadow-lg transition">
-                <img src={tool.logo} alt={tool.name} className="w-12 h-12 mb-2 object-contain" />
+              <div key={index} className="flex flex-col items-center justify-center p-4 bg-white dark:bg-slate-900 rounded-xl shadow hover:shadow-lg transition hover:-translate-y-1">
+                <img src={tool.logo} alt={tool.name} className="w-14 h-14 mb-2 object-contain" />
                 <span className="text-lg font-medium text-slate-700 dark:text-white">{tool.name}</span>
               </div>
             ))}

@@ -29,7 +29,7 @@ export default function Navigation({ activeSection, onNavigate, darkMode }: Navi
 
   return (
     <nav className={`fixed w-full top-0 left-0 z-[9999] transition-all duration-300 ${scrolled ? (darkMode ? 'bg-slate-900 shadow-lg' : 'bg-white shadow-lg') : 'bg-transparent'} backdrop-blur-lg`} style={{ minHeight: '80px' }}>
-      <div className="max-w-5xl mx-auto px-8 py-4 flex items-center">
+  <div className="max-w-5xl mx-auto px-4 py-4 flex items-center">
         {/* Mobile Menu Button */}
         <button
           className="md:hidden p-2 rounded-full bg-white dark:bg-slate-800 shadow"
@@ -69,7 +69,7 @@ export default function Navigation({ activeSection, onNavigate, darkMode }: Navi
         </div>
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-slate-200/50 bg-white dark:bg-slate-900 shadow-xl z-[9999]">
+          <div className="md:hidden py-4 border-t border-slate-200/50 bg-white dark:bg-slate-900 shadow-xl z-[9999] flex flex-col items-center">
             {navItems.map((item) => (
               <button
                 key={item.id}

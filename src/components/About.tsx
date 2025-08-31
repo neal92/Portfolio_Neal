@@ -18,51 +18,51 @@ const About: React.FC = () => {
             </div>
           </div>
           <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-800 dark:text-white mb-8 leading-tight">
-            About Me
+            <span className="text-slate-800 dark:text-white">About Me</span>
           </h2>
           <p className="text-2xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed font-light mb-8">
               I am a passionate web developer based in Paris, specialized in building modern, high-quality digital solutions. 
               My expertise covers a wide range of website and application types: from elegant portfolios and professional showcase sites to 
               dynamic e-commerce platforms and powerful web applications. I offer you work that is not only well-structured and efficient, 
               but also creative, user-friendly, and tailored to your specific needs. With me, you get a reliable partner who transforms 
-              your ideas into impactful digital experiences that stand out.
+              your ideas into impactful digital experiences.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {/* 1. Sites vitrines */}
             <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-6 flex flex-col items-center">
               <img src="/images/vitrine.png" alt="Sites vitrines" className="w-35 h-30 mb-4" />
-              <h3 className="text-xl font-bold mb-2">Showcase Websites</h3>
+              <h3 className="text-xl font-bold mb-2 text-slate-800 dark:text-white">Showcase Websites</h3>
               <p className="text-slate-600 dark:text-slate-300 text-center">Presenting businesses, associations, or freelancers with simple, elegant pages.</p>
             </div>
             {/* 2. Portfolios */}
             <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-6 flex flex-col items-center">
               <img src="/images/portfolio.png" alt="Portfolio" className="w-35 h-30 mb-4" />
-              <h3 className="text-xl font-bold mb-2">Portfolios</h3>
+              <h3 className="text-xl font-bold mb-2 text-slate-800 dark:text-white">Portfolios</h3>
               <p className="text-slate-600 dark:text-slate-300 text-center">Highlighting personal or professional achievements, skills, and projects.</p>
             </div>
             {/* 3. Blogs / Magazines */}
             <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-6 flex flex-col items-center">
               <img src="/images/blog.png" alt="Blog" className="w-35 h-30 mb-4" />
-              <h3 className="text-xl font-bold mb-2">Blogs & Magazines</h3>
+              <h3 className="text-xl font-bold mb-2 text-slate-800 dark:text-white">Blogs & Magazines</h3>
               <p className="text-slate-600 dark:text-slate-300 text-center">Sharing articles, news, and tutorials with categorized content and subscriptions.</p>
             </div>
             {/* 4. E-commerce */}
             <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-6 flex flex-col items-center">
               <img src="/images/ecommerce.jpg" alt="E-commerce" className="w-35 h-30 mb-4" />
-              <h3 className="text-xl font-bold mb-2">E-commerce</h3>
+              <h3 className="text-xl font-bold mb-2 text-slate-800 dark:text-white">E-commerce</h3>
               <p className="text-slate-600 dark:text-slate-300 text-center">Online stores with product catalogs, shopping carts, and secure payments.</p>
             </div>
             {/* 5. Web Apps */}
             <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-6 flex flex-col items-center">
               <img src="/images/webapp.jpg" alt="Web App" className="w-35 h-30 mb-4" />
-              <h3 className="text-xl font-bold mb-2">Web Applications</h3>
+              <h3 className="text-xl font-bold mb-2 text-slate-800 dark:text-white">Web Applications</h3>
               <p className="text-slate-600 dark:text-slate-300 text-center">Interactive online services with dynamic features and user spaces.</p>
             </div>
             {/* 9. Landing Pages */}
             <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-6 flex flex-col items-center">
               <img src="/images/landing.jpg" alt="Landing Page" className="w-35 h-30 mb-4" />
-              <h3 className="text-xl font-bold mb-2">Landing Pages</h3>
+              <h3 className="text-xl font-bold mb-2 text-slate-800 dark:text-white">Landing Pages</h3>
               <p className="text-slate-600 dark:text-slate-300 text-center">Single-page campaigns for products, apps, or newsletters.</p>
             </div>
           </div>

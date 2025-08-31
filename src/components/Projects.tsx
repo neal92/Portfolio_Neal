@@ -7,10 +7,12 @@ export const projects = [
     id: 'service-booking',
     title: 'Saas Service Booking',
     description: 'A comprehensive service booking platform with real-time availability, user management, and advanced reporting capabilities.',
+    longDescription: 'Saas Service Booking is a modern web application that allows users to book services in real time, manage their accounts, and access advanced reporting. The platform is built with React and Node.js, featuring a clean UI, secure authentication, and scalable architecture. It is ideal for businesses looking to streamline their booking process and improve customer experience.',
     technologies: ['React', 'Node.js', 'Express'],
     images: ['/images/servicebooking.png'],
-    github: 'https://github.com',
-    demo: 'https://example.com',
+    video: '', // Ajoute ici le lien vers la vidéo mp4 si disponible
+    github: 'https://github.com/neal92/ServiceBooking',
+    demo: '', // Peut être utilisé pour un lien externe si besoin
     featured: true,
   },
   // Add more projects here following the same model
@@ -44,7 +46,7 @@ const Projects: React.FC = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`group bg-white/60 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 ${
+              className={`group ${project.id === 'service-booking' ? 'bg-slate-900 text-white border-slate-800' : 'bg-white/60'} backdrop-blur-xl rounded-3xl overflow-hidden border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 ${
                 project.featured ? 'lg:grid-cols-2' : ''
               }`}
             >
@@ -58,37 +60,39 @@ const Projects: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
                 <div className={`p-10 ${project.featured ? '' : 'md:col-span-2'}`}>
-                  <h3 className="text-3xl font-bold text-slate-800 mb-6 group-hover:text-blue-600 transition-colors duration-300">
+                  <h3 className={`text-3xl font-bold mb-6 group-hover:text-blue-400 transition-colors duration-300 ${project.id === 'service-booking' ? 'text-white' : 'text-slate-800'}`}>
                     {project.title}
                   </h3>
-                  <p className="text-slate-600 mb-8 leading-relaxed text-lg">
+                  <p className={`mb-8 leading-relaxed text-lg ${project.id === 'service-booking' ? 'text-slate-300' : 'text-slate-600'}`}>
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-3 mb-8">
                     {project.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 rounded-full font-medium border border-blue-200/50 hover:shadow-md transition-all duration-300"
+                        className={`px-4 py-2 rounded-full font-medium border hover:shadow-md transition-all duration-300 ${project.id === 'service-booking' ? 'bg-gradient-to-r from-blue-900 to-purple-900 text-blue-200 border-blue-900/50' : 'bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 border-blue-200/50'}`}
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
-                  <div className="flex space-x-6">
+                  <div className="flex space-x-8 mt-8 z-20 relative">
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group/btn inline-flex items-center px-6 py-3 border-2 border-slate-300 text-slate-700 rounded-xl hover:border-blue-500 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 font-semibold"
+                      className="group/btn inline-flex items-center px-8 py-4 text-xl border-2 border-blue-500 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-bold shadow-lg hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105 hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-4 focus:ring-blue-400"
+                      style={{ boxShadow: '0 0 24px 4px #3b82f6, 0 0 8px 2px #a78bfa' }}
                     >
-                      <Github size={20} className="mr-3 group-hover/btn:rotate-12 transition-transform duration-300" />
+                      <Github size={28} className="mr-4 group-hover/btn:rotate-12 transition-transform duration-300" />
                       Code
                     </a>
                     <Link
                       to={`/project/${project.id}`}
-                      className="group/btn inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-semibold hover:shadow-lg hover:shadow-blue-500/25"
+                      className="group/btn inline-flex items-center px-8 py-4 text-xl bg-gradient-to-r from-purple-600 to-blue-600 border-2 border-purple-500 text-white rounded-2xl font-bold shadow-lg hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105 hover:from-purple-700 hover:to-blue-700 focus:outline-none focus:ring-4 focus:ring-purple-400"
+                      style={{ boxShadow: '0 0 24px 4px #a78bfa, 0 0 8px 2px #3b82f6' }}
                     >
-                      <ExternalLink size={20} className="mr-3 group-hover/btn:rotate-12 transition-transform duration-300" />
+                      <ExternalLink size={28} className="mr-4 group-hover/btn:rotate-12 transition-transform duration-300" />
                       Demo
                     </Link>
                   </div>

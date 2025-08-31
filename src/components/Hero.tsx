@@ -49,28 +49,31 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
               <div className="absolute inset-0 bg-gradient-to-r from-pink-400 to-purple-400 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
               Get In Touch
             </a>
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group p-4 bg-white/10 backdrop-blur-sm rounded-2xl text-slate-300 hover:text-white hover:bg-white/20 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
-            >
-              <Github size={24} />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group p-4 bg-white/10 backdrop-blur-sm rounded-2xl text-slate-300 hover:text-white hover:bg-white/20 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
-            >
-              <Linkedin size={24} />
-            </a>
-            <a
-              href="mailto:nealbristol2002@gmail.com"
-              className="group p-4 bg-white/10 backdrop-blur-sm rounded-2xl text-slate-300 hover:text-white hover:bg-white/20 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
-            >
-              <Mail size={24} />
-            </a>
+            {/* Icônes en dessous sur mobile */}
+            <div className="flex gap-4 mt-6 sm:mt-0 sm:ml-6 sm:flex-row flex-row sm:items-center items-center sm:static justify-center w-full sm:w-auto">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group p-4 bg-white/10 backdrop-blur-sm rounded-2xl text-slate-300 hover:text-white hover:bg-white/20 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
+              >
+                <Github size={24} />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group p-4 bg-white/10 backdrop-blur-sm rounded-2xl text-slate-300 hover:text-white hover:bg-white/20 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
+              >
+                <Linkedin size={24} />
+              </a>
+              <a
+                href="mailto:nealbristol2002@gmail.com"
+                className="group p-4 bg-white/10 backdrop-blur-sm rounded-2xl text-slate-300 hover:text-white hover:bg-white/20 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
+              >
+                <Mail size={24} />
+              </a>
+            </div>
           </div>
           <button
             onClick={() => onNavigate('about')}
