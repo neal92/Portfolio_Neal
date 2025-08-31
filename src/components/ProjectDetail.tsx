@@ -2,25 +2,24 @@ import React from 'react';
 
 interface ProjectDetailProps {
   project: {
-    title: { en: string; fr: string };
-    description: { en: string; fr: string };
+    title: string;
+    description: string;
     technologies: string[];
     images: string[];
     video?: string;
-    functionalities?: { en: string; fr: string };
+    functionalities?: string;
   };
-  language: 'fr' | 'en';
 }
 
-const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, language }) => {
+const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
   return (
-  <div className="max-w-4xl mx-auto py-16 px-4 bg-white dark:bg-slate-900 rounded-3xl shadow-xl">
-  <h1 className="text-4xl font-bold mb-6 text-slate-800 dark:text-white">{project.title[language]}</h1>
-  <p className="text-lg text-slate-600 dark:text-slate-300 mb-4">{project.description[language]}</p>
+    <div className="max-w-4xl mx-auto py-16 px-4 bg-white dark:bg-slate-900 rounded-3xl shadow-xl">
+      <h1 className="text-4xl font-bold mb-6 text-slate-800 dark:text-white">{project.title}</h1>
+      <p className="text-lg text-slate-600 dark:text-slate-300 mb-4">{project.description}</p>
       {project.functionalities && (
         <div className="mb-6">
-          <h2 className="text-2xl font-semibold mb-2 text-slate-800 dark:text-white">{language === 'fr' ? 'Fonctionnalités' : 'Features'}</h2>
-          <p className="text-slate-600 dark:text-slate-300">{project.functionalities[language]}</p>
+          <h2 className="text-2xl font-semibold mb-2 text-slate-800 dark:text-white">Features</h2>
+          <p className="text-slate-600 dark:text-slate-300">{project.functionalities}</p>
         </div>
       )}
       <div className="flex flex-wrap gap-3 mb-8">
@@ -32,15 +31,15 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, language }) => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         {project.images.map((img, idx) => (
-          <img key={idx} src={img} alt={project.title[language]} className="w-full h-64 object-cover rounded-xl shadow-md bg-slate-100 dark:bg-slate-800" />
+          <img key={idx} src={img} alt={project.title} className="w-full h-64 object-cover rounded-xl shadow-md bg-slate-100 dark:bg-slate-800" />
         ))}
       </div>
       {project.video && (
         <div className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">{language === 'fr' ? 'Vidéo démo' : 'Demo Video'}</h2>
+          <h2 className="text-2xl font-semibold mb-2">Demo Video</h2>
           <video controls className="w-full rounded-xl shadow-md">
             <source src={project.video} type="video/mp4" />
-            {language === 'fr' ? 'Votre navigateur ne supporte pas la vidéo.' : 'Your browser does not support the video tag.'}
+            Your browser does not support the video tag.
           </video>
         </div>
       )}

@@ -6,11 +6,7 @@ import postmanLogo from '/public/images/tools/postman.svg';
 import dockerLogo from '/public/images/tools/docker.svg';
 import viteLogo from '/public/images/tools/vite.svg';
 
-interface SkillsProps {
-  language: 'fr' | 'en';
-}
-
-const Skills: React.FC<SkillsProps> = ({ language }) => {
+const Skills: React.FC = () => {
   const frontendSkills = [
     { name: 'React', level: 85, color: 'from-blue-500 to-blue-600' },
     { name: 'JavaScript/TypeScript', level: 80, color: 'from-yellow-500 to-orange-500' },
@@ -36,25 +32,6 @@ const Skills: React.FC<SkillsProps> = ({ language }) => {
     { name: 'Vite', logo: viteLogo }
   ];
 
-  const t = {
-    en: {
-      expertise: 'My expertise',
-      skills: 'Skills & Technologies',
-      toolkit: 'A comprehensive toolkit spanning the full development spectrum',
-      frontend: 'Frontend Development',
-      backend: 'Backend Development',
-      tools: 'Tools & Technologies',
-    },
-    fr: {
-      expertise: 'Mon expertise',
-      skills: 'Compétences & Technologies',
-      toolkit: 'Une boîte à outils complète couvrant tout le spectre du développement',
-      frontend: 'Développement Frontend',
-      backend: 'Développement Backend',
-      tools: 'Outils & Technologies',
-    },
-  };
-
   const SkillBar = ({ skill }: { skill: typeof frontendSkills[0] }) => (
     <div className="mb-6 group">
       <div className="flex justify-between mb-3">
@@ -77,27 +54,27 @@ const Skills: React.FC<SkillsProps> = ({ language }) => {
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 rounded-full blur-3xl opacity-20"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-pink-100 to-orange-100 dark:from-pink-900 dark:to-orange-900 rounded-full blur-3xl opacity-20"></div>
       </div>
-  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <div className="inline-block p-1 bg-gradient-to-r from-purple-500 to-pink-500 dark:from-purple-900 dark:to-pink-900 rounded-full mb-8">
             <div className="bg-white dark:bg-slate-900 px-6 py-2 rounded-full">
               <span className="text-sm font-semibold bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
-                {t[language].expertise}
+                My expertise
               </span>
             </div>
           </div>
           <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-800 dark:text-white mb-8 leading-tight">
-            {t[language].skills}
+            Skills & Technologies
           </h2>
           <p className="text-2xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed font-light">
-            {t[language].toolkit}
+            A comprehensive toolkit spanning the full development spectrum
           </p>
         </div>
-  <div className="relative z-10 grid lg:grid-cols-2 gap-12 mb-20">
+        <div className="relative z-10 grid lg:grid-cols-2 gap-12 mb-20">
           <div className="group bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-10 rounded-3xl border border-white/20 dark:border-slate-700 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
             <h3 className="text-3xl font-bold text-slate-800 dark:text-white mb-8 flex items-center">
               <div className="w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mr-4"></div>
-              {t[language].frontend}
+              Frontend Development
             </h3>
             <div className="space-y-6">
               {frontendSkills.map((skill, index) => (
@@ -108,7 +85,7 @@ const Skills: React.FC<SkillsProps> = ({ language }) => {
           <div className="group bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-10 rounded-3xl border border-white/20 dark:border-slate-700 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
             <h3 className="text-3xl font-bold text-slate-800 dark:text-white mb-8 flex items-center">
               <div className="w-4 h-4 bg-gradient-to-r from-green-500 to-teal-500 rounded-full mr-4"></div>
-              {t[language].backend}
+              Backend Development
             </h3>
             <div className="space-y-6">
               {backendSkills.map((skill, index) => (
@@ -117,9 +94,9 @@ const Skills: React.FC<SkillsProps> = ({ language }) => {
             </div>
           </div>
         </div>
-  <div className="relative z-10 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-10 rounded-3xl border border-white/20 dark:border-slate-700 shadow-xl">
+        <div className="relative z-10 bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-10 rounded-3xl border border-white/20 dark:border-slate-700 shadow-xl">
           <h3 className="text-3xl font-bold text-slate-800 dark:text-white mb-10 text-center">
-            {t[language].tools}
+            Tools & Technologies
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
             {tools.map((tool, index) => (

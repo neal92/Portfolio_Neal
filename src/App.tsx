@@ -1,36 +1,29 @@
 import React, { useState, useEffect } from 'react';
-
+import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom';
 import Navigation from './components/Navigation';
-import TestDarkMode from './components/TestDarkMode';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import ProjectDetail from './components/ProjectDetail';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import projectsData, { Project } from './components/projectsData.ts';
 
-import { useParams } from 'react-router-dom';
-import { projects as projectsData } from './components/Projects';
-
-function ProjectDetailWrapper({ language }: { language: 'fr' | 'en' }) {
+function ProjectDetailWrapper() {
   const { id } = useParams<{ id: string }>();
-  const project = projectsData.find((p) => p.id === id);
-
+  const project = projectsData.find((p: Project) => p.id === id);
   if (!project) {
     return <div>Project not found</div>;
   }
-
-  return <ProjectDetail project={project} language={language} />;
+  return <ProjectDetail project={project} />;
 }
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
-  const [language, setLanguage] = useState<'fr' | 'en'>('en');
   const [darkMode, setDarkMode] = useState(false);
 
   // Ajoute ou retire la classe 'dark' sur le body
-  React.useEffect(() => {
+  useEffect(() => {
     if (darkMode) {
       document.body.classList.add('dark');
     } else {
@@ -42,7 +35,6 @@ function App() {
     const handleScroll = () => {
       const sections = ['home', 'about', 'skills', 'projects', 'contact'];
       const scrollPosition = window.scrollY + 100;
-
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -54,7 +46,6 @@ function App() {
         }
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -69,7 +60,8 @@ function App() {
   return (
     <Router>
       <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}> 
-  <div className="fixed top-6 right-6 z-[9999] flex gap-2">
+        {/* Boutons mode sombre/clair en position fixe en haut à droite */}
+        <div className="fixed top-2 right-6 z-[10000] flex gap-2">
           <button
             onClick={() => setDarkMode(false)}
             className={`p-1 rounded-full bg-white dark:bg-slate-800 shadow hover:bg-yellow-100 dark:hover:bg-slate-700 transition ${!darkMode ? 'ring-2 ring-yellow-400' : ''}`}
@@ -88,8 +80,6 @@ function App() {
         <Navigation 
           activeSection={activeSection} 
           onNavigate={scrollToSection}
-          language={language}
-          setLanguage={setLanguage}
           darkMode={darkMode}
         />
         <main>
@@ -99,26 +89,26 @@ function App() {
               element={
                 <>
                   <section id="home">
-                    <Hero onNavigate={scrollToSection} language={language} />
+                    <Hero onNavigate={scrollToSection} />
                   </section>
                   <section id="about">
-                    <About language={language} />
+                    <About />
                   </section>
                   <section id="skills">
-                    <Skills language={language} />
+                    <Skills />
                   </section>
                   <section id="projects">
-                    <Projects language={language} />
+                    <Projects />
                   </section>
                   <section id="contact">
-                    <Contact language={language} />
+                    <Contact />
                   </section>
                 </>
               }
             />
             <Route
               path="/project/:id"
-              element={<ProjectDetailWrapper language={language} />}
+              element={<ProjectDetailWrapper />}
             />
           </Routes>
         </main>
