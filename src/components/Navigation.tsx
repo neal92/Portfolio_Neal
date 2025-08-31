@@ -45,7 +45,7 @@ export default function Navigation({ activeSection, onNavigate, darkMode }: Navi
           }`}
           onClick={() => onNavigate('home')}
         >
-          Crafted by NB
+        Neal Bristol
         </div>
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-8 items-center ml-auto">
