@@ -18,7 +18,7 @@ export const projects = [
       fr: "Une plateforme de réservation de services complète avec disponibilité en temps réel, gestion des utilisateurs et rapports avancés.",
     },
     technologies: ['React', 'Node.js', 'Express'],
-    images: ['src/images/servicebooking.png'],
+  images: ['/images/servicebooking.png'],
     github: 'https://github.com',
     demo: 'https://example.com',
     featured: true,

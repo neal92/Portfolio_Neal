@@ -25,9 +25,9 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
 		};
 		return (
 				<section id="contact" className="py-16 px-4 bg-gray-100 dark:bg-slate-900">
-			<div className="max-w-2xl mx-auto text-center text-white">
-					  <h2 className="text-3xl font-bold mb-4 text-white">{t[language].contact}</h2>
-					  <p className="mb-8 text-white">{t[language].reach}</p>
+			<div className="max-w-2xl mx-auto text-center text-slate-800 dark:text-white">
+					  <h2 className="text-3xl font-bold mb-4 text-slate-800 dark:text-white">{t[language].contact}</h2>
+					  <p className="mb-8 text-slate-800 dark:text-white">{t[language].reach}</p>
 								<form className="space-y-4">
 									  <input type="text" placeholder={t[language].name} className="w-full p-2 border rounded bg-white dark:bg-slate-800 text-white" required />
 									  <input type="email" placeholder={t[language].email} className="w-full p-2 border rounded bg-white dark:bg-slate-800 text-white" required />
