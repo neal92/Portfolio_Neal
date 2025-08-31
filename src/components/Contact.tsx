@@ -20,10 +20,12 @@ const Contact: React.FC = () => {
 								</span>
 								<input type="email" placeholder="Email" className="w-full bg-transparent outline-none text-slate-800 dark:text-white" required />
 							</div>
-										<div className="flex items-center bg-white dark:bg-slate-800 rounded-xl shadow px-4 py-3 mb-2">
-											<span className="mr-3 text-blue-500 dark:text-blue-300 flex items-center">
-												<svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10"/><polyline points="3 10 12 15 21 10"/></svg>
-											</span>
+										<div className="bg-white dark:bg-slate-800 rounded-xl shadow px-4 py-3 mb-2 flex flex-col items-start">
+												<span className="mb-2 flex items-center justify-center" style={{ minWidth: '28px', minHeight: '28px' }}>
+													<svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500 dark:text-blue-300">
+														<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+													</svg>
+												</span>
 											<textarea placeholder="Message" className="w-full bg-transparent outline-none text-slate-800 dark:text-white" rows={4} required></textarea>
 										</div>
 							<button type="submit" className="w-full py-4 rounded-xl font-bold text-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg hover:scale-105 hover:shadow-blue-500/30 transition-all duration-300">Send Message</button>

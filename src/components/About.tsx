@@ -68,21 +68,76 @@ const About: React.FC = () => {
           </div>
           <br></br>
 
+
 <section className="w-full mb-16">
-  <h3 className="text-4xl font-extrabold text-slate-800 dark:text-white mb-8 tracking-tight text-left">Education & Qualifications</h3>
-  <div className="flex flex-col md:flex-row items-center bg-white dark:bg-slate-900 rounded-3xl shadow-xl p-8 md:p-16 gap-12 border border-slate-200 dark:border-slate-800">
-    <div className="flex-shrink-0 flex justify-center items-center w-full md:w-1/3">
-      <img src="/images/ecole-iris.png" alt="Ecole IRIS Paris" className="w-[34rem] h-72 object-cover rounded-2xl shadow-lg border border-slate-100 dark:border-slate-800" />
-    </div>
-    <div className="flex-1 flex flex-col justify-start">
-      <span className="text-2xl font-bold text-blue-700 dark:text-blue-300 mb-4">IRIS School, Paris 17e</span>
-      <span className="text-lg font-semibold text-slate-700 dark:text-slate-200 mb-2">Diplômes</span>
-      <ul className="text-lg text-slate-600 dark:text-slate-300 mb-6 space-y-2 pl-4">
-        <li className="list-disc">BTS SIO</li>
-        <li className="list-disc">Licence Web & Mobile Development</li>
-        <li className="list-disc">Currently preparing my Master’s degree (2025)</li>
-      </ul>
-      <p className="text-base text-slate-500 dark:text-slate-400 font-light mt-2">I am committed to delivering high-quality, reliable work for every project.</p>
+  <h3 className="text-4xl font-extrabold text-slate-800 dark:text-white mb-12 tracking-tight text-center">Education & Qualifications</h3>
+  <div className="relative max-w-2xl mx-auto">
+    {/* Ligne centrale */}
+    <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-400 to-purple-400"></div>
+    <div className="flex flex-col gap-16">
+
+      {/* Master 2  */}
+      <div className="flex items-center relative">
+        <div className="z-10 flex-shrink-0 w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center border-4 border-blue-400 mx-4">
+          <img src="/images/ecole-iris.png" alt="Licence professionnel CDW" className="w-16 h-16 object-contain" />
+        </div>
+        
+        <div className="bg-white dark:bg-slate-900 rounded-xl shadow-md p-6 ml-8">
+          <div className="text-lg font-bold text-blue-700 dark:text-blue-300">2023-2024</div>
+          <div className="text-xl font-bold mb-2">Mastère 2  Expert IT, développement et base de données</div>
+          <div className="text-base text-slate-600 dark:text-slate-300">Education at IRIS School in Paris - IT School.</div>
+        </div>
+        
+      </div>
+
+      {/* Master 1*/}
+      <div className="flex items-center relative">
+        <div className="z-10 flex-shrink-0 w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center border-4 border-blue-400 mx-4">
+          <img src="/images/ecole-iris.png" alt="Licence professionnel CDW" className="w-16 h-16 object-contain" />
+        </div>
+        
+        <div className="bg-white dark:bg-slate-900 rounded-xl shadow-md p-6 ml-8">
+          <div className="text-lg font-bold text-blue-700 dark:text-blue-300">2023-2024</div>
+          <div className="text-xl font-bold mb-2">Mastère 1  Expert IT, développement et base de données</div>
+          <div className="text-base text-slate-600 dark:text-slate-300">Education at IRIS School in Paris - IT School.</div>
+        </div>
+        
+      </div>
+      {/* Licence professionnel CDW */}
+      <div className="flex items-center relative">
+        <div className="z-10 flex-shrink-0 w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center border-4 border-blue-400 mx-4">
+          <img src="/images/ecole-iris.png" alt="Licence professionnel CDW" className="w-16 h-16 object-contain" />
+        </div>
+        
+        <div className="bg-white dark:bg-slate-900 rounded-xl shadow-md p-6 ml-8">
+          <div className="text-lg font-bold text-blue-700 dark:text-blue-300">2022-2023</div>
+          <div className="text-xl font-bold mb-2">Licence Bachelors Informatique</div>
+          <div className="text-base text-slate-600 dark:text-slate-300">Education at IRIS School in Paris - IT School.</div>
+        </div>
+
+      </div>
+      {/* BTS Services Informatiques aux Organisations */}
+      <div className="flex items-center relative">
+        <div className="z-10 flex-shrink-0 w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center border-4 border-blue-400 mx-4">
+          <img src="/images/ecole-iris.png" alt="BTS SIO" className="w-16 h-16 object-contain" />
+        </div>
+        <div className="bg-white dark:bg-slate-900 rounded-xl shadow-md p-6 ml-8">
+          <div className="text-lg font-bold text-blue-700 dark:text-blue-300">2021-2022</div>
+          <div className="text-xl font-bold mb-2">BTS Services Informatiques aux Organisations option : SLAM </div>
+          <div className="text-base text-slate-600 dark:text-slate-300">Education at IRIS School in Paris - IT School.</div>
+        </div>
+      </div>
+      {/* BAC STMG */}
+      <div className="flex items-center relative">
+        <div className="z-10 flex-shrink-0 w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center border-4 border-blue-400 mx-4">
+          <img src="/images/ecole-agora.jpg" alt="BAC STI2D" className="w-16 h-16 object-contain" />
+        </div>
+        <div className="bg-white dark:bg-slate-900 rounded-xl shadow-md p-6 ml-8">
+          <div className="text-lg font-bold text-blue-700 dark:text-blue-300">2020-2021</div>
+          <div className="text-xl font-bold mb-2">BAC STI2D</div>
+          <div className="text-base text-slate-600 dark:text-slate-300">Option SIN (système informatique et numérique).</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
