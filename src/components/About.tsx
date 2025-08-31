@@ -59,16 +59,6 @@ const About: React.FC = () => {
               <h3 className="text-xl font-bold mb-2">Web Applications</h3>
               <p className="text-slate-600 dark:text-slate-300 text-center">Interactive online services with dynamic features and user spaces.</p>
             </div>
-            {/* 6. Social Networks */}
-              <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-6 flex flex-col items-center justify-between h-full">
-                  <img src="/images/social.png" alt="Social Network" className="w-32 h-20 mb-4" />
-                  <div className="flex-1 flex flex-col justify-end w-full">
-                    <h3 className="text-xl font-bold mb-2 text-center">Social Networks & Communities</h3>
-                    <p className="text-slate-600 dark:text-slate-300 text-center">
-                      Connecting people, enabling messaging, posts, and user profiles.
-                    </p>
-                  </div>
-                </div>
             {/* 9. Landing Pages */}
             <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-6 flex flex-col items-center">
               <img src="/images/landing.jpg" alt="Landing Page" className="w-35 h-30 mb-4" />
@@ -77,21 +67,25 @@ const About: React.FC = () => {
             </div>
           </div>
           <br></br>
-<div className="max-w-4xl mx-auto mb-12">
-  <h3 className="text-3xl font-bold mb-8 text-slate-800 dark:text-white text-center">Education & Qualifications</h3>
-  <div className="flex flex-col md:flex-row items-center bg-white dark:bg-slate-900 rounded-2xl shadow-lg p-8 gap-8">
-    <img src="/images/ecole-iris.png" alt="Ecole IRIS Paris" className="w-56 h-40 object-contain rounded shadow mb-4 md:mb-0" />
-    <div className="flex-1 text-left">
-      <span className="text-xl font-semibold text-slate-700 dark:text-slate-200 block mb-2">Ecole IRIS, Porte de Champerret, Paris 17e</span>
-      <ul className="text-xl text-slate-600 dark:text-slate-300 mb-4 list-disc list-inside">
-        <li>BTS SIO</li>
-        <li>Licence Web & Mobile Development</li>
-        <li>Currently preparing my Master’s degree (2025)</li>
+
+<section className="w-full mb-16">
+  <h3 className="text-4xl font-extrabold text-slate-800 dark:text-white mb-8 tracking-tight text-left">Education & Qualifications</h3>
+  <div className="flex flex-col md:flex-row items-center bg-white dark:bg-slate-900 rounded-3xl shadow-xl p-8 md:p-16 gap-12 border border-slate-200 dark:border-slate-800">
+    <div className="flex-shrink-0 flex justify-center items-center w-full md:w-1/3">
+      <img src="/images/ecole-iris.png" alt="Ecole IRIS Paris" className="w-[34rem] h-72 object-cover rounded-2xl shadow-lg border border-slate-100 dark:border-slate-800" />
+    </div>
+    <div className="flex-1 flex flex-col justify-start">
+      <span className="text-2xl font-bold text-blue-700 dark:text-blue-300 mb-4">IRIS School, Paris 17e</span>
+      <span className="text-lg font-semibold text-slate-700 dark:text-slate-200 mb-2">Diplômes</span>
+      <ul className="text-lg text-slate-600 dark:text-slate-300 mb-6 space-y-2 pl-4">
+        <li className="list-disc">BTS SIO</li>
+        <li className="list-disc">Licence Web & Mobile Development</li>
+        <li className="list-disc">Currently preparing my Master’s degree (2025)</li>
       </ul>
-      <p className="text-lg text-slate-700 dark:text-slate-200 font-medium">I am committed to delivering high-quality, reliable work for every project.</p>
+      <p className="text-base text-slate-500 dark:text-slate-400 font-light mt-2">I am committed to delivering high-quality, reliable work for every project.</p>
     </div>
   </div>
-</div>
+</section>
         </div>
       </div>
     </div>
