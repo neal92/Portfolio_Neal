@@ -72,7 +72,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate, language }) => {
             </button>
           </div>
 
-          <div className="flex justify-center space-x-8">
+          <div className="flex justify-center space-x-8 mb-8">
             <a
               href="https://github.com"
               target="_blank"
@@ -96,15 +96,14 @@ const Hero: React.FC<HeroProps> = ({ onNavigate, language }) => {
               <Mail size={24} />
             </a>
           </div>
+          <button
+            onClick={() => onNavigate('about')}
+            className="mx-auto block p-3 bg-white/10 backdrop-blur-sm rounded-full text-white/70 hover:text-white hover:bg-white/20 transition-all duration-300 animate-bounce"
+          >
+            <ChevronDown size={24} />
+          </button>
         </div>
       </div>
-
-      <button
-        onClick={() => onNavigate('about')}
-        className="absolute bottom-12 left-1/2 transform -translate-x-1/2 p-3 bg-white/10 backdrop-blur-sm rounded-full text-white/70 hover:text-white hover:bg-white/20 transition-all duration-300 animate-bounce"
-      >
-        <ChevronDown size={24} />
-      </button>
     </div>
   );
 };

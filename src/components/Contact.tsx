@@ -24,22 +24,21 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
 			}
 		};
 		return (
-			<section id="contact" className="py-16 px-4 bg-gray-100 dark:bg-slate-900">
-			<div className="max-w-2xl mx-auto text-center">
-					  <h2 className="text-3xl font-bold mb-4 text-slate-800 dark:text-white">{t[language].contact}</h2>
-					  <p className="mb-8 text-slate-600 dark:text-slate-300">{t[language].reach}</p>
+				<section id="contact" className="py-16 px-4 bg-gray-100 dark:bg-slate-900">
+			<div className="max-w-2xl mx-auto text-center text-white">
+					  <h2 className="text-3xl font-bold mb-4 text-white">{t[language].contact}</h2>
+					  <p className="mb-8 text-white">{t[language].reach}</p>
 								<form className="space-y-4">
-									<input type="text" placeholder={t[language].name} className="w-full p-2 border rounded bg-white dark:bg-slate-800 text-slate-800 dark:text-white" required />
-									<input type="email" placeholder={t[language].email} className="w-full p-2 border rounded bg-white dark:bg-slate-800 text-slate-800 dark:text-white" required />
-									<textarea placeholder={t[language].message} className="w-full p-2 border rounded bg-white dark:bg-slate-800 text-slate-800 dark:text-white" rows={5} required></textarea>
+									  <input type="text" placeholder={t[language].name} className="w-full p-2 border rounded bg-white dark:bg-slate-800 text-white" required />
+									  <input type="email" placeholder={t[language].email} className="w-full p-2 border rounded bg-white dark:bg-slate-800 text-white" required />
+									  <textarea placeholder={t[language].message} className="w-full p-2 border rounded bg-white dark:bg-slate-800 text-white" rows={5} required></textarea>
 									<button type="submit" className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 transition">{t[language].send}</button>
 								</form>
-					<p className="mb-4">
-					  {language === 'fr'
-					    ? "Vous pouvez aussi m'écrire directement à "
-					    : "You can also email me directly at "}
-					  <a href="mailto:adrien.martin@example.com" className="text-blue-600 underline">adrien.martin@example.com</a>
-					</p>
+							<p className="mb-4 text-slate-800 dark:text-white">
+								{language === 'fr'
+									? "Vous pouvez aussi m'écrire directement à "
+									: "You can also email me directly at "}<a href="mailto:nealbristol2002@gmail.com" className="text-blue-600 underline">nealbristol2002@gmail.com</a>
+							</p>
 				</div>
 			</section>
 		);
