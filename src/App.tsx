@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import Navigation from './components/Navigation';
+import TestDarkMode from './components/TestDarkMode';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
@@ -26,6 +27,16 @@ function ProjectDetailWrapper({ language }: { language: 'fr' | 'en' }) {
 function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [language, setLanguage] = useState<'fr' | 'en'>('en');
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Ajoute ou retire la classe 'dark' sur le body
+  React.useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+  }, [darkMode]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,12 +68,29 @@ function App() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-slate-50">
+      <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}> 
+  <div className="fixed top-6 right-6 z-[9999] flex gap-2">
+          <button
+            onClick={() => setDarkMode(false)}
+            className={`p-1 rounded-full bg-white dark:bg-slate-800 shadow hover:bg-yellow-100 dark:hover:bg-slate-700 transition ${!darkMode ? 'ring-2 ring-yellow-400' : ''}`}
+            aria-label="Mode clair"
+          >
+            <span className="text-yellow-400 text-lg">☀️</span>
+          </button>
+          <button
+            onClick={() => setDarkMode(true)}
+            className={`p-1 rounded-full bg-white dark:bg-slate-800 shadow hover:bg-purple-100 dark:hover:bg-slate-700 transition ${darkMode ? 'ring-2 ring-purple-600' : ''}`}
+            aria-label="Mode sombre"
+          >
+            <span className="text-purple-600 text-lg">🌙</span>
+          </button>
+        </div>
         <Navigation 
           activeSection={activeSection} 
           onNavigate={scrollToSection}
           language={language}
           setLanguage={setLanguage}
+          darkMode={darkMode}
         />
         <main>
           <Routes>

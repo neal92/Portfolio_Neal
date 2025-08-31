@@ -6,9 +6,10 @@ interface NavigationProps {
   onNavigate: (section: string) => void;
   language: 'fr' | 'en';
   setLanguage: (lang: 'fr' | 'en') => void;
+  darkMode: boolean;
 }
 
-export default function Navigation({ activeSection, onNavigate, language, setLanguage }: NavigationProps) {
+export default function Navigation({ activeSection, onNavigate, language, setLanguage, darkMode }: NavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
   const [langChanged, setLangChanged] = React.useState(false);
@@ -59,15 +60,21 @@ export default function Navigation({ activeSection, onNavigate, language, setLan
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      scrolled 
-        ? 'bg-white/80 backdrop-blur-xl border-b border-slate-200/50 shadow-lg' 
-        : 'bg-transparent'
+      scrolled
+        ? darkMode
+          ? 'bg-slate-900/80 backdrop-blur-xl border-b border-slate-700/50 shadow-lg'
+          : 'bg-white/80 backdrop-blur-xl border-b border-slate-200/50 shadow-lg'
+        : darkMode
+          ? 'bg-transparent'
+          : 'bg-transparent'
     }`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div 
             className={`text-2xl font-bold cursor-pointer transition-colors duration-300 ${
-              scrolled ? 'text-slate-800' : 'text-white'
+              scrolled
+                ? darkMode ? 'text-white' : 'text-slate-800'
+                : darkMode ? 'text-white' : 'text-white'
             }`}
             onClick={() => onNavigate('home')}
           >
@@ -82,12 +89,12 @@ export default function Navigation({ activeSection, onNavigate, language, setLan
                 onClick={() => onNavigate(item.id)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                   activeSection === item.id
-                    ? scrolled 
-                      ? 'text-blue-600 bg-blue-50' 
-                      : 'text-blue-300 bg-white/20'
+                    ? scrolled
+                      ? darkMode ? 'text-blue-400 bg-slate-800' : 'text-blue-600 bg-blue-50'
+                      : darkMode ? 'text-blue-400 bg-slate-800' : 'text-blue-300 bg-white/20'
                     : scrolled
-                      ? 'text-slate-600 hover:text-blue-600 hover:bg-slate-50'
-                      : 'text-white/80 hover:text-white hover:bg-white/10'
+                      ? darkMode ? 'text-slate-200 hover:text-blue-400 hover:bg-slate-800' : 'text-slate-600 hover:text-blue-600 hover:bg-slate-50'
+                      : darkMode ? 'text-slate-200 hover:text-blue-400 hover:bg-slate-800' : 'text-white/80 hover:text-white hover:bg-white/10'
                 }`}
               >
                 {item.label}
