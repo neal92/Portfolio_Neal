@@ -23,7 +23,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             </span>
           </h1>
           <p className="text-2xl sm:text-3xl lg:text-4xl text-slate-200 dark:text-slate-300 mb-2 font-light">
-            Full-Stack Developer
+            Locking for a developer ? I'm your guy !  
           </p>
           <div className="inline-block p-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mb-6">
             <div className="bg-slate-900 dark:bg-slate-800 px-6 py-2 rounded-full">
