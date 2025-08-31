@@ -1,10 +1,11 @@
 import React from 'react';
+
 import githubLogo from '/public/images/tools/github.svg';
 import vscodeLogo from '/public/images/tools/vscode.svg';
 import figmaLogo from '/public/images/tools/figma.svg';
 import postmanLogo from '/public/images/tools/postman.svg';
 import dockerLogo from '/public/images/tools/docker.svg';
-import viteLogo from '/public/images/tools/vite.svg';
+import wordpressLogo from '/public/images/tools/wordpress.svg';
 
 const Skills: React.FC = () => {
   const frontendSkills = [
@@ -28,7 +29,8 @@ const Skills: React.FC = () => {
     { name: 'VS Code', logo: vscodeLogo },
     { name: 'Figma', logo: figmaLogo },
     { name: 'Postman', logo: postmanLogo },
-    { name: 'Docker', logo: dockerLogo }
+    { name: 'Docker', logo: dockerLogo },
+    { name: 'WordPress', logo: wordpressLogo }
   ];
 
   const SkillCard = ({ skill, icon, borderColor }: { skill: typeof frontendSkills[0], icon: string, borderColor: string }) => (

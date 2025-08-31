@@ -5,10 +5,11 @@ interface NavigationProps {
   activeSection: string;
   onNavigate: (section: string) => void;
   darkMode: boolean;
+  isMenuOpen: boolean;
+  setIsMenuOpen: (open: boolean) => void;
 }
 
-export default function Navigation({ activeSection, onNavigate, darkMode }: NavigationProps) {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+export default function Navigation({ activeSection, onNavigate, darkMode, isMenuOpen, setIsMenuOpen }: NavigationProps) {
   const [scrolled, setScrolled] = React.useState(false);
 
   React.useEffect(() => {
@@ -42,13 +43,13 @@ export default function Navigation({ activeSection, onNavigate, darkMode }: Navi
             scrolled
               ? darkMode ? 'text-white' : 'text-slate-800'
               : darkMode ? 'text-white' : 'text-white'
-          }`}
+          } ${isMenuOpen ? 'invisible' : ''}`}
           onClick={() => onNavigate('home')}
         >
         Neal Bristol
         </div>
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-8 items-center ml-auto">
+        <div className={`hidden md:flex space-x-8 items-center ml-auto ${isMenuOpen ? 'invisible' : ''}`}> 
           {navItems.map((item) => (
             <button
               key={item.id}
@@ -69,24 +70,28 @@ export default function Navigation({ activeSection, onNavigate, darkMode }: Navi
         </div>
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-slate-200/50 bg-white dark:bg-slate-900 shadow-xl z-[9999] flex flex-col items-center">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => {
-                  onNavigate(item.id);
-                  setIsMenuOpen(false);
-                }}
-                className={`block w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                  activeSection === item.id
-                    ? 'text-blue-600 bg-blue-50 dark:text-white dark:bg-slate-800'
-                    : 'text-slate-800 hover:text-blue-600 hover:bg-slate-50 dark:text-white dark:hover:text-blue-400 dark:hover:bg-slate-800'
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
+          <>
+            <div className="md:hidden py-4 px-2 max-w-xs w-full border-t border-slate-200/50 bg-transparent dark:bg-transparent shadow-2xl z-[9999] flex flex-col items-center rounded-2xl mt-4 mx-auto animate-fade-in mb-16">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    onNavigate(item.id);
+                    setIsMenuOpen(false);
+                  }}
+                  className={`block w-full text-left px-6 py-4 mb-2 rounded-xl text-base font-semibold transition-colors duration-200 shadow-sm ${
+                    activeSection === item.id
+                      ? 'text-blue-600 bg-blue-50 dark:text-blue-300 dark:bg-slate-800'
+                      : 'text-slate-800 hover:text-blue-600 hover:bg-blue-100 dark:text-white dark:hover:text-blue-400 dark:hover:bg-slate-800'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+            {/* Masque le bouton sombre/clair */}
+            <style>{`.darkmode-toggle { display: none !important; }`}</style>
+          </>
         )}
       </div>
     </nav>

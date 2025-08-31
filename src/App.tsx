@@ -21,6 +21,7 @@ function ProjectDetailWrapper() {
 function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [darkMode, setDarkMode] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Ajoute ou retire la classe 'dark' sur le body
   useEffect(() => {
@@ -61,26 +62,30 @@ function App() {
     <Router>
       <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}> 
         {/* Boutons mode sombre/clair en position fixe en haut à droite */}
-        <div className="fixed top-2 right-6 z-[10000] flex gap-2">
-          <button
-            onClick={() => setDarkMode(false)}
-            className={`p-1 rounded-full bg-white dark:bg-slate-800 shadow hover:bg-yellow-100 dark:hover:bg-slate-700 transition ${!darkMode ? 'ring-2 ring-yellow-400' : ''}`}
-            aria-label="Mode clair"
-          >
-            <span className="text-yellow-400 text-lg">☀️</span>
-          </button>
-          <button
-            onClick={() => setDarkMode(true)}
-            className={`p-1 rounded-full bg-white dark:bg-slate-800 shadow hover:bg-purple-100 dark:hover:bg-slate-700 transition ${darkMode ? 'ring-2 ring-purple-600' : ''}`}
-            aria-label="Mode sombre"
-          >
-            <span className="text-purple-600 text-lg">🌙</span>
-          </button>
-        </div>
+        {!isMenuOpen && (
+          <div className="fixed top-2 right-6 z-[10000] flex gap-2">
+            <button
+              onClick={() => setDarkMode(false)}
+              className={`p-1 rounded-full bg-white dark:bg-slate-800 shadow hover:bg-yellow-100 dark:hover:bg-slate-700 transition ${!darkMode ? 'ring-2 ring-yellow-400' : ''}`}
+              aria-label="Mode clair"
+            >
+              <span className="text-yellow-400 text-lg">☀️</span>
+            </button>
+            <button
+              onClick={() => setDarkMode(true)}
+              className={`p-1 rounded-full bg-white dark:bg-slate-800 shadow hover:bg-purple-100 dark:hover:bg-slate-700 transition ${darkMode ? 'ring-2 ring-purple-600' : ''}`}
+              aria-label="Mode sombre"
+            >
+              <span className="text-purple-600 text-lg">🌙</span>
+            </button>
+          </div>
+        )}
         <Navigation 
           activeSection={activeSection} 
           onNavigate={scrollToSection}
           darkMode={darkMode}
+          isMenuOpen={isMenuOpen}
+          setIsMenuOpen={setIsMenuOpen}
         />
         <main>
           <Routes>

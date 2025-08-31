@@ -28,10 +28,10 @@ const About: React.FC = () => {
               your ideas into impactful digital experiences.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 mb-12">
             {/* 1. Sites vitrines */}
-            <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-6 flex flex-col items-center">
-              <img src="/images/vitrine.png" alt="Sites vitrines" className="w-35 h-30 mb-4" />
+            <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-4 sm:p-6 flex flex-col items-center">
+              <img src="/images/vitrine.png" alt="Sites vitrines" className="w-20 h-16 mb-3 sm:w-35 sm:h-30 sm:mb-4" />
               <h3 className="text-xl font-bold mb-2 text-slate-800 dark:text-white">Showcase Websites</h3>
               <p className="text-slate-600 dark:text-slate-300 text-center">Presenting businesses, associations, or freelancers with simple, elegant pages.</p>
             </div>
