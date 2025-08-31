@@ -1,4 +1,34 @@
 import React from 'react';
+// Animation fade-in au scroll
+const FadeInSection: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const ref = React.useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = React.useState(false);
+
+  React.useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className={`transition-opacity transition-transform duration-2000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-24'}`}
+    >
+      {children}
+    </div>
+  );
+};
 
 import githubLogo from '/public/images/tools/github.svg';
 import vscodeLogo from '/public/images/tools/vscode.svg';
@@ -41,76 +71,82 @@ const Skills: React.FC = () => {
   );
 
   return (
-  <div className="mt-24 py-32 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-200 to-purple-200 dark:from-blue-900 dark:to-purple-900 rounded-full blur-3xl opacity-20"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-pink-200 to-orange-200 dark:from-pink-900 dark:to-orange-900 rounded-full blur-3xl opacity-20"></div>
-      </div>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
-          <div className="inline-block p-1 bg-gradient-to-r from-purple-500 to-pink-500 dark:from-purple-900 dark:to-pink-900 rounded-full mb-8">
-            <div className="bg-white dark:bg-slate-900 px-6 py-2 rounded-full">
-              <span className="text-sm font-semibold bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
-                My expertise
-              </span>
-            </div>
+    <FadeInSection>
+      <div>
+        <div className="mt-24 py-32 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-200 to-purple-200 dark:from-blue-900 dark:to-purple-900 rounded-full blur-3xl opacity-20"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-pink-200 to-orange-200 dark:from-pink-900 dark:to-orange-900 rounded-full blur-3xl opacity-20"></div>
           </div>
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-800 dark:text-white mb-8 leading-tight">
-            Skills & Technologies
-          </h2>
-          <p className="text-2xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed font-light">
-            A comprehensive toolkit spanning the full development spectrum
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
-          <div>
-            <h3 className="text-3xl font-bold text-blue-700 dark:text-blue-400 mb-8 flex items-center">
-              <div className="w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mr-4"></div>
-              Frontend Development
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {frontendSkills.map((skill, index) => (
-                <SkillCard
-                  key={index}
-                  skill={skill}
-                  icon={index === 0 ? '/images/tools/vite.svg' : index === 1 ? '/images/tools/github.svg' : index === 2 ? '/images/tools/vscode.svg' : index === 3 ? '/images/tools/figma.svg' : '/images/tools/docker.svg'}
-                  borderColor="border-blue-600 dark:border-blue-400"
-                />
-              ))}
-            </div>
-          </div>
-          <div>
-            <h3 className="text-3xl font-bold text-green-700 dark:text-green-400 mb-8 flex items-center">
-              <div className="w-4 h-4 bg-gradient-to-r from-green-500 to-teal-500 rounded-full mr-4"></div>
-              Backend Development
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {backendSkills.map((skill, index) => (
-                <SkillCard
-                  key={index}
-                  skill={skill}
-                  icon={index === 0 ? '/images/tools/postman.svg' : index === 1 ? '/images/tools/docker.svg' : index === 2 ? '/images/tools/github.svg' : index === 3 ? '/images/tools/vscode.svg' : '/images/tools/figma.svg'}
-                  borderColor="border-green-600 dark:border-green-400"
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-        <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl p-10 rounded-3xl border border-white/20 dark:border-slate-700 shadow-xl mt-10">
-          <h3 className="text-3xl font-bold text-slate-800 dark:text-white mb-10 text-center">
-            Tools & Technologies
-          </h3>
-          <div className="flex flex-wrap justify-center gap-8">
-            {tools.map((tool, index) => (
-              <div key={index} className="flex flex-col items-center justify-center p-4 bg-white dark:bg-slate-900 rounded-xl shadow hover:shadow-lg transition hover:-translate-y-1">
-                <img src={tool.logo} alt={tool.name} className="w-14 h-14 mb-2 object-contain" />
-                <span className="text-lg font-medium text-slate-700 dark:text-white">{tool.name}</span>
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-20">
+              <div className="inline-block p-1 bg-gradient-to-r from-purple-500 to-pink-500 dark:from-purple-900 dark:to-pink-900 rounded-full mb-8">
+                <div className="bg-white dark:bg-slate-900 px-6 py-2 rounded-full">
+                  <span className="text-sm font-semibold bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
+                    My expertise
+                  </span>
+                </div>
               </div>
-            ))}
+              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-800 dark:text-white mb-8 leading-tight">
+                Skills & Technologies
+              </h2>
+              <p className="text-2xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed font-light">
+                A comprehensive toolkit spanning the full development spectrum
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+              <>
+                <div>
+                  <h3 className="text-3xl font-bold text-blue-700 dark:text-blue-400 mb-8 flex items-center">
+                    <div className="w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mr-4"></div>
+                    Frontend Development
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    {frontendSkills.map((skill, index) => (
+                      <SkillCard
+                        key={index}
+                        skill={skill}
+                        icon={index === 0 ? '/images/tools/vite.svg' : index === 1 ? '/images/tools/github.svg' : index === 2 ? '/images/tools/vscode.svg' : index === 3 ? '/images/tools/figma.svg' : '/images/tools/docker.svg'}
+                        borderColor="border-blue-600 dark:border-blue-400"
+                      />
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-3xl font-bold text-green-700 dark:text-green-400 mb-8 flex items-center">
+                    <div className="w-4 h-4 bg-gradient-to-r from-green-500 to-teal-500 rounded-full mr-4"></div>
+                    Backend Development
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    {backendSkills.map((skill, index) => (
+                      <SkillCard
+                        key={index}
+                        skill={skill}
+                        icon={index === 0 ? '/images/tools/postman.svg' : index === 1 ? '/images/tools/docker.svg' : index === 2 ? '/images/tools/github.svg' : index === 3 ? '/images/tools/vscode.svg' : '/images/tools/figma.svg'}
+                        borderColor="border-green-600 dark:border-green-400"
+                      />
+                    ))}
+                  </div>
+                </div>
+              </>
+            </div>
+            <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl p-10 rounded-3xl border border-white/20 dark:border-slate-700 shadow-xl mt-10">
+              <h3 className="text-3xl font-bold text-slate-800 dark:text-white mb-10 text-center">
+                Tools & Technologies
+              </h3>
+              <div className="flex flex-wrap justify-center gap-8">
+                {tools.map((tool, index) => (
+                  <div key={index} className="flex flex-col items-center justify-center p-4 bg-white dark:bg-slate-900 rounded-xl shadow hover:shadow-lg transition hover:-translate-y-1">
+                    <img src={tool.logo} alt={tool.name} className="w-14 h-14 mb-2 object-contain" />
+                    <span className="text-lg font-medium text-slate-700 dark:text-white">{tool.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </FadeInSection>
   );
 };
 
