@@ -73,6 +73,11 @@ const Projects: React.FC = () => {
                 >
                   <div className="w-full p-6 sm:p-10 flex flex-col justify-center h-full">
                     <div>
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-55 object-cover rounded-2xl mb-4 shadow-md"
+                      />
                       <h3 className={`text-3xl font-bold mb-4 group-hover:text-blue-400 transition-colors duration-300 ${project.id === 'service-booking' ? 'text-black dark:text-white' : 'text-black dark:text-white'}`}>{project.title}</h3>
                       <p className={`mb-6 leading-relaxed text-base sm:text-lg ${project.id === 'service-booking' ? 'text-black dark:text-slate-300' : 'text-black dark:text-slate-600'}`}>{project.description}</p>
                       <div className="flex flex-wrap gap-2 mb-6">
@@ -91,20 +96,23 @@ const Projects: React.FC = () => {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group/btn inline-flex items-center justify-center px-6 py-3 text-base sm:text-xl border-2 border-blue-500 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-bold shadow-lg hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105 hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-4 focus:ring-blue-400"
-                        style={{ boxShadow: '0 0 24px 4px #3b82f6, 0 0 8px 2px #a78bfa' }}
+                        className="group/btn inline-flex items-center justify-center px-4 py-2 text-sm sm:text-base border-2 border-blue-500 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-bold shadow-lg hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105 hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        style={{ boxShadow: '0 0 12px 2px #3b82f6, 0 0 4px 1px #a78bfa' }}
                       >
-                        <Github size={24} className="mr-3 group-hover/btn:rotate-12 transition-transform duration-300" />
+                        <Github size={18} className="mr-2 group-hover/btn:rotate-12 transition-transform duration-300" />
                         Code
                       </a>
-                      <button
-                        onClick={() => setOpenModal(index)}
-                        className="group/btn inline-flex items-center justify-center px-6 py-3 text-lg sm:text-xl bg-gradient-to-r from-purple-600 to-blue-600 border-2 border-purple-500 text-white rounded-2xl font-bold shadow-lg hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105 hover:from-purple-700 hover:to-blue-700 focus:outline-none focus:ring-4 focus:ring-purple-400 w-full sm:w-auto"
-                        style={{ boxShadow: '0 0 24px 4px #a78bfa, 0 0 8px 2px #3b82f6' }}
+                      <a
+                        href={project.video}
+                        download
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/btn inline-flex items-center justify-center px-4 py-2 text-sm sm:text-base bg-gradient-to-r from-purple-600 to-blue-600 border-2 border-purple-500 text-white rounded-xl font-bold shadow-lg hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105 hover:from-purple-700 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-purple-400 w-full sm:w-auto"
+                        style={{ boxShadow: '0 0 12px 2px #a78bfa, 0 0 4px 1px #3b82f6' }}
                       >
-                        <ExternalLink size={24} className="mr-3 group-hover/btn:rotate-12 transition-transform duration-300" />
-                        Demo
-                      </button>
+                        <ExternalLink size={18} className="mr-2 group-hover/btn:rotate-12 transition-transform duration-300" />
+                        Download the demo
+                      </a>
                     </div>
                     {/* Modale projet */}
                     {typeof openModal === 'number' && (
@@ -112,10 +120,34 @@ const Projects: React.FC = () => {
                         <div className="bg-white dark:bg-slate-900 rounded-3xl shadow-2xl max-w-2xl w-full p-8 relative flex flex-col items-center">
                           <button onClick={() => setOpenModal(null)} className="absolute top-4 right-4 text-slate-500 dark:text-slate-300 hover:text-red-500 text-2xl font-bold">×</button>
                           {projectsData[openModal].video ? (
-                            <video controls autoPlay className="w-full rounded-xl shadow-md">
-                              <source src={projectsData[openModal].video} type="video/mp4" />
-                              Votre navigateur ne supporte pas la vidéo.
-                            </video>
+                            (projectsData[openModal].video.includes('youtube.com') || projectsData[openModal].video.includes('vimeo.com')) ? (
+                              <iframe
+                                width="100%"
+                                height="360"
+                                src={projectsData[openModal].video}
+                                title="Demo Video"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                                className="rounded-xl shadow-md mb-6"
+                              />
+                            ) : (
+                              <>
+                                <video controls autoPlay className="w-full rounded-xl shadow-md mb-4">
+                                  <source src={projectsData[openModal].video} type="video/mp4" />
+                                  Votre navigateur ne supporte pas la vidéo.
+                                </video>
+                                <a
+                                  href={projectsData[openModal].video}
+                                  download
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition-colors text-center"
+                                >
+                                  Télécharger la vidéo
+                                </a>
+                              </>
+                            )
                           ) : (
                             <div className="flex flex-col items-center justify-center w-full h-64">
                               <span className="text-2xl font-semibold text-slate-700 dark:text-slate-200 mb-4">No video available for this project.</span>
