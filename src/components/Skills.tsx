@@ -122,7 +122,19 @@ const Skills: React.FC = () => {
                       <SkillCard
                         key={index}
                         skill={skill}
-                        icon={index === 0 ? '/images/tools/postman.svg' : index === 1 ? '/images/tools/docker.svg' : index === 2 ? '/images/tools/github.svg' : index === 3 ? '/images/tools/vscode.svg' : '/images/tools/figma.svg'}
+                        icon={
+                          skill.name === 'PHP'
+                            ? '/images/tools/php.svg'
+                            : index === 0
+                              ? '/images/tools/postman.svg'
+                              : index === 1
+                                ? '/images/tools/docker.svg'
+                                : index === 2
+                                  ? '/images/tools/github.svg'
+                                  : index === 3
+                                    ? '/images/tools/vscode.svg'
+                                    : '/images/tools/figma.svg'
+                        }
                         borderColor="border-green-600 dark:border-green-400"
                       />
                     ))}

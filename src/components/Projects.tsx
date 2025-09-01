@@ -29,24 +29,11 @@ const FadeInSection: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   );
 };
 import React from 'react';
+import projectsData from './projectsData';
 import { Link } from 'react-router-dom';
 import { ExternalLink, Github } from 'lucide-react';
 
-export const projects = [
-  {
-    id: 'service-booking',
-    title: 'Saas Service Booking',
-    description: 'A comprehensive service booking platform with real-time availability, user management, and advanced reporting capabilities.',
-    longDescription: 'Saas Service Booking is a modern web application that allows users to book services in real time, manage their accounts, and access advanced reporting. The platform is built with React and Node.js, featuring a clean UI, secure authentication, and scalable architecture. It is ideal for businesses looking to streamline their booking process and improve customer experience.',
-    technologies: ['React', 'Node.js', 'Express'],
-    images: ['/images/servicebooking.png'],
-    video: '', // Ajoute ici le lien vers la vidéo mp4 si disponible
-    github: 'https://github.com/neal92/ServiceBooking',
-    demo: '', // Peut être utilisé pour un lien externe si besoin
-    featured: true,
-    functionalities: '• Real-time booking\n• User management\n• Advanced reporting', // Example functionalities
-  },
-];
+// Utilise projectsData importé
 
 const Projects: React.FC = () => {
   const [openModal, setOpenModal] = React.useState<number | null>(null);
@@ -75,7 +62,7 @@ const Projects: React.FC = () => {
             </p>
           </div>
           <div className="relative z-10 grid gap-12 grid-cols-1 md:grid-cols-2">
-            {projects.map((project, index) => (
+            {projectsData.map((project, index) => (
               <FadeInSection key={index}>
                 <div
                   className={`group
@@ -89,7 +76,7 @@ const Projects: React.FC = () => {
                       <h3 className={`text-3xl font-bold mb-4 group-hover:text-blue-400 transition-colors duration-300 ${project.id === 'service-booking' ? 'text-black dark:text-white' : 'text-black dark:text-white'}`}>{project.title}</h3>
                       <p className={`mb-6 leading-relaxed text-base sm:text-lg ${project.id === 'service-booking' ? 'text-black dark:text-slate-300' : 'text-black dark:text-slate-600'}`}>{project.description}</p>
                       <div className="flex flex-wrap gap-2 mb-6">
-                        {project.technologies.map((tech, techIndex) => (
+                        {project.technologies.map((tech: string, techIndex: number) => (
                           <span
                             key={techIndex}
                             className={`px-3 py-1 rounded-full font-medium border text-sm sm:text-base hover:shadow-md transition-all duration-300 ${project.id === 'service-booking' ? 'bg-gradient-to-r from-blue-900 to-purple-900 text-blue-200 border-blue-900/50' : 'bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 border-blue-200/50'}`}
@@ -124,9 +111,9 @@ const Projects: React.FC = () => {
                       <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/70 backdrop-blur-sm">
                         <div className="bg-white dark:bg-slate-900 rounded-3xl shadow-2xl max-w-2xl w-full p-8 relative flex flex-col items-center">
                           <button onClick={() => setOpenModal(null)} className="absolute top-4 right-4 text-slate-500 dark:text-slate-300 hover:text-red-500 text-2xl font-bold">×</button>
-                          {projects[openModal].video ? (
+                          {projectsData[openModal].video ? (
                             <video controls autoPlay className="w-full rounded-xl shadow-md">
-                              <source src={projects[openModal].video} type="video/mp4" />
+                              <source src={projectsData[openModal].video} type="video/mp4" />
                               Votre navigateur ne supporte pas la vidéo.
                             </video>
                           ) : (

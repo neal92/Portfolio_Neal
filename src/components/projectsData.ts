@@ -26,7 +26,7 @@ const projectsData: Project[] = [
     technologies: ['React', 'Node.js', 'Express'],
     github: 'https://github.com/neal92/ServiceBooking',
     demo: '',
-    video: '', // Ajoute ici le lien vers la vidéo mp4 si disponible
+  video: '/vidéo/demo_servicebooking.mp4', 
     functionalities: '• Real-time booking\n• User management\n• Advanced reporting\n• Secure authentication\n• Scalable architecture',
   },
   // Add more projects here
