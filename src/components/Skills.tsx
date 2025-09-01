@@ -101,7 +101,7 @@ const Skills: React.FC = () => {
                     <div className="w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mr-4"></div>
                     Frontend Development
                   </h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
                     {frontendSkills.map((skill, index) => (
                       <SkillCard
                         key={index}
@@ -117,7 +117,7 @@ const Skills: React.FC = () => {
                     <div className="w-4 h-4 bg-gradient-to-r from-green-500 to-teal-500 rounded-full mr-4"></div>
                     Backend Development
                   </h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
                     {backendSkills.map((skill, index) => (
                       <SkillCard
                         key={index}
