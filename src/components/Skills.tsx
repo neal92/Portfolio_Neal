@@ -66,7 +66,7 @@ const Skills: React.FC = () => {
   const SkillCard = ({ skill, icon, borderColor }: { skill: typeof frontendSkills[0], icon: string, borderColor: string }) => (
     <div className={`group bg-white dark:bg-slate-900 rounded-2xl shadow-lg p-6 flex flex-col items-center transition-all duration-300 hover:-translate-y-2 hover:shadow-blue-500/30 border-2 ${borderColor}`}>
       <img src={icon} alt={skill.name} className="w-12 h-12 mb-4 object-contain" />
-      <span className="font-bold text-lg text-slate-800 dark:text-white mb-2">{skill.name}</span>
+      <span className="font-bold text-lg text-slate-800 dark:text-white mb-2 text-center break-words max-w-[120px]">{skill.name}</span>
     </div>
   );
 
@@ -99,7 +99,7 @@ const Skills: React.FC = () => {
                 <div>
                   <h3 className="text-3xl font-bold text-blue-700 dark:text-blue-400 mb-8 flex items-center">
                     <div className="w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mr-4"></div>
-                    Frontend Development
+                    Front-End Development
                   </h3>
                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
                     {frontendSkills.map((skill, index) => (
@@ -142,7 +142,7 @@ const Skills: React.FC = () => {
                 </div>
               </>
             </div>
-            <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl p-10 rounded-3xl border border-white/20 dark:border-slate-700 shadow-xl mt-10">
+            <div className="backdrop-blur-xl p-10 rounded-3xl border border-white/20 dark:border-slate-700 shadow-xl mt-10">
               <h3 className="text-3xl font-bold text-slate-800 dark:text-white mb-10 text-center">
                 Tools & Technologies
               </h3>

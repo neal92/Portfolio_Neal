@@ -93,16 +93,6 @@ const Projects: React.FC = () => {
                     </div>
                     <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 mt-4 z-20 relative">
                       <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group/btn inline-flex items-center justify-center px-4 py-2 text-sm sm:text-base border-2 border-blue-500 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-bold shadow-lg hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105 hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                        style={{ boxShadow: '0 0 12px 2px #3b82f6, 0 0 4px 1px #a78bfa' }}
-                      >
-                        <Github size={18} className="mr-2 group-hover/btn:rotate-12 transition-transform duration-300" />
-                        Code
-                      </a>
-                      <a
                         href={project.video}
                         download
                         target="_blank"

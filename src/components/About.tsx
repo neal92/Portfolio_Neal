@@ -84,7 +84,7 @@ const About: React.FC = () => {
         
         <div className="bg-white dark:bg-slate-900 rounded-xl shadow-md p-6 ml-8">
           <div className="text-lg font-bold text-blue-700 dark:text-blue-300">2023-2024</div>
-          <div className="text-xl font-bold mb-2">Mastère 2  Expert IT, développement et base de données</div>
+          <div className="text-xl font-bold mb-2 text-slate-800 dark:text-white">Mastère 2  Expert IT, développement et base de données</div>
           <div className="text-base text-slate-600 dark:text-slate-300">Education at IRIS School in Paris - IT School.</div>
         </div>
         
@@ -98,7 +98,7 @@ const About: React.FC = () => {
         
         <div className="bg-white dark:bg-slate-900 rounded-xl shadow-md p-6 ml-8">
           <div className="text-lg font-bold text-blue-700 dark:text-blue-300">2023-2024</div>
-          <div className="text-xl font-bold mb-2">Mastère 1  Expert IT, développement et base de données</div>
+          <div className="text-xl font-bold mb-2 text-slate-800 dark:text-white">Mastère 1  Expert IT, développement et base de données</div>
           <div className="text-base text-slate-600 dark:text-slate-300">Education at IRIS School in Paris - IT School.</div>
         </div>
         
@@ -111,7 +111,7 @@ const About: React.FC = () => {
         
         <div className="bg-white dark:bg-slate-900 rounded-xl shadow-md p-6 ml-8">
           <div className="text-lg font-bold text-blue-700 dark:text-blue-300">2022-2023</div>
-          <div className="text-xl font-bold mb-2">Licence Bachelors Informatique</div>
+          <div className="text-xl font-bold mb-2 text-slate-800 dark:text-white">Licence Bachelors Informatique</div>
           <div className="text-base text-slate-600 dark:text-slate-300">Education at IRIS School in Paris - IT School.</div>
         </div>
 
@@ -123,7 +123,7 @@ const About: React.FC = () => {
         </div>
         <div className="bg-white dark:bg-slate-900 rounded-xl shadow-md p-6 ml-8">
           <div className="text-lg font-bold text-blue-700 dark:text-blue-300">2021-2022</div>
-          <div className="text-xl font-bold mb-2">BTS Services Informatiques aux Organisations option : SLAM </div>
+          <div className="text-xl font-bold mb-2 text-slate-800 dark:text-white">BTS Services Informatiques aux Organisations option : SLAM </div>
           <div className="text-base text-slate-600 dark:text-slate-300">Education at IRIS School in Paris - IT School.</div>
         </div>
       </div>
@@ -134,7 +134,7 @@ const About: React.FC = () => {
         </div>
         <div className="bg-white dark:bg-slate-900 rounded-xl shadow-md p-6 ml-8">
           <div className="text-lg font-bold text-blue-700 dark:text-blue-300">2020-2021</div>
-          <div className="text-xl font-bold mb-2">BAC STI2D</div>
+          <div className="text-xl font-bold mb-2 text-slate-800 dark:text-white">BAC STI2D</div>
           <div className="text-base text-slate-600 dark:text-slate-300">Option SIN (système informatique et numérique).</div>
         </div>
       </div>

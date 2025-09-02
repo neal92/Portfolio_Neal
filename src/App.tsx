@@ -117,8 +117,11 @@ function App() {
             />
           </Routes>
         </main>
-      </div>
-    </Router>
+      <footer className="w-full py-6 bg-slate-100 dark:bg-slate-900 text-center text-slate-600 dark:text-white text-sm mt-10 border-t border-slate-200 dark:border-slate-700">
+        © {new Date().getFullYear()} Neal Birstol Portfolio. Toute reproduction ou plagiat est interdite.
+      </footer>
+    </div>
+  </Router>
   );
 }
 
