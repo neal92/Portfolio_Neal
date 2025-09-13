@@ -38,18 +38,22 @@ const Contact: React.FC = () => {
 							<div className="glass dark:glass-dark rounded-3xl shadow-2xl p-10 text-center">
 								<h2 className="text-4xl font-extrabold mb-4 text-blue-700 dark:text-blue-400 tracking-tight">Contact</h2>
 								<p className="mb-8 text-lg text-slate-700 dark:text-slate-300">Let's build something great together! Send me a message or connect via social networks below.</p>
-								<form className="space-y-6">
+												 <form
+													 action="https://formspree.io/f/xldwvzvg"
+													 method="POST"
+													 className="space-y-6"
+												 >
 									<div className="flex items-center bg-white dark:bg-slate-800 rounded-xl shadow px-4 py-3 mb-2">
 										<span className="mr-3 text-blue-500 dark:text-blue-300">
 											<svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a6.5 6.5 0 0 1 13 0"/></svg>
 										</span>
-										<input type="text" placeholder="Name" className="w-full bg-transparent outline-none text-slate-800 dark:text-white" required />
+										<input type="text" name="name" placeholder="Name" className="w-full bg-transparent outline-none text-slate-800 dark:text-white" required />
 									</div>
 									<div className="flex items-center bg-white dark:bg-slate-800 rounded-xl shadow px-4 py-3 mb-2">
 										<span className="mr-3 text-blue-500 dark:text-blue-300">
 											<svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
 										</span>
-										<input type="email" placeholder="Email" className="w-full bg-transparent outline-none text-slate-800 dark:text-white" required />
+										<input type="email" name="email" placeholder="Email" className="w-full bg-transparent outline-none text-slate-800 dark:text-white" required />
 									</div>
 									<div className="bg-white dark:bg-slate-800 rounded-xl shadow px-4 py-3 mb-2 flex flex-col items-start">
 										<span className="mb-2 flex items-center justify-center" style={{ minWidth: '28px', minHeight: '28px' }}>
@@ -57,7 +61,7 @@ const Contact: React.FC = () => {
 												<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
 											</svg>
 										</span>
-										<textarea placeholder="Message" className="w-full bg-transparent outline-none text-slate-800 dark:text-white" rows={4} required></textarea>
+										<textarea name="message" placeholder="Message" className="w-full bg-transparent outline-none text-slate-800 dark:text-white" rows={4} required></textarea>
 									</div>
 									<button type="submit" className="w-full py-4 rounded-xl font-bold text-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg hover:scale-105 hover:shadow-blue-500/30 transition-all duration-300">Send Message</button>
 								</form>
