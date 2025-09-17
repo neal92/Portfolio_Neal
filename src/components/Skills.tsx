@@ -30,12 +30,24 @@ const FadeInSection: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   );
 };
 
+
 import githubLogo from '/public/images/tools/github.svg';
 import vscodeLogo from '/public/images/tools/vscode.svg';
 import figmaLogo from '/public/images/tools/figma.svg';
 import postmanLogo from '/public/images/tools/postman.svg';
 import dockerLogo from '/public/images/tools/docker.svg';
 import wordpressLogo from '/public/images/tools/wordpress.svg';
+import expressLogo from '/public/images/tools/expressjs.svg';
+import htmlLogo from '/public/images/tools/html.svg';
+import jsLogo from '/public/images/tools/javascript.svg';
+import reactLogo from '/public/images/tools/logo-react.svg';
+import tailwindLogo from '/public/images/tools/tailwind.svg';
+import restApiLogo from '/public/images/tools/restapi.png';
+import php from '/public/images/tools/php.svg';
+import postgresqlLogo from '/public/images/tools/postgresql.svg';
+
+
+
 
 const Skills: React.FC = () => {
   const frontendSkills = [
@@ -43,11 +55,11 @@ const Skills: React.FC = () => {
     { name: 'JavaScript/TypeScript', level: 80, color: 'from-yellow-500 to-orange-500' },
     { name: 'HTML/CSS', level: 90, color: 'from-orange-500 to-red-500' },
     { name: 'Tailwind CSS', level: 85, color: 'from-cyan-500 to-blue-500' },
-    { name: 'Vue.js', level: 70, color: 'from-green-500 to-emerald-500' },
+    { name: 'Vite.js', level: 70, color: 'from-green-500 to-emerald-500' },
+
   ];
 
   const backendSkills = [
-    { name: 'Node.js', level: 75, color: 'from-green-600 to-green-700' },
     { name: 'Express.js', level: 80, color: 'from-gray-600 to-gray-700' },
     { name: 'PHP', level: 70, color: 'from-green-700 to-green-800' },
     { name: 'PostgreSQL', level: 65, color: 'from-blue-700 to-indigo-700' },
@@ -56,11 +68,12 @@ const Skills: React.FC = () => {
 
   const tools = [
     { name: 'GitHub', logo: githubLogo },
-    { name: 'VS Code', logo: vscodeLogo },
+    { name: 'VS Code', logo: vscodeLogo }, 
     { name: 'Figma', logo: figmaLogo },
     { name: 'Postman', logo: postmanLogo },
     { name: 'Docker', logo: dockerLogo },
-    { name: 'WordPress', logo: wordpressLogo }
+    { name: 'WordPress', logo: wordpressLogo },
+
   ];
 
   const SkillCard = ({ skill, icon, borderColor }: { skill: typeof frontendSkills[0], icon: string, borderColor: string }) => (
@@ -106,7 +119,14 @@ const Skills: React.FC = () => {
                       <SkillCard
                         key={index}
                         skill={skill}
-                        icon={index === 0 ? '/images/tools/vite.svg' : index === 1 ? '/images/tools/github.svg' : index === 2 ? '/images/tools/vscode.svg' : index === 3 ? '/images/tools/figma.svg' : '/images/tools/docker.svg'}
+                        icon={
+                          index === 0 ? reactLogo
+                          : index === 1 ? jsLogo
+                          : index === 2 ? htmlLogo
+                          : index === 3 ? tailwindLogo
+                          : index === 4 ? restApiLogo
+                          : ''
+                        }
                         borderColor="border-blue-600 dark:border-blue-400"
                       />
                     ))}
@@ -123,17 +143,11 @@ const Skills: React.FC = () => {
                         key={index}
                         skill={skill}
                         icon={
-                          skill.name === 'PHP'
-                            ? '/images/tools/php.svg'
-                            : index === 0
-                              ? '/images/tools/postman.svg'
-                              : index === 1
-                                ? '/images/tools/docker.svg'
-                                : index === 2
-                                  ? '/images/tools/github.svg'
-                                  : index === 3
-                                    ? '/images/tools/vscode.svg'
-                                    : '/images/tools/figma.svg'
+                          skill.name === 'Express.js' ? expressLogo
+                          : skill.name === 'PHP' ? php
+                          : skill.name === 'PostgreSQL' ? postgresqlLogo
+                          : skill.name === 'REST APIs' ? restApiLogo
+                          : ''
                         }
                         borderColor="border-green-600 dark:border-green-400"
                       />
