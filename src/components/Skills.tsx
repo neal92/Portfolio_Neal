@@ -45,6 +45,7 @@ import tailwindLogo from '/public/images/tools/tailwind.svg';
 import restApiLogo from '/public/images/tools/restapi.png';
 import php from '/public/images/tools/php.svg';
 import postgresqlLogo from '/public/images/tools/postgresql.svg';
+import vite from '/public/images/tools/vite.svg';
 
 
 
@@ -55,7 +56,7 @@ const Skills: React.FC = () => {
     { name: 'JavaScript/TypeScript', level: 80, color: 'from-yellow-500 to-orange-500' },
     { name: 'HTML/CSS', level: 90, color: 'from-orange-500 to-red-500' },
     { name: 'Tailwind CSS', level: 85, color: 'from-cyan-500 to-blue-500' },
-    { name: 'Vite.js', level: 70, color: 'from-green-500 to-emerald-500' },
+    { name: 'Vite', level: 70, color: 'from-green-500 to-emerald-500' },
 
   ];
 
@@ -124,7 +125,7 @@ const Skills: React.FC = () => {
                           : index === 1 ? jsLogo
                           : index === 2 ? htmlLogo
                           : index === 3 ? tailwindLogo
-                          : index === 4 ? restApiLogo
+                          : index === 4 ? vite
                           : ''
                         }
                         borderColor="border-blue-600 dark:border-blue-400"
