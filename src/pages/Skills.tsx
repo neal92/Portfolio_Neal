@@ -87,7 +87,7 @@ const Skills: React.FC = () => {
   return (
     <FadeInSection>
       <div>
-        <div className="mt-12 sm:mt-16 lg:mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 relative overflow-hidden">
+        <div className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-200 to-purple-200 dark:from-blue-900 dark:to-purple-900 rounded-full blur-3xl opacity-20"></div>
             <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-pink-200 to-orange-200 dark:from-pink-900 dark:to-orange-900 rounded-full blur-3xl opacity-20"></div>

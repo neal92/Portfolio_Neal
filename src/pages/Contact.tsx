@@ -31,9 +31,9 @@ const FadeInSection: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 };
 
 const Contact: React.FC = () => {
-			return (
+				return (
 				<FadeInSection>
-					<section id="contact" className="py-16 sm:py-20 px-4 bg-gradient-to-b from-gray-100 to-white dark:from-slate-900 dark:to-slate-800">
+					<section id="contact" className="py-16 sm:py-20 px-4 bg-gradient-to-b from-gray-100 to-white dark:from-slate-900 dark:to-slate-800 pb-0">
 						<div className="max-w-2xl mx-auto">
 							<div className="glass dark:glass-dark rounded-3xl shadow-2xl p-6 sm:p-8 text-center">
 								<h2 className="text-2xl sm:text-3xl font-extrabold mb-2 sm:mb-3 text-blue-700 dark:text-blue-400 tracking-tight">Contact</h2>

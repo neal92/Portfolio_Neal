@@ -78,7 +78,7 @@ const About: React.FC = () => {
 
       {/* Master 2  */}
       <div className="flex items-center relative">
-        <div className="z-10 flex-shrink-0 w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center border-4 border-blue-400 mx-4">
+        <div className="z-10 flex-shrink-0 w-24 h-24 rounded-full bg-white dark:bg-slate-800 shadow-lg flex items-center justify-center border-4 border-blue-400 dark:border-blue-500 mx-4">
           <img src="/images/ecole-iris.png" alt="Licence professionnel CDW" className="w-16 h-16 object-contain" />
         </div>
         
@@ -92,7 +92,7 @@ const About: React.FC = () => {
 
       {/* Master 1*/}
       <div className="flex items-center relative">
-        <div className="z-10 flex-shrink-0 w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center border-4 border-blue-400 mx-4">
+        <div className="z-10 flex-shrink-0 w-24 h-24 rounded-full bg-white dark:bg-slate-800 shadow-lg flex items-center justify-center border-4 border-blue-400 dark:border-blue-500 mx-4">
           <img src="/images/ecole-iris.png" alt="Licence professionnel CDW" className="w-16 h-16 object-contain" />
         </div>
         
@@ -105,7 +105,7 @@ const About: React.FC = () => {
       </div>
       {/* Licence professionnel CDW */}
       <div className="flex items-center relative">
-        <div className="z-10 flex-shrink-0 w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center border-4 border-blue-400 mx-4">
+        <div className="z-10 flex-shrink-0 w-24 h-24 rounded-full bg-white dark:bg-slate-800 shadow-lg flex items-center justify-center border-4 border-blue-400 dark:border-blue-500 mx-4">
           <img src="/images/ecole-iris.png" alt="Licence professionnel CDW" className="w-16 h-16 object-contain" />
         </div>
         
@@ -118,7 +118,7 @@ const About: React.FC = () => {
       </div>
       {/* BTS Services Informatiques aux Organisations */}
       <div className="flex items-center relative">
-        <div className="z-10 flex-shrink-0 w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center border-4 border-blue-400 mx-4">
+        <div className="z-10 flex-shrink-0 w-24 h-24 rounded-full bg-white dark:bg-slate-800 shadow-lg flex items-center justify-center border-4 border-blue-400 dark:border-blue-500 mx-4">
           <img src="/images/ecole-iris.png" alt="BTS SIO" className="w-16 h-16 object-contain" />
         </div>
         <div className="bg-white dark:bg-slate-900 rounded-xl shadow-md p-6 ml-8">
@@ -129,7 +129,7 @@ const About: React.FC = () => {
       </div>
       {/* BAC STMG */}
       <div className="flex items-center relative">
-        <div className="z-10 flex-shrink-0 w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center border-4 border-blue-400 mx-4">
+        <div className="z-10 flex-shrink-0 w-24 h-24 rounded-full bg-white dark:bg-slate-800 shadow-lg flex items-center justify-center border-4 border-blue-400 dark:border-blue-500 mx-4">
           <img src="/images/ecole-agora.jpg" alt="BAC STI2D" className="w-16 h-16 object-contain" />
         </div>
         <div className="bg-white dark:bg-slate-900 rounded-xl shadow-md p-6 ml-8">

@@ -40,7 +40,7 @@ const Projects: React.FC = () => {
   
   return (
     <FadeInSection>
-      <div className="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-800 relative overflow-hidden">
+      <div className="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-pink-50 to-slate-50 dark:from-slate-900 dark:to-slate-800 relative overflow-hidden">
         {/* Background decorations */}
         <div className="absolute inset-0">
           <div className="absolute top-1/3 right-0 w-96 h-96 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 rounded-full blur-3xl opacity-30"></div>
