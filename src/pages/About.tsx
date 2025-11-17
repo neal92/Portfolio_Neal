@@ -9,18 +9,18 @@ const About: React.FC = () => {
         <div className="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-br from-pink-100 to-orange-100 dark:from-pink-900 dark:to-orange-900 rounded-full blur-3xl opacity-20"></div>
       </div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
-          <div className="inline-block p-1 bg-gradient-to-r from-blue-500 to-purple-500 dark:from-blue-900 dark:to-purple-900 rounded-full mb-8">
-            <div className="bg-white dark:bg-slate-900 px-6 py-2 rounded-full">
-              <span className="text-sm font-semibold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+        <div className="text-center mb-16">
+          <div className="inline-block p-1 bg-gradient-to-r from-blue-500 to-purple-500 dark:from-blue-900 dark:to-purple-900 rounded-full mb-6">
+            <div className="bg-white dark:bg-slate-900 px-5 py-1.5 rounded-full">
+              <span className="text-xs font-semibold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
                 Get to know me
               </span>
             </div>
           </div>
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-800 dark:text-white mb-8 leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 dark:text-white mb-6 leading-tight">
             <span className="text-slate-800 dark:text-white">About Me</span>
           </h2>
-          <p className="text-2xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed font-light mb-8">
+          <p className="text-lg text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed font-light mb-6">
               I am a passionate web developer based in Paris, specialized in building modern, high-quality digital solutions. 
               My expertise covers a wide range of website and application types: from elegant portfolios and professional showcase sites to 
               dynamic e-commerce platforms and powerful web applications. I offer you work that is not only well-structured and efficient, 
@@ -28,49 +28,49 @@ const About: React.FC = () => {
               your ideas into impactful digital experiences.
           </p>
 
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 mb-12">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-8 mb-8 sm:mb-12">
             {/* 1. Sites vitrines */}
-            <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-6 flex flex-col items-center">
-              <img src="/images/vitrine.png" alt="Sites vitrines" className="w-35 h-30 mb-4" />
-              <h3 className="text-xl font-bold mb-2 text-slate-800 dark:text-white">Showcase Websites</h3>
-              <p className="text-slate-600 dark:text-slate-300 text-center">Presenting businesses, associations, or freelancers with simple, elegant pages.</p>
+            <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-3 sm:p-4 lg:p-6 flex flex-col items-center">
+              <img src="/images/vitrine.png" alt="Sites vitrines" className="w-20 h-16 sm:w-28 sm:h-24 lg:w-35 lg:h-30 mb-2 sm:mb-3 lg:mb-4" />
+              <h3 className="text-sm sm:text-base lg:text-xl font-bold mb-1 sm:mb-2 text-slate-800 dark:text-white text-center">Showcase Websites</h3>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 text-center">Presenting businesses, associations, or freelancers with simple, elegant pages.</p>
             </div>
             {/* 2. Portfolios */}
-            <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-6 flex flex-col items-center">
-              <img src="/images/portfolio.png" alt="Portfolio" className="w-35 h-30 mb-4" />
-              <h3 className="text-xl font-bold mb-2 text-slate-800 dark:text-white">Portfolios</h3>
-              <p className="text-slate-600 dark:text-slate-300 text-center">Highlighting personal or professional achievements, skills, and projects.</p>
+            <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-3 sm:p-4 lg:p-6 flex flex-col items-center">
+              <img src="/images/portfolio.png" alt="Portfolio" className="w-20 h-16 sm:w-28 sm:h-24 lg:w-35 lg:h-30 mb-2 sm:mb-3 lg:mb-4" />
+              <h3 className="text-sm sm:text-base lg:text-xl font-bold mb-1 sm:mb-2 text-slate-800 dark:text-white text-center">Portfolios</h3>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 text-center">Highlighting personal or professional achievements, skills, and projects.</p>
             </div>
             {/* 3. Blogs / Magazines */}
-            <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-6 flex flex-col items-center">
-              <img src="/images/blog.png" alt="Blog" className="w-35 h-30 mb-4" />
-              <h3 className="text-xl font-bold mb-2 text-slate-800 dark:text-white">Blogs & Magazines</h3>
-              <p className="text-slate-600 dark:text-slate-300 text-center">Sharing articles, news, and tutorials with categorized content and subscriptions.</p>
+            <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-3 sm:p-4 lg:p-6 flex flex-col items-center">
+              <img src="/images/blog.png" alt="Blog" className="w-20 h-16 sm:w-28 sm:h-24 lg:w-35 lg:h-30 mb-2 sm:mb-3 lg:mb-4" />
+              <h3 className="text-sm sm:text-base lg:text-xl font-bold mb-1 sm:mb-2 text-slate-800 dark:text-white text-center">Blogs & Magazines</h3>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 text-center">Sharing articles, news, and tutorials with categorized content and subscriptions.</p>
             </div>
             {/* 4. E-commerce */}
-            <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-6 flex flex-col items-center">
-              <img src="/images/ecommerce.jpg" alt="E-commerce" className="w-35 h-30 mb-4" />
-              <h3 className="text-xl font-bold mb-2 text-slate-800 dark:text-white">E-commerce</h3>
-              <p className="text-slate-600 dark:text-slate-300 text-center">Online stores with product catalogs, shopping carts, and secure payments.</p>
+            <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-3 sm:p-4 lg:p-6 flex flex-col items-center">
+              <img src="/images/ecommerce.jpg" alt="E-commerce" className="w-20 h-16 sm:w-28 sm:h-24 lg:w-35 lg:h-30 mb-2 sm:mb-3 lg:mb-4" />
+              <h3 className="text-sm sm:text-base lg:text-xl font-bold mb-1 sm:mb-2 text-slate-800 dark:text-white text-center">E-commerce</h3>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 text-center">Online stores with product catalogs, shopping carts, and secure payments.</p>
             </div>
             {/* 5. Web Apps */}
-            <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-6 flex flex-col items-center">
-              <img src="/images/webapp.jpg" alt="Web App" className="w-35 h-30 mb-4" />
-              <h3 className="text-xl font-bold mb-2 text-slate-800 dark:text-white">Web Applications</h3>
-              <p className="text-slate-600 dark:text-slate-300 text-center">Interactive online services with dynamic features and user spaces.</p>
+            <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-3 sm:p-4 lg:p-6 flex flex-col items-center">
+              <img src="/images/webapp.jpg" alt="Web App" className="w-20 h-16 sm:w-28 sm:h-24 lg:w-35 lg:h-30 mb-2 sm:mb-3 lg:mb-4" />
+              <h3 className="text-sm sm:text-base lg:text-xl font-bold mb-1 sm:mb-2 text-slate-800 dark:text-white text-center">Web Applications</h3>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 text-center">Interactive online services with dynamic features and user spaces.</p>
             </div>
             {/* 9. Landing Pages */}
-            <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-6 flex flex-col items-center">
-              <img src="/images/landing.jpg" alt="Landing Page" className="w-35 h-30 mb-4" />
-              <h3 className="text-xl font-bold mb-2 text-slate-800 dark:text-white">Landing Pages</h3>
-              <p className="text-slate-600 dark:text-slate-300 text-center">Single-page campaigns for products, apps, or newsletters.</p>
+            <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-3 sm:p-4 lg:p-6 flex flex-col items-center">
+              <img src="/images/landing.jpg" alt="Landing Page" className="w-20 h-16 sm:w-28 sm:h-24 lg:w-35 lg:h-30 mb-2 sm:mb-3 lg:mb-4" />
+              <h3 className="text-sm sm:text-base lg:text-xl font-bold mb-1 sm:mb-2 text-slate-800 dark:text-white text-center">Landing Pages</h3>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 text-center">Single-page campaigns for products, apps, or newsletters.</p>
             </div>
           </div>
           <br></br>
 
 
-<section className="w-full mb-16">
-  <h3 className="text-4xl font-extrabold text-slate-800 dark:text-white mb-12 tracking-tight text-center">Education & Qualifications</h3>
+<section className="w-full mb-12 sm:mb-16">
+  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-800 dark:text-white mb-8 sm:mb-12 tracking-tight text-center">Education & Qualifications</h3>
   <div className="relative max-w-2xl mx-auto">
     {/* Ligne centrale */}
     <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-400 to-purple-400"></div>

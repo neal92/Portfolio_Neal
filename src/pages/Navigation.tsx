@@ -89,7 +89,6 @@ export default function Navigation({ activeSection, onNavigate, darkMode, isMenu
                 </button>
               ))}
             </div>
-            {/* Masque le bouton sombre/clair */}
             <style>{`.darkmode-toggle { display: none !important; }`}</style>
           </>
         )}

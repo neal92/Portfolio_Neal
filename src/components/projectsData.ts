@@ -1,6 +1,3 @@
-// Example projects data for your portfolio
-// You can customize this array with your real projects
-
 export interface Project {
   id: string;
   title: string;
@@ -29,7 +26,19 @@ const projectsData: Project[] = [
     video: 'https://drive.google.com/uc?export=download&id=1kx8I8XQybFs1NhpkKaotzU3IeaimVizq',
     functionalities: '• Real-time booking\n• User management\n• Advanced reporting\n• Secure authentication\n• Scalable architecture',
   },
-  // Add more projects here
+  {
+    id: 'new-project',
+    title: 'Audittab Cloud',
+    description: 'Audittab allows you to create, manage, and track your field audits with ease. A modern solution for high-performing teams.',
+    longDescription: 'This is a detailed description of your new project. Explain what problem it solves, the technologies used, and what makes it unique. Add details about the architecture, features, and any challenges you overcame during development.',
+    image: '/images/audittab.png',
+    images: ['/images/audittab.png'],
+    technologies: ['React', 'TypeScript', 'Tailwind CSS'],
+    github: 'https://github.com/neal92/new-project',
+    demo: '',
+    video: '',
+    functionalities: '• Feature 1\n• Feature 2\n• Feature 3\n• Feature 4\n• Feature 5',
+  },
 ];
 
 export default projectsData;

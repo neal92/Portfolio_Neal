@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom';
-import Navigation from './components/Navigation';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-import ProjectDetail from './components/ProjectDetail';
+import Navigation from './pages/Navigation';
+import Hero from './pages/Hero';
+import About from './pages/About';
+import Skills from './pages/Skills';
+import Projects from './pages/Projects';
+import HowIWork from './pages/HowIWork';
+import Contact from './pages/Contact';
+import ProjectDetail from './pages/ProjectDetail';
 import projectsData, { Project } from './components/projectsData.ts';
 
 function ProjectDetailWrapper() {
@@ -104,6 +105,9 @@ function App() {
                   </section>
                   <section id="projects">
                     <Projects />
+                  </section>
+                  <section id="how-i-work">
+                    <HowIWork />
                   </section>
                   <section id="contact">
                     <Contact />

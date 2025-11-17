@@ -78,41 +78,41 @@ const Skills: React.FC = () => {
   ];
 
   const SkillCard = ({ skill, icon, borderColor }: { skill: typeof frontendSkills[0], icon: string, borderColor: string }) => (
-    <div className={`group bg-white dark:bg-slate-900 rounded-2xl shadow-lg p-6 flex flex-col items-center transition-all duration-300 hover:-translate-y-2 hover:shadow-blue-500/30 border-2 ${borderColor}`}>
-      <img src={icon} alt={skill.name} className="w-12 h-12 mb-4 object-contain" />
-      <span className="font-bold text-lg text-slate-800 dark:text-white mb-2 text-center break-words max-w-[120px]">{skill.name}</span>
+    <div className={`group bg-white dark:bg-slate-900 rounded-2xl shadow-lg p-3 sm:p-4 flex flex-col items-center transition-all duration-300 hover:-translate-y-2 hover:shadow-blue-500/30 border-2 ${borderColor}`}>
+      <img src={icon} alt={skill.name} className="w-8 h-8 sm:w-10 sm:h-10 mb-2 sm:mb-3 object-contain" />
+      <span className="font-bold text-sm sm:text-base text-slate-800 dark:text-white mb-1 sm:mb-2 text-center break-words max-w-[120px]">{skill.name}</span>
     </div>
   );
 
   return (
     <FadeInSection>
       <div>
-        <div className="mt-24 py-32 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 relative overflow-hidden">
+        <div className="mt-12 sm:mt-16 lg:mt-20 py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-200 to-purple-200 dark:from-blue-900 dark:to-purple-900 rounded-full blur-3xl opacity-20"></div>
             <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-pink-200 to-orange-200 dark:from-pink-900 dark:to-orange-900 rounded-full blur-3xl opacity-20"></div>
           </div>
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-20">
-              <div className="inline-block p-1 bg-gradient-to-r from-purple-500 to-pink-500 dark:from-purple-900 dark:to-pink-900 rounded-full mb-8">
-                <div className="bg-white dark:bg-slate-900 px-6 py-2 rounded-full">
-                  <span className="text-sm font-semibold bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
+            <div className="text-center mb-12 sm:mb-16">
+              <div className="inline-block p-1 bg-gradient-to-r from-purple-500 to-pink-500 dark:from-purple-900 dark:to-pink-900 rounded-full mb-4 sm:mb-6">
+                <div className="bg-white dark:bg-slate-900 px-4 py-1 sm:px-5 sm:py-1.5 rounded-full">
+                  <span className="text-xs font-semibold bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
                     My expertise
                   </span>
                 </div>
               </div>
-              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-800 dark:text-white mb-8 leading-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-slate-800 dark:text-white mb-4 sm:mb-6 leading-tight">
                 Skills & Technologies
               </h2>
-              <p className="text-2xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed font-light">
+              <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed font-light">
                 A comprehensive toolkit spanning the full development spectrum
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16">
               <>
                 <div>
-                  <h3 className="text-3xl font-bold text-blue-700 dark:text-blue-400 mb-8 flex items-center">
-                    <div className="w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mr-4"></div>
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-blue-700 dark:text-blue-400 mb-4 sm:mb-6 flex items-center">
+                    <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mr-2 sm:mr-3"></div>
                     Front-End Development
                   </h3>
                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
