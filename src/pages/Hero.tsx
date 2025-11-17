@@ -20,7 +20,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 rounded-full blur-lg opacity-75 animate-pulse"></div>
               <img 
-                src="public/images/profile.jpg" 
+                src="/images/profile.jpg" 
                 alt="Neal" 
                 className="relative w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full object-cover border-4 border-white dark:border-slate-800 shadow-2xl"
               />
