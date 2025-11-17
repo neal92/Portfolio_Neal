@@ -38,6 +38,12 @@ import { ExternalLink, Github } from 'lucide-react';
 const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = React.useState<number>(0);
   
+  React.useEffect(() => {
+    console.log('Selected project changed to:', selectedProject, projectsData[selectedProject]?.title);
+  }, [selectedProject]);
+
+  const currentProject = projectsData[selectedProject];
+  
   return (
     <FadeInSection>
       <div className="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-pink-50 to-slate-50 dark:from-slate-900 dark:to-slate-800 relative overflow-hidden">
@@ -68,7 +74,10 @@ const Projects: React.FC = () => {
             {projectsData.map((project, index) => (
               <button
                 key={index}
-                onClick={() => setSelectedProject(index)}
+                onClick={() => {
+                  console.log('Clicking project:', index, project.title);
+                  setSelectedProject(index);
+                }}
                 className={`flex-shrink-0 px-4 py-2.5 rounded-xl font-semibold text-xs transition-all duration-300 whitespace-nowrap ${
                   selectedProject === index
                     ? 'bg-gradient-to-r from-green-600 to-blue-600 text-white shadow-lg'
@@ -82,35 +91,35 @@ const Projects: React.FC = () => {
 
           {/* Mobile: Show only selected project */}
           <div className="md:hidden">
-            <FadeInSection>
-              <div className="group h-full bg-white text-black border-slate-200 dark:bg-slate-900 dark:text-white dark:border-slate-800 backdrop-blur-xl rounded-3xl overflow-hidden border shadow-xl">
-                <div className="w-full p-4 sm:p-5 flex flex-col justify-between h-full">
-                  <div>
-                    <img
-                      src={projectsData[selectedProject].image}
-                      alt={projectsData[selectedProject].title}
-                      className="w-full h-40 sm:h-48 object-cover rounded-2xl mb-3 sm:mb-4 shadow-md"
-                    />
-                    <h3 className="text-xl sm:text-2xl font-bold mb-3 group-hover:text-blue-400 transition-colors duration-300 text-black dark:text-white">
-                      {projectsData[selectedProject].title}
-                    </h3>
-                    <p className="mb-4 leading-relaxed text-sm text-slate-600 dark:text-slate-300">
-                      {projectsData[selectedProject].description}
-                    </p>
-                    <div className="flex flex-wrap gap-1.5 mb-4">
-                      {projectsData[selectedProject].technologies.map((tech: string, techIndex: number) => (
-                        <span
-                          key={techIndex}
-                          className="px-2 py-0.5 rounded-full font-medium border text-xs hover:shadow-md transition-all duration-300 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 border-blue-200/50 dark:from-blue-900 dark:to-purple-900 dark:text-blue-200 dark:border-blue-900/50"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
+            <div className="group h-full bg-white text-black border-slate-200 dark:bg-slate-900 dark:text-white dark:border-slate-800 backdrop-blur-xl rounded-3xl overflow-hidden border shadow-xl">
+              <div className="w-full p-4 sm:p-5 flex flex-col justify-between h-full">
+                <div>
+                  <img
+                    src={currentProject.image}
+                    alt={currentProject.title}
+                    className="w-full h-40 sm:h-48 object-cover rounded-2xl mb-3 sm:mb-4 shadow-md"
+                  />
+                  <h3 className="text-xl sm:text-2xl font-bold mb-3 group-hover:text-blue-400 transition-colors duration-300 text-black dark:text-white">
+                    {currentProject.title}
+                  </h3>
+                  <p className="mb-4 leading-relaxed text-sm text-slate-600 dark:text-slate-300">
+                    {currentProject.description}
+                  </p>
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {currentProject.technologies.map((tech: string, techIndex: number) => (
+                      <span
+                        key={techIndex}
+                        className="px-2 py-0.5 rounded-full font-medium border text-xs hover:shadow-md transition-all duration-300 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 border-blue-200/50 dark:from-blue-900 dark:to-purple-900 dark:text-blue-200 dark:border-blue-900/50"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
-                  <div className="flex flex-col gap-3 mt-3 z-20 relative">
+                </div>
+                <div className="flex flex-col gap-3 mt-3 z-20 relative">
+                  {currentProject.video && (
                     <a
-                      href={projectsData[selectedProject].video}
+                      href={currentProject.video}
                       download
                       target="_blank"
                       rel="noopener noreferrer"
@@ -120,10 +129,10 @@ const Projects: React.FC = () => {
                       <ExternalLink size={16} className="mr-2 group-hover/btn:rotate-12 transition-transform duration-300" />
                       Download the demo
                     </a>
-                  </div>
+                  )}
                 </div>
               </div>
-            </FadeInSection>
+            </div>
           </div>
 
           {/* Desktop: Show all projects in grid */}
