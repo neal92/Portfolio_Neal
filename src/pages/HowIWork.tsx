@@ -33,6 +33,7 @@ const FadeInSection: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 };
 
 const HowIWork: React.FC = () => {
+  const [activeTab, setActiveTab] = React.useState<'process' | 'pricing'>('process');
   const process = [
     {
       step: '1',
@@ -141,7 +142,7 @@ const HowIWork: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <FadeInSection>
-          <div className="text-center mb-12 sm:mb-16">
+          <div className="text-center mb-8 sm:mb-12">
             <div className="inline-block p-1 bg-gradient-to-r from-blue-500 to-purple-500 dark:from-blue-900 dark:to-purple-900 rounded-full mb-4 sm:mb-6">
               <div className="bg-white dark:bg-slate-900 px-4 py-1 sm:px-5 sm:py-1.5 rounded-full">
                 <span className="text-xs font-semibold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
@@ -158,9 +159,36 @@ const HowIWork: React.FC = () => {
           </div>
         </FadeInSection>
 
-        {/* Process Steps */}
+        {/* Mobile Tabs Navigation */}
+        <div className="flex gap-2 mb-8 overflow-x-auto md:hidden">
+          <button
+            onClick={() => setActiveTab('process')}
+            className={`flex-1 min-w-[140px] px-4 py-3 rounded-xl font-semibold text-sm transition-all duration-300 whitespace-nowrap ${
+              activeTab === 'process'
+                ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+                : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700'
+            }`}
+          >
+            🚀 Process
+          </button>
+          <button
+            onClick={() => setActiveTab('pricing')}
+            className={`flex-1 min-w-[140px] px-4 py-3 rounded-xl font-semibold text-sm transition-all duration-300 whitespace-nowrap ${
+              activeTab === 'pricing'
+                ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+                : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700'
+            }`}
+          >
+            💰 Pricing
+          </button>
+        </div>
+
+        {/* Process Steps - Visible on desktop or when active on mobile */}
         <FadeInSection>
-          <div className="mb-16 sm:mb-20">
+          <div className={`mb-16 sm:mb-20 ${activeTab === 'process' ? 'block' : 'hidden md:block'}`}>
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-800 dark:text-white mb-6 sm:mb-8 text-center md:hidden">
+              My Process
+            </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
               {process.map((item, index) => {
                 const Icon = item.icon;
@@ -197,9 +225,9 @@ const HowIWork: React.FC = () => {
           </div>
         </FadeInSection>
 
-        {/* Pricing Section */}
+        {/* Pricing Section - Visible on desktop or when active on mobile */}
         <FadeInSection>
-          <div className="mb-16 sm:mb-20">
+          <div className={`mb-16 sm:mb-20 ${activeTab === 'pricing' ? 'block' : 'hidden md:block'}`}>
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-800 dark:text-white mb-8 sm:mb-12 text-center">
               Transparent Pricing
             </h3>

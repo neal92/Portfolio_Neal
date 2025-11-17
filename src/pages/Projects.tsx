@@ -36,7 +36,8 @@ import { ExternalLink, Github } from 'lucide-react';
 // Utilise projectsData importé
 
 const Projects: React.FC = () => {
-  const [openModal, setOpenModal] = React.useState<number | null>(null);
+  const [selectedProject, setSelectedProject] = React.useState<number>(0);
+  
   return (
     <FadeInSection>
       <div className="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-800 relative overflow-hidden">
@@ -46,7 +47,7 @@ const Projects: React.FC = () => {
           <div className="absolute bottom-1/3 left-0 w-96 h-96 bg-gradient-to-br from-pink-100 to-orange-100 dark:from-pink-900 dark:to-orange-900 rounded-full blur-3xl opacity-20"></div>
         </div>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
+          <div className="text-center mb-8 sm:mb-12">
             <div className="inline-block p-1 bg-gradient-to-r from-green-500 to-blue-500 dark:from-green-900 dark:to-blue-900 rounded-full mb-4 sm:mb-6">
               <div className="bg-white dark:bg-slate-900 px-4 py-1 sm:px-5 sm:py-1.5 rounded-full">
                 <span className="text-xs font-semibold bg-gradient-to-r from-green-600 to-blue-600 dark:from-green-400 dark:to-blue-400 bg-clip-text text-transparent">
@@ -61,7 +62,72 @@ const Projects: React.FC = () => {
               Innovative solutions that demonstrate technical excellence and creative problem-solving
             </p>
           </div>
-          <div className="relative z-10 grid gap-6 sm:gap-12 grid-cols-1 md:grid-cols-2">
+
+          {/* Mobile Project Navigation Tabs */}
+          <div className="flex gap-2 mb-6 overflow-x-auto md:hidden pb-2">
+            {projectsData.map((project, index) => (
+              <button
+                key={index}
+                onClick={() => setSelectedProject(index)}
+                className={`flex-shrink-0 px-4 py-2.5 rounded-xl font-semibold text-xs transition-all duration-300 whitespace-nowrap ${
+                  selectedProject === index
+                    ? 'bg-gradient-to-r from-green-600 to-blue-600 text-white shadow-lg'
+                    : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700'
+                }`}
+              >
+                {project.title}
+              </button>
+            ))}
+          </div>
+
+          {/* Mobile: Show only selected project */}
+          <div className="md:hidden">
+            <FadeInSection>
+              <div className="group h-full bg-white text-black border-slate-200 dark:bg-slate-900 dark:text-white dark:border-slate-800 backdrop-blur-xl rounded-3xl overflow-hidden border shadow-xl">
+                <div className="w-full p-4 sm:p-5 flex flex-col justify-between h-full">
+                  <div>
+                    <img
+                      src={projectsData[selectedProject].image}
+                      alt={projectsData[selectedProject].title}
+                      className="w-full h-40 sm:h-48 object-cover rounded-2xl mb-3 sm:mb-4 shadow-md"
+                    />
+                    <h3 className="text-xl sm:text-2xl font-bold mb-3 group-hover:text-blue-400 transition-colors duration-300 text-black dark:text-white">
+                      {projectsData[selectedProject].title}
+                    </h3>
+                    <p className="mb-4 leading-relaxed text-sm text-slate-600 dark:text-slate-300">
+                      {projectsData[selectedProject].description}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5 mb-4">
+                      {projectsData[selectedProject].technologies.map((tech: string, techIndex: number) => (
+                        <span
+                          key={techIndex}
+                          className="px-2 py-0.5 rounded-full font-medium border text-xs hover:shadow-md transition-all duration-300 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 border-blue-200/50 dark:from-blue-900 dark:to-purple-900 dark:text-blue-200 dark:border-blue-900/50"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-3 mt-3 z-20 relative">
+                    <a
+                      href={projectsData[selectedProject].video}
+                      download
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/btn inline-flex items-center justify-center px-4 py-2 text-xs bg-gradient-to-r from-purple-600 to-blue-600 border-2 border-purple-500 text-white rounded-xl font-bold shadow-lg hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105 hover:from-purple-700 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-purple-400 w-full"
+                      style={{ boxShadow: '0 0 12px 2px #a78bfa, 0 0 4px 1px #3b82f6' }}
+                    >
+                      <ExternalLink size={16} className="mr-2 group-hover/btn:rotate-12 transition-transform duration-300" />
+                      Download the demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </FadeInSection>
+          </div>
+
+          {/* Desktop: Show all projects in grid */}
+          <div className="hidden md:grid relative z-10 gap-6 sm:gap-12 grid-cols-1 md:grid-cols-2">
             {projectsData.map((project, index) => (
               <FadeInSection key={index}>
                 <div
