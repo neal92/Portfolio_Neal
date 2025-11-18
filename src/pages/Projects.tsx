@@ -172,7 +172,7 @@ const Projects: React.FC = () => {
                         style={{ boxShadow: '0 0 12px 2px #a78bfa, 0 0 4px 1px #3b82f6' }}
                       >
                         <ExternalLink size={18} className="mr-2 group-hover/btn:rotate-12 transition-transform duration-300" />
-                        Download the demo
+                        Contact me for a demo
                       </a>
                     </div>
                   </div>

@@ -274,15 +274,16 @@ const HowIWork: React.FC = () => {
                     ))}
                   </ul>
                   
-                  <button
-                    className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 ${
+                  <a
+                    href="#contact"
+                    className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 block text-center ${
                       plan.highlight
                         ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 shadow-lg hover:shadow-xl'
                         : 'bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700'
                     }`}
                   >
                     Get Started
-                  </button>
+                  </a>
                 </div>
               ))}
             </div>
