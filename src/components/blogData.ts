@@ -18,12 +18,17 @@ const blogData: BlogPost[] = [
         question: 'Why should you hire me for your web development project?',
         answer: `Working with me means choosing a passionate developer dedicated to your project's success. 
         Here are some reasons why I'm the right choice:
+        
             1. Technical expertise - I master modern technologies like React, Node.js, and many others, 
                 ensuring clean and performant code.
+
             2. Clear communication - I believe in transparent communication throughout the project,
                 ensuring your needs are always understood and taken into account.
+
             3. Meeting deadlines - I commit to delivering projects within agreed timelines without compromising quality.
+
             4. Custom solutions - Each project is unique, and I strive to provide solutions tailored to your specific objectives.
+
             5. Ongoing support - My commitment doesn't stop at delivery; I'm here to help with maintenance and updates.
         In summary, I'm passionate about web development and determined to make your project a success!`,
         tags: ['React', 'Performance', 'Optimization'],
