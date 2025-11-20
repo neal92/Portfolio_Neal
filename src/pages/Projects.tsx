@@ -37,8 +37,11 @@ import ProjectCarousel from '../components/ProjectCarousel';
 
 const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = React.useState<number>(0);
-  
-  const currentProject = projectsData[selectedProject];
+  const [currentProject, setCurrentProject] = React.useState(projectsData[0]);
+
+  React.useEffect(() => {
+    setCurrentProject(projectsData[selectedProject]);
+  }, [selectedProject]);
   
   // Protection si pas de projet
   if (!currentProject || projectsData.length === 0) {

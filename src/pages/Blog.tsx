@@ -125,44 +125,44 @@ const Blog: React.FC = () => {
         </div>
 
         {/* Blog Posts */}
-        <div className="space-y-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
           {filteredPosts.map((post) => (
             <FadeInSection key={post.id}>
-              <article className="bg-white dark:bg-slate-900 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-200 dark:border-slate-800">
+              <article className="bg-white dark:bg-slate-900 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-200 dark:border-slate-800 h-full flex flex-col">
                 {/* Post Header */}
-                <div className="p-6">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className={`inline-block px-3 py-1 rounded-lg bg-gradient-to-r ${getCategoryColor(post.category)} text-white text-xs font-semibold`}>
+                <div className="p-4 sm:p-6 flex flex-col flex-grow">
+                  <div className="flex items-start justify-between mb-3 sm:mb-4">
+                    <div className={`inline-block px-2 sm:px-3 py-1 rounded-lg bg-gradient-to-r ${getCategoryColor(post.category)} text-white text-xs font-semibold`}>
                       {post.category}
                     </div>
-                    <div className="flex items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
+                    <div className="flex flex-col sm:flex-row items-end sm:items-center gap-1 sm:gap-4 text-xs text-slate-500 dark:text-slate-400">
                       <div className="flex items-center gap-1">
-                        <Calendar size={16} />
+                        <Calendar size={14} />
                         <span>{new Date(post.date).toLocaleDateString('fr-FR')}</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <Clock size={16} />
+                        <Clock size={14} />
                         <span>{post.readTime}</span>
                       </div>
                     </div>
                   </div>
 
-                  <h2 className="text-2xl font-bold text-slate-800 dark:text-white mb-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                  <h2 className="text-lg sm:text-xl font-bold text-slate-800 dark:text-white mb-2 sm:mb-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                     {post.title}
                   </h2>
 
-                  <p className="text-lg text-slate-700 dark:text-slate-300 mb-4 italic">
+                  <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 mb-3 sm:mb-4 italic flex-grow">
                     Q: {post.question}
                   </p>
 
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
                     {post.tags.map((tag, index) => (
                       <span
                         key={index}
-                        className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs font-medium"
+                        className="inline-flex items-center gap-1 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs font-medium"
                       >
-                        <Tag size={12} />
+                        <Tag size={10} />
                         {tag}
                       </span>
                     ))}
@@ -171,17 +171,17 @@ const Blog: React.FC = () => {
                   {/* Toggle Button */}
                   <button
                     onClick={() => setExpandedPost(expandedPost === post.id ? null : post.id)}
-                    className="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-semibold hover:gap-3 transition-all duration-300"
+                    className="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-semibold hover:gap-3 transition-all duration-300 text-sm sm:text-base mt-auto"
                   >
                     {expandedPost === post.id ? (
                       <>
                         <span>Hide Answer</span>
-                        <ChevronUp size={20} />
+                        <ChevronUp size={18} />
                       </>
                     ) : (
                       <>
                         <span>Read Full Answer</span>
-                        <ChevronDown size={20} />
+                        <ChevronDown size={18} />
                       </>
                     )}
                   </button>
@@ -189,11 +189,11 @@ const Blog: React.FC = () => {
 
                 {/* Expandable Answer */}
                 {expandedPost === post.id && (
-                  <div className="px-6 pb-6 animate-fade-in">
-                    <div className="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl">
+                  <div className="px-4 sm:px-6 pb-4 sm:pb-6 animate-fade-in">
+                    <div className="p-4 sm:p-6 bg-slate-50 dark:bg-slate-800 rounded-xl">
                       <div className="prose prose-slate dark:prose-invert max-w-none">
                         {post.answer.split('\n\n').map((paragraph, index) => (
-                          <p key={index} className="mb-4 text-slate-700 dark:text-slate-300 leading-relaxed whitespace-pre-line">
+                          <p key={index} className="mb-3 sm:mb-4 text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed whitespace-pre-line">
                             {paragraph}
                           </p>
                         ))}
