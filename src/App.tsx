@@ -6,9 +6,12 @@ import About from './pages/About';
 import Skills from './pages/Skills';
 import Projects from './pages/Projects';
 import HowIWork from './pages/HowIWork';
+import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import ProjectDetail from './pages/ProjectDetail';
 import projectsData, { Project } from './components/projectsData.ts';
+import Loader from './components/Loader';
+import ScrollProgress from './components/ScrollProgress';
 
 function ProjectDetailWrapper() {
   const { id } = useParams<{ id: string }>();
@@ -21,7 +24,7 @@ function ProjectDetailWrapper() {
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Ajoute ou retire la classe 'dark' sur le body
@@ -35,7 +38,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'projects', 'how-i-work', 'contact'];
+      const sections = ['home', 'about', 'skills', 'projects', 'how-i-work', 'blog', 'contact'];
       const scrollPosition = window.scrollY + 100;
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -66,23 +69,22 @@ function App() {
 
   return (
     <Router>
+      <Loader />
+      <ScrollProgress />
       <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}> 
-        {/* Boutons mode sombre/clair en position fixe en haut à droite */}
+        {/* Bouton toggle mode sombre/clair en position fixe en haut à droite */}
         {!isMenuOpen && (
-          <div className="fixed top-2 right-6 z-[10000] flex gap-2">
+          <div className="fixed top-2 right-6 z-[10000]">
             <button
-              onClick={() => setDarkMode(false)}
-              className={`p-1 rounded-full bg-white dark:bg-slate-800 shadow hover:bg-yellow-100 dark:hover:bg-slate-700 transition ${!darkMode ? 'ring-2 ring-yellow-400' : ''}`}
-              aria-label="Mode clair"
+              onClick={() => setDarkMode(!darkMode)}
+              className="p-3 rounded-full bg-transparent dark:bg-slate-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border-2 border-transparent dark:border-slate-700"
+              aria-label={darkMode ? "Mode clair" : "Mode sombre"}
             >
-              <span className="text-yellow-400 text-lg">☀️</span>
-            </button>
-            <button
-              onClick={() => setDarkMode(true)}
-              className={`p-1 rounded-full bg-white dark:bg-slate-800 shadow hover:bg-purple-100 dark:hover:bg-slate-700 transition ${darkMode ? 'ring-2 ring-purple-600' : ''}`}
-              aria-label="Mode sombre"
-            >
-              <span className="text-purple-600 text-lg">🌙</span>
+              {darkMode ? (
+                <span className="text-yellow-400 text-xl">☀️</span>
+              ) : (
+                <span className="text-purple-600 text-xl">🌙</span>
+              )}
             </button>
           </div>
         )}
@@ -113,6 +115,9 @@ function App() {
                   </section>
                   <section id="how-i-work">
                     <HowIWork />
+                  </section>
+                  <section id="blog">
+                    <Blog />
                   </section>
                   <section id="contact">
                     <Contact />

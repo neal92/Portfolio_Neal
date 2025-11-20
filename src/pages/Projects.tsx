@@ -30,19 +30,26 @@ const FadeInSection: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 };
 import React from 'react';
 import projectsData from '../components/projectsData';
-import { Link } from 'react-router-dom';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
+import ProjectCarousel from '../components/ProjectCarousel';
 
 // Utilise projectsData importé
 
 const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = React.useState<number>(0);
   
-  React.useEffect(() => {
-    console.log('Selected project changed to:', selectedProject, projectsData[selectedProject]?.title);
-  }, [selectedProject]);
-
   const currentProject = projectsData[selectedProject];
+  
+  // Protection si pas de projet
+  if (!currentProject || projectsData.length === 0) {
+    return (
+      <div className="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-pink-50 to-slate-50 dark:from-slate-900 dark:to-slate-800">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-xl text-slate-600 dark:text-slate-400">No projects found</p>
+        </div>
+      </div>
+    );
+  }
   
   return (
     <FadeInSection>
@@ -74,10 +81,7 @@ const Projects: React.FC = () => {
             {projectsData.map((project, index) => (
               <button
                 key={index}
-                onClick={() => {
-                  console.log('Clicking project:', index, project.title);
-                  setSelectedProject(index);
-                }}
+                onClick={() => setSelectedProject(index)}
                 className={`flex-shrink-0 px-4 py-2.5 rounded-xl font-semibold text-xs transition-all duration-300 whitespace-nowrap ${
                   selectedProject === index
                     ? 'bg-gradient-to-r from-green-600 to-blue-600 text-white shadow-lg'
@@ -94,12 +98,8 @@ const Projects: React.FC = () => {
             <div className="group h-full bg-white text-black border-slate-200 dark:bg-slate-900 dark:text-white dark:border-slate-800 backdrop-blur-xl rounded-3xl overflow-hidden border shadow-xl">
               <div className="w-full p-4 sm:p-5 flex flex-col justify-between h-full">
                 <div>
-                  <img
-                    src={currentProject.image}
-                    alt={currentProject.title}
-                    className="w-full h-40 sm:h-48 object-cover rounded-2xl mb-3 sm:mb-4 shadow-md"
-                  />
-                  <h3 className="text-xl sm:text-2xl font-bold mb-3 group-hover:text-blue-400 transition-colors duration-300 text-black dark:text-white">
+                  <ProjectCarousel images={currentProject.images} title={currentProject.title} />
+                  <h3 className="text-xl sm:text-2xl font-bold mb-3 mt-4 group-hover:text-blue-400 transition-colors duration-300 text-black dark:text-white">
                     {currentProject.title}
                   </h3>
                   <p className="mb-4 leading-relaxed text-sm text-slate-600 dark:text-slate-300">
@@ -144,12 +144,8 @@ const Projects: React.FC = () => {
                 >
                   <div className="w-full p-4 sm:p-5 lg:p-7 flex flex-col justify-between h-full">
                     <div>
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-40 sm:h-48 object-cover rounded-2xl mb-3 sm:mb-4 shadow-md"
-                      />
-                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 group-hover:text-blue-400 transition-colors duration-300 text-black dark:text-white">{project.title}</h3>
+                      <ProjectCarousel images={project.images} title={project.title} />
+                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 mt-4 group-hover:text-blue-400 transition-colors duration-300 text-black dark:text-white">{project.title}</h3>
                       <p className="mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base text-slate-600 dark:text-slate-300">{project.description}</p>
                       <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
                         {project.technologies.map((tech: string, techIndex: number) => (
