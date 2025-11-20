@@ -10,21 +10,44 @@ export interface BlogPost {
 }
 
 const blogData: BlogPost[] = [
+
+  {
+        id: 'moi',
+        title: 'Why work with me?',
+        category: 'FAQ',
+        question: 'Why should you hire me for your web development project?',
+        answer: `Working with me means choosing a passionate developer dedicated to your project's success. 
+        Here are some reasons why I'm the right choice:
+            1. Technical expertise - I master modern technologies like React, Node.js, and many others, 
+                ensuring clean and performant code.
+            2. Clear communication - I believe in transparent communication throughout the project,
+                ensuring your needs are always understood and taken into account.
+            3. Meeting deadlines - I commit to delivering projects within agreed timelines without compromising quality.
+            4. Custom solutions - Each project is unique, and I strive to provide solutions tailored to your specific objectives.
+            5. Ongoing support - My commitment doesn't stop at delivery; I'm here to help with maintenance and updates.
+        In summary, I'm passionate about web development and determined to make your project a success!`,
+        tags: ['React', 'Performance', 'Optimization'],
+        date: '2024-11-15',
+        readTime: '5 min'
+
+  },
+
+
   {
     id: 'react-performance',
-    title: 'Comment optimiser les performances React ?',
+    title: 'How to optimize React performance?',
     category: 'Best Practices',
-    question: 'Quelles sont les meilleures pratiques pour optimiser les performances d\'une application React ?',
-    answer: `Les performances React peuvent être optimisées de plusieurs façons :
+    question: 'What are the best practices to optimize React application performance?',
+    answer: `React performance can be optimized in several ways:
 
-    1. Utiliser React.memo() pour éviter les re-renders inutiles des composants fonctionnels.
+    1. Use React.memo() to avoid unnecessary re-renders of functional components.
 
-    2. Optimiser les hooks :
-    - useCallback pour mémoriser les fonctions
-    - useMemo pour mémoriser les calculs coûteux
-    - useRef pour les valeurs qui ne déclenchent pas de re-render
+    2. Optimize hooks:
+    - useCallback to memoize functions
+    - useMemo to memoize expensive calculations
+    - useRef for values that don't trigger re-renders
 
-        3. Code-splitting avec React.lazy() et Suspense pour charger le code à la demande.`,
+    3. Code-splitting with React.lazy() and Suspense to load code on demand.`,
     tags: ['React', 'Performance', 'Optimization'],
     date: '2024-11-15',
     readTime: '5 min'
@@ -34,20 +57,20 @@ const blogData: BlogPost[] = [
   
   {
         id: 'typescript-benefits',
-        title: 'Pourquoi utiliser TypeScript ?',
+        title: 'Why use TypeScript?',
         category: 'FAQ',
-        question: 'Quels sont les avantages de TypeScript par rapport à JavaScript ?',
-        answer: `TypeScript apporte de nombreux avantages au développement JavaScript :
+        question: 'What are the advantages of TypeScript over JavaScript?',
+        answer: `TypeScript brings many advantages to JavaScript development:
 
-        1. Typage statique - Détecte les erreurs à la compilation plutôt qu'à l'exécution.
+        1. Static typing - Detects errors at compile time rather than runtime.
 
-        2. Meilleure autocomplétion - Les IDE peuvent fournir des suggestions plus précises.
+        2. Better autocomplete - IDEs can provide more accurate suggestions.
 
-        3. Refactoring sécurisé - Renommer ou modifier du code devient moins risqué.
+        3. Safe refactoring - Renaming or modifying code becomes less risky.
 
-        4. Documentation vivante - Les types servent de documentation auto-générée.
+        4. Living documentation - Types serve as auto-generated documentation.
 
-        En résumé, TypeScript améliore la maintenabilité et réduit les bugs dans les grandes applications.`,
+        In summary, TypeScript improves maintainability and reduces bugs in large applications.`,
         tags: ['TypeScript', 'JavaScript', 'Development'],
         date: '2024-11-10',
         readTime: '4 min'
@@ -55,30 +78,30 @@ const blogData: BlogPost[] = [
 
   {
         id: 'rest-api-design',
-        title: 'Comment concevoir une API REST ?',
+        title: 'How to design a REST API?',
         category: 'Technical',
-        question: 'Quels sont les principes pour créer une API REST bien structurée ?',
-        answer: `Une bonne API REST suit ces principes fondamentaux :
+        question: 'What are the principles for creating a well-structured REST API?',
+        answer: `A good REST API follows these fundamental principles:
 
-        1. Utiliser les méthodes HTTP correctement :
-        - GET pour récupérer des données
-        - POST pour créer
-        - PUT/PATCH pour mettre à jour
-        - DELETE pour supprimer
+        1. Use HTTP methods correctly:
+        - GET to retrieve data
+        - POST to create
+        - PUT/PATCH to update
+        - DELETE to remove
 
-        2. Nommage des ressources :
-        - Utiliser des noms au pluriel (/users, /posts)
-        - Éviter les verbes dans les URLs
-        - Structure hiérarchique claire (/users/123/posts)
+        2. Resource naming:
+        - Use plural nouns (/users, /posts)
+        - Avoid verbs in URLs
+        - Clear hierarchical structure (/users/123/posts)
 
-        3. Codes de statut HTTP appropriés :
+        3. Appropriate HTTP status codes:
         - 200 OK, 201 Created, 204 No Content
         - 400 Bad Request, 401 Unauthorized, 404 Not Found
         - 500 Internal Server Error
 
-        4. Versioning de l'API (v1, v2) pour maintenir la compatibilité.
+        4. API versioning (v1, v2) to maintain compatibility.
 
-        5. Documentation complète avec Swagger/OpenAPI.`,
+        5. Complete documentation with Swagger/OpenAPI.`,
 
         tags: ['API', 'REST', 'Backend', 'Node.js'],
         date: '2024-11-05',
@@ -87,21 +110,21 @@ const blogData: BlogPost[] = [
 
   {
         id: 'responsive-design',
-        title: 'Comment créer un design responsive ?',
+        title: 'How to create responsive design?',
         category: 'Tutorial',
-        question: 'Quelles techniques utiliser pour rendre un site web responsive ?',
-        answer: `Le design responsive repose sur plusieurs techniques :
+        question: 'What techniques to use to make a website responsive?',
+        answer: `Responsive design relies on several techniques:
 
-        1. Mobile-First Approach** - Commencer par le design mobile puis adapter pour desktop.
+        1. Mobile-First Approach - Start with mobile design then adapt for desktop.
 
-        2. CSS Grid et Flexbox** - Layouts flexibles qui s'adaptent automatiquement.
+        2. CSS Grid and Flexbox - Flexible layouts that adapt automatically.
 
-        3. Unités relatives** - Utiliser rem, em, %, vh/vw au lieu de px fixes.
+        3. Relative units - Use rem, em, %, vh/vw instead of fixed px.
 
-        4. Images responsives :
-        - srcset pour différentes résolutions
-        - object-fit pour l'adaptation des images
-        - lazy loading pour les performances`,
+        4. Responsive images:
+        - srcset for different resolutions
+        - object-fit for image adaptation
+        - lazy loading for performance`,
 
         tags: ['CSS', 'Responsive', 'Design', 'Tailwind'],
         date: '2024-10-28',
@@ -110,20 +133,20 @@ const blogData: BlogPost[] = [
 
   {
         id: 'git-workflow',
-        title: 'Quel workflow Git utiliser ?',
+        title: 'Which Git workflow to use?',
         category: 'Best Practices',
-        question: 'Comment organiser les branches et commits dans un projet Git ?',
-        answer: `Un bon workflow Git améliore la collaboration :
+        question: 'How to organize branches and commits in a Git project?',
+        answer: `A good Git workflow improves collaboration:
 
-        1. Git Flow - Workflow classique avec plusieurs branches :
-        - main/master : code en production
-        - develop : développement en cours
-        - feature/* : nouvelles fonctionnalités
-        - hotfix/* : corrections urgentes
+        1. Git Flow - Classic workflow with multiple branches:
+        - main/master: production code
+        - develop: ongoing development
+        - feature/*: new features
+        - hotfix/*: urgent fixes
 
-        2. Commits atomiques - Un commit = une modification logique.
+        2. Atomic commits - One commit = one logical change.
 
-        3. Pull Requests avec code review avant de merger.`,
+        3. Pull Requests with code review before merging.`,
     
         tags: ['Git', 'Version Control', 'Workflow'],
         date: '2024-10-20',
@@ -132,30 +155,30 @@ const blogData: BlogPost[] = [
 
   {
         id: 'security-web',
-        title: 'Comment sécuriser une application web ?',
+        title: 'How to secure a web application?',
         category: 'Technical',
-        question: 'Quelles mesures de sécurité implémenter dans une application web ?',
-        answer: `La sécurité web nécessite une approche multicouche :
+        question: 'What security measures to implement in a web application?',
+        answer: `Web security requires a multi-layered approach:
 
-        1. Authentification & Autorisation :
-        - JWT avec expiration
-        - Sessions sécurisées
-        - OAuth 2.0 pour l'intégration externe
+        1. Authentication & Authorization:
+        - JWT with expiration
+        - Secure sessions
+        - OAuth 2.0 for external integration
 
-        2. Protection contre les attaques courantes :
-        - XSS : échapper les données utilisateur
-        - CSRF : tokens anti-CSRF
-        - SQL Injection : requêtes préparées
-        - Clickjacking : X-Frame-Options
+        2. Protection against common attacks:
+        - XSS: escape user data
+        - CSRF: anti-CSRF tokens
+        - SQL Injection: prepared statements
+        - Clickjacking: X-Frame-Options
 
-        3. HTTPS obligatoire avec certificats SSL/TLS valides.
+        3. Mandatory HTTPS with valid SSL/TLS certificates.
 
-        4. Headers de sécurité :
+        4. Security headers:
         - Content-Security-Policy
         - Strict-Transport-Security
         - X-Content-Type-Options
 
-        5. Validation des données côté client ET serveur.`,
+        5. Data validation on both client AND server side.`,
 
         tags: ['Security', 'Web', 'Backend', 'Best Practices'],
         date: '2024-10-15',
