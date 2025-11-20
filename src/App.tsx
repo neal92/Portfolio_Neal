@@ -64,6 +64,8 @@ function App() {
         behavior: 'smooth'
       });
       setActiveSection(sectionId);
+      // Mettre à jour l'URL hash
+      window.location.hash = sectionId;
     }
   };
 

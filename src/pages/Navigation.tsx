@@ -32,7 +32,7 @@ export default function Navigation({ activeSection, onNavigate, darkMode, isMenu
 
   return (
     <nav className={`fixed w-full top-0 left-0 z-[9999] transition-all duration-300 ${scrolled ? (darkMode ? 'bg-slate-900 shadow-lg' : 'bg-white shadow-lg') : 'bg-transparent'} backdrop-blur-lg`} style={{ minHeight: '80px' }}>
-  <div className="max-w-5xl mx-auto px-4 py-4 flex items-center">
+  <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between md:justify-start">
         {/* Mobile Menu Button */}
         <button
           className="md:hidden p-2 rounded-full bg-white dark:bg-slate-800 shadow"
@@ -41,7 +41,7 @@ export default function Navigation({ activeSection, onNavigate, darkMode, isMenu
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
         <div
-          className={`text-2xl font-bold cursor-pointer transition-colors duration-300 ${
+          className={`text-2xl font-bold cursor-pointer transition-colors duration-300 md:ml-0 absolute left-1/2 transform -translate-x-1/2 md:relative md:left-0 md:transform-none ${
             scrolled
               ? darkMode ? 'text-white' : 'text-slate-800'
               : darkMode ? 'text-white' : 'text-white'

@@ -31,7 +31,23 @@ const FadeInSection: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 };
 
 const Contact: React.FC = () => {
-				return (
+	const [message, setMessage] = React.useState('');
+	const messageRef = React.useRef<HTMLTextAreaElement>(null);
+
+	React.useEffect(() => {
+		// Récupérer le message depuis sessionStorage
+		const storedMessage = sessionStorage.getItem('contactMessage');
+		if (storedMessage) {
+			setMessage(storedMessage);
+			sessionStorage.removeItem('contactMessage');
+			// Focus sur le champ message après un court délai
+			setTimeout(() => {
+				messageRef.current?.focus();
+			}, 300);
+		}
+	}, []);
+
+	return (
 				<FadeInSection>
 					<section id="contact" className="py-16 sm:py-20 px-4 bg-gradient-to-b from-gray-100 to-white dark:from-slate-900 dark:to-slate-800 pb-0">
 						<div className="max-w-2xl mx-auto">
@@ -61,7 +77,16 @@ const Contact: React.FC = () => {
 												<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
 											</svg>
 										</span>
-										<textarea name="message" placeholder="Message" className="w-full bg-transparent outline-none text-slate-800 dark:text-white" rows={4} required></textarea>
+										<textarea 
+											name="message" 
+											placeholder="Message" 
+											className="w-full bg-transparent outline-none text-slate-800 dark:text-white" 
+											rows={4} 
+											required
+											ref={messageRef}
+											value={message}
+											onChange={(e) => setMessage(e.target.value)}
+										></textarea>
 									</div>
 									<button type="submit" className="w-full py-4 rounded-xl font-bold text-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg hover:scale-105 hover:shadow-blue-500/30 transition-all duration-300">Send Message</button>
 								</form>

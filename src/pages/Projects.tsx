@@ -37,11 +37,8 @@ import ProjectCarousel from '../components/ProjectCarousel';
 
 const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = React.useState<number>(0);
-  const [currentProject, setCurrentProject] = React.useState(projectsData[0]);
 
-  React.useEffect(() => {
-    setCurrentProject(projectsData[selectedProject]);
-  }, [selectedProject]);
+  const currentProject = projectsData[selectedProject] || projectsData[0];
   
   // Protection si pas de projet
   if (!currentProject || projectsData.length === 0) {
@@ -97,7 +94,7 @@ const Projects: React.FC = () => {
           </div>
 
           {/* Mobile: Show only selected project */}
-          <div className="md:hidden">
+          <div className="md:hidden" key={`project-${selectedProject}`}>
             <div className="group h-full bg-white text-black border-slate-200 dark:bg-slate-900 dark:text-white dark:border-slate-800 backdrop-blur-xl rounded-3xl overflow-hidden border shadow-xl">
               <div className="w-full p-4 sm:p-5 flex flex-col justify-between h-full">
                 <div>
@@ -121,17 +118,21 @@ const Projects: React.FC = () => {
                 </div>
                 <div className="flex flex-col gap-3 mt-3 z-20 relative">
                   {currentProject.video && (
-                    <a
-                      href={currentProject.video}
-                      download
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      onClick={() => {
+                        sessionStorage.setItem('contactMessage', 'Hello, I would like to see a demo of your project!');
+                        const contactSection = document.getElementById('contact');
+                        if (contactSection) {
+                          contactSection.scrollIntoView({ behavior: 'smooth' });
+                        }
+                        window.location.hash = 'contact';
+                      }}
                       className="group/btn inline-flex items-center justify-center px-4 py-2 text-xs bg-gradient-to-r from-purple-600 to-blue-600 border-2 border-purple-500 text-white rounded-xl font-bold shadow-lg hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105 hover:from-purple-700 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-purple-400 w-full"
                       style={{ boxShadow: '0 0 12px 2px #a78bfa, 0 0 4px 1px #3b82f6' }}
                     >
                       <ExternalLink size={16} className="mr-2 group-hover/btn:rotate-12 transition-transform duration-300" />
-                      Download the demo
-                    </a>
+                      Contact me for a demo
+                    </button>
                   )}
                 </div>
               </div>
@@ -162,17 +163,21 @@ const Projects: React.FC = () => {
                       </div>
                     </div>
                     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-3 sm:mt-4 z-20 relative">
-                      <a
-                        href={project.video}
-                        download
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <button
+                        onClick={() => {
+                          sessionStorage.setItem('contactMessage', 'Hello, I would like to see a demo of your project!');
+                          const contactSection = document.getElementById('contact');
+                          if (contactSection) {
+                            contactSection.scrollIntoView({ behavior: 'smooth' });
+                          }
+                          window.location.hash = 'contact';
+                        }}
                         className="group/btn inline-flex items-center justify-center px-4 py-2 text-xs sm:text-sm bg-gradient-to-r from-purple-600 to-blue-600 border-2 border-purple-500 text-white rounded-xl font-bold shadow-lg hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105 hover:from-purple-700 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-purple-400 w-full sm:w-auto"
                         style={{ boxShadow: '0 0 12px 2px #a78bfa, 0 0 4px 1px #3b82f6' }}
                       >
                         <ExternalLink size={18} className="mr-2 group-hover/btn:rotate-12 transition-transform duration-300" />
                         Contact me for a demo
-                      </a>
+                      </button>
                     </div>
                   </div>
                 </div>
