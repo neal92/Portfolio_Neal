@@ -39,6 +39,8 @@ const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = React.useState<number>(0);
 
   const currentProject = projectsData[selectedProject] || projectsData[0];
+
+  console.log('Current selectedProject:', selectedProject, 'Current project:', currentProject.title);
   
   // Protection si pas de projet
   if (!currentProject || projectsData.length === 0) {
@@ -77,11 +79,14 @@ const Projects: React.FC = () => {
           </div>
 
           {/* Mobile Project Navigation Tabs */}
-          <div className="flex gap-2 mb-6 overflow-x-auto md:hidden pb-2">
+          <div className="flex gap-2 mb-6 overflow-x-auto md:hidden pb-2 relative z-50">
             {projectsData.map((project, index) => (
               <button
                 key={index}
-                onClick={() => setSelectedProject(index)}
+                onClick={() => {
+                  console.log('Selecting project index:', index, 'Title:', project.title);
+                  setSelectedProject(index);
+                }}
                 className={`flex-shrink-0 px-4 py-2.5 rounded-xl font-semibold text-xs transition-all duration-300 whitespace-nowrap ${
                   selectedProject === index
                     ? 'bg-gradient-to-r from-green-600 to-blue-600 text-white shadow-lg'

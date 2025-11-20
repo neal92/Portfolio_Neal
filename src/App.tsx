@@ -66,6 +66,10 @@ function App() {
       setActiveSection(sectionId);
       // Mettre à jour l'URL hash
       window.location.hash = sectionId;
+      // Nettoyer le message de contact si on navigue ailleurs
+      if (sectionId !== 'contact') {
+        sessionStorage.removeItem('contactMessage');
+      }
     }
   };
 

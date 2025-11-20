@@ -47,6 +47,17 @@ const Contact: React.FC = () => {
 		}
 	}, []);
 
+	// Observer les changements de hash pour vider le message
+	React.useEffect(() => {
+		const handleHashChange = () => {
+			if (window.location.hash !== '#contact') {
+				setMessage('');
+			}
+		};
+		window.addEventListener('hashchange', handleHashChange);
+		return () => window.removeEventListener('hashchange', handleHashChange);
+	}, []);
+
 	return (
 				<FadeInSection>
 					<section id="contact" className="py-16 sm:py-20 px-4 bg-gradient-to-b from-gray-100 to-white dark:from-slate-900 dark:to-slate-800 pb-0">
