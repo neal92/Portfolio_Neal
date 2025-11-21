@@ -39,8 +39,6 @@ const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = React.useState<number>(0);
 
   const currentProject = projectsData[selectedProject] || projectsData[0];
-
-  console.log('Current selectedProject:', selectedProject, 'Current project:', currentProject.title);
   
   // Protection si pas de projet
   if (!currentProject || projectsData.length === 0) {
@@ -83,10 +81,7 @@ const Projects: React.FC = () => {
             {projectsData.map((project, index) => (
               <button
                 key={index}
-                onClick={() => {
-                  console.log('Selecting project index:', index, 'Title:', project.title);
-                  setSelectedProject(index);
-                }}
+                onClick={() => setSelectedProject(index)}
                 className={`flex-shrink-0 px-4 py-2.5 rounded-xl font-semibold text-xs transition-all duration-300 whitespace-nowrap ${
                   selectedProject === index
                     ? 'bg-gradient-to-r from-green-600 to-blue-600 text-white shadow-lg'
@@ -122,23 +117,21 @@ const Projects: React.FC = () => {
                   </div>
                 </div>
                 <div className="flex flex-col gap-3 mt-3 z-20 relative">
-                  {currentProject.video && (
-                    <button
-                      onClick={() => {
-                        sessionStorage.setItem('contactMessage', 'Hello, I would like to see a demo of your project!');
-                        const contactSection = document.getElementById('contact');
-                        if (contactSection) {
-                          contactSection.scrollIntoView({ behavior: 'smooth' });
-                        }
-                        window.location.hash = 'contact';
-                      }}
-                      className="group/btn inline-flex items-center justify-center px-4 py-2 text-xs bg-gradient-to-r from-purple-600 to-blue-600 border-2 border-purple-500 text-white rounded-xl font-bold shadow-lg hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105 hover:from-purple-700 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-purple-400 w-full"
-                      style={{ boxShadow: '0 0 12px 2px #a78bfa, 0 0 4px 1px #3b82f6' }}
-                    >
-                      <ExternalLink size={16} className="mr-2 group-hover/btn:rotate-12 transition-transform duration-300" />
-                      Contact me for a demo
-                    </button>
-                  )}
+                  <button
+                    onClick={() => {
+                      sessionStorage.setItem('contactMessage', 'Hello, I would like to see a demo of your project!');
+                      const contactSection = document.getElementById('contact');
+                      if (contactSection) {
+                        contactSection.scrollIntoView({ behavior: 'smooth' });
+                      }
+                      window.location.hash = 'contact';
+                    }}
+                    className="group/btn inline-flex items-center justify-center px-4 py-2 text-xs bg-gradient-to-r from-purple-600 to-blue-600 border-2 border-purple-500 text-white rounded-xl font-bold shadow-lg hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105 hover:from-purple-700 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-purple-400 w-full"
+                    style={{ boxShadow: '0 0 12px 2px #a78bfa, 0 0 4px 1px #3b82f6' }}
+                  >
+                    <ExternalLink size={16} className="mr-2 group-hover/btn:rotate-12 transition-transform duration-300" />
+                    Contact me for a demo
+                  </button>
                 </div>
               </div>
             </div>
