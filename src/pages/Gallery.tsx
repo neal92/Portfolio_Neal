@@ -36,9 +36,12 @@ const Gallery: React.FC = () => {
 
   // Images et vidéos du carousel
   const media = [
-    { type: 'image', src: '/images/image2.jpg', alt: 'Project 2' },
-    { type: 'image', src: '/images/image1.JPG', alt: 'Project 1' },
-    { type: 'video', src: '/images/video1.mp4', alt: 'Project 3' },
+    { type: 'image', src: '/images/image2.jpg', alt: 'Project 1' },
+    { type: 'image', src: '/images/image1.JPG', alt: 'Project 2' },
+    { type: 'image', src: '/images/image3.jpg', alt: 'Project 3' },
+    { type: 'video', src: '/images/video1.mp4', alt: 'Project 4' },
+    { type: 'image', src: '/images/image4.jpg', alt: 'Project 5' },
+    { type: 'image', src: '/images/image5.jpg', alt: 'Project 6' },
   ];
 
   // Dupliquer les médias plusieurs fois pour un défilement infini fluide
