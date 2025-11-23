@@ -52,8 +52,20 @@ function App() {
         }
       }
     };
+    
+    const handleNavigate = (event: Event) => {
+      const customEvent = event as CustomEvent;
+      if (customEvent.detail) {
+        setActiveSection(customEvent.detail);
+      }
+    };
+    
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('navigate', handleNavigate);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('navigate', handleNavigate);
+    };
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -64,9 +76,10 @@ function App() {
         top: offsetTop,
         behavior: 'smooth'
       });
+      // Mettre à jour immédiatement la section active
       setActiveSection(sectionId);
-      // Mettre à jour l'URL hash
-      window.location.hash = sectionId;
+      // Mettre à jour l'URL hash sans provoquer de scroll
+      history.replaceState(null, '', `#${sectionId}`);
       // Nettoyer le message de contact si on navigue ailleurs
       if (sectionId !== 'contact') {
         sessionStorage.removeItem('contactMessage');
