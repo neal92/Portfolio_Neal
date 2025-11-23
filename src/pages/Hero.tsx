@@ -15,14 +15,14 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
       </div>
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <div className="animate-fade-in-up space-y-4 sm:space-y-6">
-          {/* Photo de profil */}
+          {/* Logo */}
           <div className="flex justify-center mb-6">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 rounded-full blur-lg opacity-75 animate-pulse"></div>
               <img 
-                src="/images/profile.jpg" 
-                alt="Neal" 
-                className="relative w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full object-cover border-4 border-white dark:border-slate-800 shadow-2xl"
+                src="/images/logo.dev.png" 
+                alt="Neal Bristol Logo" 
+                className="relative w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full object-contain border-4 border-white dark:border-slate-800 shadow-2xl bg-white dark:bg-slate-900 p-4"
               />
             </div>
           </div>

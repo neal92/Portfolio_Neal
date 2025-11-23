@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 .env
 public/vidéo/demo_servicebooking.mp4
+
+# Fichiers sensibles - NE PAS COMMIT
+public/images/*.pdf
+public/images/**/*.pdf

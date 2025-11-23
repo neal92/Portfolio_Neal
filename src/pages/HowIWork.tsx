@@ -68,7 +68,8 @@ const HowIWork: React.FC = () => {
   const pricing = [
     {
       name: 'Basic Development',
-      price: '€350',
+      price: '150€',
+      pricePrefix: 'à partir de',
       description: 'You provide all specifications',
       features: [
         'Frontend & Backend development',
@@ -83,7 +84,8 @@ const HowIWork: React.FC = () => {
     },
     {
       name: 'Full Service',
-      price: '€550',
+      price: '350€',
+      pricePrefix: 'à partir de',
       description: 'Complete development with support',
       features: [
         'Complete project planning',
@@ -99,6 +101,7 @@ const HowIWork: React.FC = () => {
     {
       name: 'Custom Project',
       price: 'Contact Me',
+      pricePrefix: '',
       description: 'Tailored solutions for unique needs',
       features: [
         'Complex functionality',
@@ -260,8 +263,22 @@ const HowIWork: React.FC = () => {
                     <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">
                       {plan.description}
                     </p>
-                    <div className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                      {plan.price}
+                    <div className="relative group flex flex-col items-center">
+                      {/* Prix flouté par défaut */}
+                      <div className="transition-all duration-300 group-hover:blur-none blur-sm">
+                        {plan.pricePrefix && (
+                          <span className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mb-1 block">
+                            {plan.pricePrefix}
+                          </span>
+                        )}
+                        <div className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                          {plan.price}
+                        </div>
+                      </div>
+                      
+                      {/* Message au survol */}
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                      </div>
                     </div>
                   </div>
                   
