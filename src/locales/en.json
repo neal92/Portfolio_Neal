@@ -166,6 +166,43 @@
     "title": "Blog & Articles",
     "description": "Discover my latest articles about web development, technologies and best practices"
   },
+  "blogData": {
+    "moi": {
+      "title": "Why work with me?",
+      "question": "Why should you hire me for your web development project?",
+      "answer": "Working with me means choosing a passionate developer dedicated to your project's success. Here are some reasons why I'm the right choice:\n\n1. Technical expertise - I master modern technologies like React, Node.js, and many others, ensuring clean and performant code.\n\n2. Clear communication - I believe in transparent communication throughout the project, ensuring your needs are always understood and taken into account.\n\n3. Meeting deadlines - I commit to delivering projects within agreed timelines without compromising quality.\n\n4. Custom solutions - Each project is unique, and I strive to provide solutions tailored to your specific objectives.\n\n5. Ongoing support - My commitment doesn't stop at delivery; I'm here to help with maintenance and updates.\nIn summary, I'm passionate about web development and determined to make your project a success!"
+    },
+    "react-performance": {
+      "title": "How to optimize React performance?",
+      "question": "What are the best practices to optimize React application performance?",
+      "answer": "React performance can be optimized in several ways:\n\n1. Use React.memo() to avoid unnecessary re-renders of functional components.\n\n2. Optimize hooks:\n- useCallback to memoize functions\n- useMemo to memoize expensive calculations\n- useRef for values that don't trigger re-renders\n\n3. Code-splitting with React.lazy() and Suspense to load code on demand."
+    },
+    "typescript-benefits": {
+      "title": "Why use TypeScript?",
+      "question": "What are the advantages of TypeScript over JavaScript?",
+      "answer": "TypeScript brings many advantages to JavaScript development:\n\n1. Static typing - Detects errors at compile time rather than runtime.\n\n2. Better autocomplete - IDEs can provide more accurate suggestions.\n\n3. Safe refactoring - Renaming or modifying code becomes less risky.\n\n4. Living documentation - Types serve as auto-generated documentation.\n\nIn summary, TypeScript improves maintainability and reduces bugs in large applications."
+    },
+    "rest-api-design": {
+      "title": "How to design a REST API?",
+      "question": "What are the principles for creating a well-structured REST API?",
+      "answer": "A good REST API follows these fundamental principles:\n\n1. Use HTTP methods correctly:\n- GET to retrieve data\n- POST to create\n- PUT/PATCH to update\n- DELETE to remove\n\n2. Resource naming:\n- Use plural nouns (/users, /posts)\n- Avoid verbs in URLs\n- Clear hierarchical structure (/users/123/posts)\n\n3. Appropriate HTTP status codes:\n- 200 OK, 201 Created, 204 No Content\n- 400 Bad Request, 401 Unauthorized, 404 Not Found\n- 500 Internal Server Error\n\n4. API versioning (v1, v2) to maintain compatibility.\n\n5. Complete documentation with Swagger/OpenAPI."
+    },
+    "responsive-design": {
+      "title": "How to create responsive design?",
+      "question": "What techniques to use to make a website responsive?",
+      "answer": "Responsive design relies on several techniques:\n\n1. Mobile-First Approach - Start with mobile design then adapt for desktop.\n\n2. CSS Grid and Flexbox - Flexible layouts that adapt automatically.\n\n3. Relative units - Use rem, em, %, vh/vw instead of fixed px.\n\n4. Responsive images:\n- srcset for different resolutions\n- object-fit for image adaptation\n- lazy loading for performance"
+    },
+    "git-workflow": {
+      "title": "Which Git workflow to use?",
+      "question": "How to organize branches and commits in a Git project?",
+      "answer": "A good Git workflow improves collaboration:\n\n1. Git Flow - Classic workflow with multiple branches:\n- main/master: production code\n- develop: ongoing development\n- feature/*: new features\n- hotfix/*: urgent fixes\n\n2. Atomic commits - One commit = one logical change.\n\n3. Pull Requests with code review before merging."
+    },
+    "security-web": {
+      "title": "How to secure a web application?",
+      "question": "What security measures to implement in a web application?",
+      "answer": "Web security requires a multi-layered approach:\n\n1. Authentication & Authorization:\n- JWT with expiration\n- Secure sessions\n- OAuth 2.0 for external integration\n\n2. Protection against common attacks:\n- XSS: escape user data\n- CSRF: anti-CSRF tokens\n- SQL Injection: prepared statements\n- Clickjacking: X-Frame-Options\n\n3. Mandatory HTTPS with valid SSL/TLS certificates.\n\n4. Security headers:\n- Content-Security-Policy\n- Strict-Transport-Security\n- X-Content-Type-Options\n\n5. Data validation on both client AND server side."
+    }
+  },
   "contact": {
     "badge": "Contact",
     "title": "Contact",

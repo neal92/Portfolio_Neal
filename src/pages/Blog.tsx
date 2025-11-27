@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import blogData, { BlogPost } from '../components/blogData';
+import { getBlogData, BlogPost } from '../components/blogData';
 import { Search, Tag, Calendar, Clock, ChevronDown, ChevronUp } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
@@ -40,6 +40,7 @@ const Blog: React.FC = () => {
   const [expandedPost, setExpandedPost] = useState<string | null>(null);
 
   const categories = ['All', 'Technical', 'Tutorial', 'FAQ', 'Best Practices'];
+  const blogData = getBlogData(t);
 
   const filteredPosts = blogData.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||

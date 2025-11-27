@@ -166,6 +166,43 @@
     "title": "Blog & Articles",
     "description": "Découvrez mes derniers articles sur le développement web, les technologies et les bonnes pratiques"
   },
+  "blogData": {
+    "moi": {
+      "title": "Pourquoi travailler avec moi ?",
+      "question": "Pourquoi devriez-vous m'embaucher pour votre projet de développement web ?",
+      "answer": "Travailler avec moi signifie choisir un développeur passionné dédié au succès de votre projet. Voici quelques raisons pour lesquelles je suis le bon choix :\n\n1. Expertise technique - Je maîtrise les technologies modernes comme React, Node.js, et bien d'autres, assurant un code propre et performant.\n\n2. Communication claire - Je crois en une communication transparente tout au long du projet, assurant que vos besoins sont toujours compris et pris en compte.\n\n3. Respect des délais - Je m'engage à livrer les projets dans les délais convenus sans compromettre la qualité.\n\n4. Solutions sur mesure - Chaque projet est unique, et je m'efforce de fournir des solutions adaptées à vos objectifs spécifiques.\n\n5. Support continu - Mon engagement ne s'arrête pas à la livraison ; je suis là pour aider avec la maintenance et les mises à jour.\nEn résumé, je suis passionné par le développement web et déterminé à faire de votre projet un succès !"
+    },
+    "react-performance": {
+      "title": "Comment optimiser les performances React ?",
+      "question": "Quelles sont les meilleures pratiques pour optimiser les performances d'une application React ?",
+      "answer": "Les performances React peuvent être optimisées de plusieurs manières :\n\n1. Utilisez React.memo() pour éviter les re-rendus inutiles des composants fonctionnels.\n\n2. Optimisez les hooks :\n- useCallback pour mémoriser les fonctions\n- useMemo pour mémoriser les calculs coûteux\n- useRef pour les valeurs qui ne déclenchent pas de re-rendus\n\n3. Code-splitting avec React.lazy() et Suspense pour charger le code à la demande."
+    },
+    "typescript-benefits": {
+      "title": "Pourquoi utiliser TypeScript ?",
+      "question": "Quels sont les avantages de TypeScript par rapport à JavaScript ?",
+      "answer": "TypeScript apporte de nombreux avantages au développement JavaScript :\n\n1. Typage statique - Détecte les erreurs au moment de la compilation plutôt qu'à l'exécution.\n\n2. Meilleure autocomplétion - Les IDE peuvent fournir des suggestions plus précises.\n\n3. Refactorisation sécurisée - Renommer ou modifier le code devient moins risqué.\n\n4. Documentation vivante - Les types servent de documentation auto-générée.\n\nEn résumé, TypeScript améliore la maintenabilité et réduit les bugs dans les grandes applications."
+    },
+    "rest-api-design": {
+      "title": "Comment concevoir une API REST ?",
+      "question": "Quels sont les principes pour créer une API REST bien structurée ?",
+      "answer": "Une bonne API REST suit ces principes fondamentaux :\n\n1. Utilisez correctement les méthodes HTTP :\n- GET pour récupérer des données\n- POST pour créer\n- PUT/PATCH pour mettre à jour\n- DELETE pour supprimer\n\n2. Nommage des ressources :\n- Utilisez des noms au pluriel (/users, /posts)\n- Évitez les verbes dans les URLs\n- Structure hiérarchique claire (/users/123/posts)\n\n3. Codes de statut HTTP appropriés :\n- 200 OK, 201 Created, 204 No Content\n- 400 Bad Request, 401 Unauthorized, 404 Not Found\n- 500 Internal Server Error\n\n4. Versionnage d'API (v1, v2) pour maintenir la compatibilité.\n\n5. Documentation complète avec Swagger/OpenAPI."
+    },
+    "responsive-design": {
+      "title": "Comment créer un design responsive ?",
+      "question": "Quelles techniques utiliser pour rendre un site web responsive ?",
+      "answer": "Le design responsive repose sur plusieurs techniques :\n\n1. Approche Mobile-First - Commencez par le design mobile puis adaptez pour desktop.\n\n2. CSS Grid et Flexbox - Mises en page flexibles qui s'adaptent automatiquement.\n\n3. Unités relatives - Utilisez rem, em, %, vh/vw au lieu de px fixes.\n\n4. Images responsives :\n- srcset pour différentes résolutions\n- object-fit pour l'adaptation des images\n- lazy loading pour les performances"
+    },
+    "git-workflow": {
+      "title": "Quel workflow Git utiliser ?",
+      "question": "Comment organiser les branches et les commits dans un projet Git ?",
+      "answer": "Un bon workflow Git améliore la collaboration :\n\n1. Git Flow - Workflow classique avec plusieurs branches :\n- main/master : code de production\n- develop : développement en cours\n- feature/* : nouvelles fonctionnalités\n- hotfix/* : corrections urgentes\n\n2. Commits atomiques - Un commit = un changement logique.\n\n3. Pull Requests avec revue de code avant fusion."
+    },
+    "security-web": {
+      "title": "Comment sécuriser une application web ?",
+      "question": "Quelles mesures de sécurité implémenter dans une application web ?",
+      "answer": "La sécurité web nécessite une approche multi-couches :\n\n1. Authentification & Autorisation :\n- JWT avec expiration\n- Sessions sécurisées\n- OAuth 2.0 pour l'intégration externe\n\n2. Protection contre les attaques courantes :\n- XSS : échapper les données utilisateur\n- CSRF : tokens anti-CSRF\n- SQL Injection : requêtes préparées\n- Clickjacking : X-Frame-Options\n\n3. HTTPS obligatoire avec certificats SSL/TLS valides.\n\n4. Headers de sécurité :\n- Content-Security-Policy\n- Strict-Transport-Security\n- X-Content-Type-Options\n\n5. Validation des données côté client ET serveur."
+    }
+  },
   "contact": {
     "badge": "Contact",
     "title": "Contact",
