@@ -12,6 +12,7 @@ import ProjectDetail from './pages/ProjectDetail';
 import projectsData, { Project } from './components/projectsData.ts';
 import Loader from './components/Loader';
 import ScrollProgress from './components/ScrollProgress';
+import LanguageSwitcher from './components/LanguageSwitcher';
 
 function ProjectDetailWrapper() {
   const { id } = useParams<{ id: string }>();
@@ -91,9 +92,13 @@ function App() {
       <Loader />
       <ScrollProgress />
       <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}> 
-        {/* Boutons toggle mode sombre/clair en position fixe en haut à droite */}
+        {/* Boutons toggle mode sombre/clair et langue en position fixe en haut à droite (desktop uniquement) */}
         {!isMenuOpen && (
           <div className="fixed top-2 right-6 z-[10000] flex items-center gap-3">
+            {/* Language Switcher desktop */}
+            <div className="hidden md:block">
+              <LanguageSwitcher />
+            </div>
             <button
               onClick={() => setDarkMode(!darkMode)}
               className="p-3 rounded-full bg-transparent dark:bg-slate-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border-2 border-transparent dark:border-slate-700"

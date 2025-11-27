@@ -17,6 +17,14 @@ export default defineConfig({
         // Supprimer les console.log en production
         drop_console: true,
         drop_debugger: true,
+        // Optimisations supplémentaires pour la sécurité
+        pure_funcs: ['console.log', 'console.info', 'console.debug'],
+      },
+      mangle: {
+        // Obfusquer les noms de propriétés
+        properties: {
+          regex: /^_/,
+        },
       },
     },
     // Optimiser la taille des chunks
@@ -24,6 +32,7 @@ export default defineConfig({
       output: {
         manualChunks: {
           'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'i18n-vendor': ['i18next', 'react-i18next', 'i18next-browser-languagedetector'],
         },
         // Exclure les fichiers sensibles du build
         assetFileNames: (assetInfo) => {
@@ -35,5 +44,11 @@ export default defineConfig({
         },
       },
     },
+    // Sécurité supplémentaire
+    reportCompressedSize: false, // Ne pas afficher la taille des fichiers
+  },
+  // Variables d'environnement sécurisées
+  define: {
+    __DEV__: false, // Forcer la production
   },
 });

@@ -28,3 +28,17 @@ public/vidéo/demo_servicebooking.mp4
 # Fichiers sensibles - NE PAS COMMIT
 public/images/*.pdf
 public/images/**/*.pdf
+
+# Variables d'environnement supplémentaires
+.env.local
+.env.production.local
+.env.development.local
+
+# Clés et certificats
+*.key
+*.pem
+secrets.json
+
+# Cache et fichiers temporaires
+.cache/
+*.tmp

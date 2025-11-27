@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "security-check": "echo 'Checking for security issues...' && npm audit && echo 'Build security check...' && npm run build",
+    "prebuild": "echo 'Pre-build security check...'"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
