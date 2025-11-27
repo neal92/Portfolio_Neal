@@ -1,11 +1,13 @@
 import React from 'react';
 import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface HeroProps {
   onNavigate: (section: string) => void;
 }
 
 const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 text-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 dark:text-white flex items-center justify-center relative overflow-hidden pt-32 sm:pt-0">
       <div className="absolute inset-0 z-0">
@@ -27,22 +29,21 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             </div>
           </div>
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
-            Hello, I'm{' '}
+            {t('hero.title')}{' '}
             <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient">
               Neal
             </span>
           </h1>
           <p className="text-lg sm:text-xl lg:text-2xl text-slate-200 dark:text-slate-300 mb-2 font-light">
-            Locking for a developer ? I'm your guy !  
+            {t('hero.subtitle')}
           </p>
           <div className="inline-block p-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mb-6">
             <div className="bg-slate-900 dark:bg-slate-800 px-6 py-2 rounded-full">
-              <span className="text-sm font-medium text-blue-300 dark:text-blue-200">Available for opportunities</span>
+              <span className="text-sm font-medium text-blue-300 dark:text-blue-200">{t('hero.available')}</span>
             </div>
           </div>
           <p className="text-base sm:text-lg lg:text-xl text-slate-300 dark:text-slate-400 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-            Crafting exceptional digital experiences with modern technologies, clean architecture, and pixel-perfect design. 
-            Affordable pricing to help you launch your project without breaking the bank.
+            {t('hero.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12">
             <button
@@ -50,7 +51,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
               className="group relative bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white dark:text-white px-6 py-2.5 sm:px-8 sm:py-3 rounded-2xl font-semibold text-sm sm:text-base transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25 w-full sm:w-auto"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-              View My Work
+              {t('hero.viewWork')}
             </button>
             <a
               href="#contact"
@@ -58,7 +59,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
               className="group relative bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white dark:text-white px-6 py-2.5 sm:px-8 sm:py-3 rounded-2xl font-semibold text-sm sm:text-base transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/25 w-full sm:w-auto"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-pink-400 to-purple-400 rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-              Get In Touch
+              {t('hero.getInTouch')}
             </a>
             {/* Icônes en dessous sur mobile */}
             <div className="flex gap-4 mt-6 sm:mt-0 sm:ml-6 sm:flex-row flex-row sm:items-center items-center sm:static justify-center w-full sm:w-auto">

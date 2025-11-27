@@ -1,0 +1,185 @@
+{
+  "hero": {
+    "title": "Hello, I'm",
+    "subtitle": "Looking for a developer? I'm your guy!",
+    "available": "Available for opportunities",
+    "description": "Crafting exceptional digital experiences with modern technologies, clean architecture, and pixel-perfect design. Affordable pricing to help you launch your project without breaking the bank.",
+    "viewWork": "View My Work",
+    "getInTouch": "Get In Touch"
+  },
+  "about": {
+    "badge": "Get to know me",
+    "title": "About Me",
+    "description": "I am a passionate web developer based in Paris, specialized in building modern, high-quality digital solutions. My expertise covers a wide range of website and application types: from elegant portfolios and professional showcase sites to dynamic e-commerce platforms and powerful web applications. I offer you work that is not only well-structured and efficient, but also creative, user-friendly, and tailored to your specific needs. With me, you get a reliable partner who transforms your ideas into impactful digital experiences.",
+    "services": {
+      "showcase": {
+        "title": "Showcase Websites",
+        "description": "Presenting businesses, associations, or freelancers with simple, elegant pages."
+      },
+      "portfolios": {
+        "title": "Portfolios",
+        "description": "Highlighting personal or professional achievements, skills, and projects."
+      },
+      "blogs": {
+        "title": "Blogs & Magazines",
+        "description": "Sharing articles, news, and tutorials with categorized content and subscriptions."
+      },
+      "ecommerce": {
+        "title": "E-commerce",
+        "description": "Online stores with product catalogs, shopping carts, and secure payments."
+      },
+      "webapps": {
+        "title": "Web Applications",
+        "description": "Interactive online services with dynamic features and user spaces."
+      },
+      "landing": {
+        "title": "Landing Pages",
+        "description": "Single-page campaigns for products, apps, or newsletters."
+      }
+    },
+    "education": "Education & Qualifications",
+    "gallery": {
+      "badge": "Gallery",
+      "title": "My Work & Journey",
+      "description": "A visual showcase of my projects and experiences"
+    }
+  },
+  "projects": {
+    "badge": "My work",
+    "title": "Projects",
+    "description": "Innovative solutions that demonstrate technical excellence and creative problem-solving",
+    "demo": "Contact me for a demo",
+    "noProjects": "No projects found"
+  },
+  "projectsData": {
+    "service-booking": {
+      "title": "Saas Service Booking",
+      "description": "A comprehensive service booking platform with real-time availability, user management, and advanced reporting capabilities.",
+      "longDescription": "Saas Service Booking is a modern web application that allows users to book services in real time, manage their accounts, and access advanced reporting. The platform is built with React and Node.js, featuring a clean UI, secure authentication, and scalable architecture. It is ideal for businesses looking to streamline their booking process and improve customer experience.",
+      "functionalities": "• Real-time booking\n• User management\n• Advanced reporting\n• Secure authentication\n• Scalable architecture"
+    },
+    "audittab-cloud": {
+      "title": "Audittab Cloud",
+      "description": "Audittab allows you to create, manage, and track your field audits with ease. A modern solution for high-performing teams.",
+      "longDescription": "This is a detailed description of your new project. Explain what problem it solves, the technologies used, and what makes it unique. Add details about the architecture, features, and any challenges you overcame during development.",
+      "functionalities": "• Feature 1\n• Feature 2\n• Feature 3\n• Feature 4\n• Feature 5"
+    },
+    "salon-coiffure": {
+      "title": "Hair Salon Website",
+      "description": "A modern hair salon website with online booking system and style gallery.",
+      "longDescription": "This website is designed for a hair salon, allowing customers to book appointments online, browse a style gallery, and discover available services. The site is built with Next.js for optimal performance and smooth user experience.",
+      "functionalities": "• Secure payment processing\n• Inventory management\n• Customer analytics\n• Order tracking\n• Admin dashboard\n• Mobile responsive design"
+    }
+  },
+  "skills": {
+    "badge": "My skills",
+    "title": "Technologies & Tools",
+    "description": "Complete set of skills to create modern and performant web solutions"
+  },
+  "howIWork": {
+    "badge": "How I work",
+    "title": "Simple Process, Quality Results",
+    "description": "From initial consultation to final launch, I guide you through every step with transparency and professionalism",
+    "process": {
+      "discovery": {
+        "title": "Discovery Call",
+        "description": "Free 30-minute consultation to understand your needs and goals"
+      },
+      "planning": {
+        "title": "Planning & Design", 
+        "description": "Create a detailed project plan with mockups and timeline"
+      },
+      "development": {
+        "title": "Development",
+        "description": "Build your project with clean code and modern technologies"
+      },
+      "testing": {
+        "title": "Testing & Launch",
+        "description": "Rigorous testing and smooth deployment to production"
+      }
+    },
+    "pricing": {
+      "badge": "Transparent",
+      "title": "Transparent Pricing",
+      "description": "All prices are negotiable depending on the project requirements and complexity. Let's discuss your needs to find the perfect solution.",
+      "plans": {
+        "basic": {
+          "name": "Basic Development",
+          "pricePrefix": "as of",
+          "description": "You provide all specifications",
+          "features": [
+            "Frontend & Backend development",
+            "Database integration",
+            "Based on your specifications",
+            "Your design/template required",
+            "Technical requirements needed",
+            "No design or planning included"
+          ],
+          "badge": "Budget-Friendly"
+        },
+        "full": {
+          "name": "Full Service",
+          "pricePrefix": "as of",
+          "description": "Complete development with support",
+          "features": [
+            "Complete project planning",
+            "Custom mockup & design",
+            "Specifications document included",
+            "Frontend & Backend development",
+            "Database integration",
+            "Full guidance & support"
+          ],
+          "badge": "Most Popular"
+        },
+        "custom": {
+          "name": "Custom Project",
+          "price": "Contact Me",
+          "description": "Tailored solutions for unique needs",
+          "features": [
+            "Complex functionality",
+            "Advanced integrations",
+            "Large-scale applications",
+            "E-commerce platforms",
+            "Custom API development",
+            "Personalized quote"
+          ],
+          "badge": "Enterprise"
+        }
+      }
+    },
+    "support": {
+      "title": "Complete Support & Hosting",
+      "description": "30 days free support after launch",
+      "fastDelivery": "Fast Delivery",
+      "fastDeliveryDesc": "Respect deadlines and milestones",
+      "hosting": "Hosting Partner",
+      "hostingDesc": "Simple & affordable hosting solutions included",
+      "hostingDetail": "Hosting Partner: I collaborate with a reliable hosting provider to offer you simple, fast, and secure hosting at just €5/month, including domain name and maintenance.",
+      "domain": "✓ Domain name included",
+      "maintenance": "✓ Regular maintenance",
+      "ssl": "✓ SSL Certificate",
+      "uptime": "✓ 99.9% Uptime"
+    }
+  },
+  "blog": {
+    "badge": "Latest news",
+    "title": "Blog & Articles",
+    "description": "Discover my latest articles about web development, technologies and best practices"
+  },
+  "contact": {
+    "badge": "Contact",
+    "title": "Contact",
+    "description": "Let's build something great together! Send me a message or connect via social networks below.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "direct": "Or contact me directly:",
+    "social": "Or contact me directly:"
+  },
+  "footer": "© 2024 Neal Bristol Portfolio. All rights reserved.",
+  "language": {
+    "fr": "Français",
+    "en": "English"
+  }
+}

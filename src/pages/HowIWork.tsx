@@ -1,5 +1,6 @@
 import React from 'react';
 import { CheckCircle2, Rocket, Code, TestTube, Zap, Shield, Headphones, Server } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 // Animation fade-in au scroll
 const FadeInSection: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -33,33 +34,34 @@ const FadeInSection: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 };
 
 const HowIWork: React.FC = () => {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = React.useState<'process' | 'pricing'>('process');
   const process = [
     {
       step: '1',
-      title: 'Discovery Call',
-      description: 'Free 30-minute consultation to understand your needs and goals',
+      title: t('howIWork.process.discovery.title'),
+      description: t('howIWork.process.discovery.description'),
       icon: Headphones,
       color: 'from-blue-500 to-cyan-500',
     },
     {
       step: '2',
-      title: 'Planning & Design',
-      description: 'Create a detailed project plan with mockups and timeline',
+      title: t('howIWork.process.planning.title'),
+      description: t('howIWork.process.planning.description'),
       icon: Code,
       color: 'from-purple-500 to-pink-500',
     },
     {
       step: '3',
-      title: 'Development',
-      description: 'Build your project with clean code and modern technologies',
+      title: t('howIWork.process.development.title'),
+      description: t('howIWork.process.development.description'),
       icon: Rocket,
       color: 'from-orange-500 to-red-500',
     },
     {
       step: '4',
-      title: 'Testing & Launch',
-      description: 'Rigorous testing and smooth deployment to production',
+      title: t('howIWork.process.testing.title'),
+      description: t('howIWork.process.testing.description'),
       icon: TestTube,
       color: 'from-green-500 to-emerald-500',
     },
@@ -67,70 +69,49 @@ const HowIWork: React.FC = () => {
 
   const pricing = [
     {
-      name: 'Basic Development',
+      name: t('howIWork.pricing.plans.basic.name'),
       price: '125€',
-      pricePrefix: 'as of',
-      description: 'You provide all specifications',
-      features: [
-        'Frontend & Backend development',
-        'Database integration',
-        'Based on your specifications',
-        'Your design/template required',
-        'Technical requirements needed',
-        'No design or planning included',
-      ],
+      pricePrefix: t('howIWork.pricing.plans.basic.pricePrefix') || '',
+      description: t('howIWork.pricing.plans.basic.description'),
+      features: t('howIWork.pricing.plans.basic.features', { returnObjects: true }) as string[],
       highlight: false,
-      badge: 'Budget-Friendly',
+      badge: t('howIWork.pricing.plans.basic.badge'),
     },
     {
-      name: 'Full Service',
+      name: t('howIWork.pricing.plans.full.name'),
       price: '250€',
-      pricePrefix: 'as of',
-      description: 'Complete development with support',
-      features: [
-        'Complete project planning',
-        'Custom mockup & design',
-        'Specifications document included',
-        'Frontend & Backend development',
-        'Database integration',
-        'Full guidance & support',
-      ],
+      pricePrefix: t('howIWork.pricing.plans.full.pricePrefix') || '',
+      description: t('howIWork.pricing.plans.full.description'),
+      features: t('howIWork.pricing.plans.full.features', { returnObjects: true }) as string[],
       highlight: true,
-      badge: 'Most Popular',
+      badge: t('howIWork.pricing.plans.full.badge'),
     },
     {
-      name: 'Custom Project',
-      price: 'Contact Me',
+      name: t('howIWork.pricing.plans.custom.name'),
+      price: t('howIWork.pricing.plans.custom.price'),
       pricePrefix: '',
-      description: 'Tailored solutions for unique needs',
-      features: [
-        'Complex functionality',
-        'Advanced integrations',
-        'Large-scale applications',
-        'E-commerce platforms',
-        'Custom API development',
-        'Personalized quote',
-      ],
+      description: t('howIWork.pricing.plans.custom.description'),
+      features: t('howIWork.pricing.plans.custom.features', { returnObjects: true }) as string[],
       highlight: false,
-      badge: 'Enterprise',
+      badge: t('howIWork.pricing.plans.custom.badge'),
     },
   ];
 
   const support = [
     {
       icon: Shield,
-      title: 'Guaranteed Support',
-      description: '30 days free support after launch',
+      title: t('howIWork.support.fastDelivery'),
+      description: t('howIWork.support.fastDeliveryDesc'),
     },
     {
       icon: Zap,
-      title: 'Fast Delivery',
-      description: 'Respect deadlines and milestones',
+      title: t('howIWork.support.hosting'),
+      description: t('howIWork.support.hostingDesc'),
     },
     {
       icon: Server,
-      title: 'Hosting Partner',
-      description: 'Simple & affordable hosting solutions included',
+      title: t('howIWork.support.domain'),
+      description: t('howIWork.support.maintenance'),
     },
   ];
 
@@ -149,15 +130,15 @@ const HowIWork: React.FC = () => {
             <div className="inline-block p-1 bg-gradient-to-r from-blue-500 to-purple-500 dark:from-blue-900 dark:to-purple-900 rounded-full mb-4 sm:mb-6">
               <div className="bg-white dark:bg-slate-900 px-4 py-1 sm:px-5 sm:py-1.5 rounded-full">
                 <span className="text-xs font-semibold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
-                  How I Work
+                  {t('howIWork.badge')}
                 </span>
               </div>
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-slate-800 dark:text-white mb-4 sm:mb-6 leading-tight">
-              Simple Process, Quality Results
+              {t('howIWork.title')}
             </h2>
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
-              From initial consultation to final launch, I guide you through every step with transparency and professionalism
+              {t('howIWork.description')}
             </p>
           </div>
         </FadeInSection>
@@ -232,10 +213,10 @@ const HowIWork: React.FC = () => {
         <FadeInSection>
           <div className={`mb-16 sm:mb-20 ${activeTab === 'pricing' ? 'block' : 'hidden md:block'}`}>
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-800 dark:text-white mb-8 sm:mb-12 text-center">
-              Transparent Pricing
+              {t('howIWork.pricing.title')}
             </h3>
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed mb-8 text-center">
-              All prices are negotiable depending on the project requirements and complexity. Let's discuss your needs to find the perfect solution.
+              {t('howIWork.pricing.description')}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
               {pricing.map((plan, index) => (
@@ -314,7 +295,7 @@ const HowIWork: React.FC = () => {
         <FadeInSection>
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-900 dark:to-purple-900 rounded-3xl p-8 sm:p-12 shadow-2xl">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-8 sm:mb-12 text-center">
-              Complete Support & Hosting
+              {t('howIWork.support.title')}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
               {support.map((item, index) => {
@@ -337,21 +318,20 @@ const HowIWork: React.FC = () => {
             
             <div className="mt-10 text-center">
               <p className="text-white text-base sm:text-lg mb-6">
-                <strong>Hosting Partner:</strong> I collaborate with a reliable hosting provider to offer you simple, 
-                fast, and secure hosting at just <strong>€5/month</strong>, including domain name and maintenance.
+                {t('howIWork.support.hostingDetail')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
                 <div className="bg-white/20 backdrop-blur-sm rounded-xl px-4 sm:px-6 py-3 text-white text-sm sm:text-base">
-                  ✓ Domain name included
+                  {t('howIWork.support.domain')}
                 </div>
                 <div className="bg-white/20 backdrop-blur-sm rounded-xl px-4 sm:px-6 py-3 text-white text-sm sm:text-base">
-                  ✓ Regular maintenance
+                  {t('howIWork.support.maintenance')}
                 </div>
                 <div className="bg-white/20 backdrop-blur-sm rounded-xl px-4 sm:px-6 py-3 text-white text-sm sm:text-base">
-                  ✓ SSL Certificate
+                  {t('howIWork.support.ssl')}
                 </div>
                 <div className="bg-white/20 backdrop-blur-sm rounded-xl px-4 sm:px-6 py-3 text-white text-sm sm:text-base">
-                  ✓ 99.9% Uptime
+                  {t('howIWork.support.uptime')}
                 </div>
               </div>
             </div>

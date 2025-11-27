@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 // Animation fade-in au scroll
 const FadeInSection: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -32,6 +33,7 @@ const FadeInSection: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 };
 
 const About: React.FC = () => {
+  const { t } = useTranslation();
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
 
   // Images et vidéos du carousel
@@ -82,57 +84,53 @@ const About: React.FC = () => {
           <div className="inline-block p-1 bg-gradient-to-r from-blue-500 to-purple-500 dark:from-blue-900 dark:to-purple-900 rounded-full mb-6">
             <div className="bg-white dark:bg-slate-900 px-5 py-1.5 rounded-full">
               <span className="text-xs font-semibold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
-                Get to know me
+                {t('about.badge')}
               </span>
             </div>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 dark:text-white mb-6 leading-tight">
-            <span className="text-slate-800 dark:text-white">About Me</span>
+            <span className="text-slate-800 dark:text-white">{t('about.title')}</span>
           </h2>
           <p className="text-lg text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed font-light mb-6">
-              I am a passionate web developer based in Paris, specialized in building modern, high-quality digital solutions. 
-              My expertise covers a wide range of website and application types: from elegant portfolios and professional showcase sites to 
-              dynamic e-commerce platforms and powerful web applications. I offer you work that is not only well-structured and efficient, 
-              but also creative, user-friendly, and tailored to your specific needs. With me, you get a reliable partner who transforms 
-              your ideas into impactful digital experiences.
+              {t('about.description')}
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-8 mb-8 sm:mb-12">
             {/* 1. Sites vitrines */}
             <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-3 sm:p-4 lg:p-6 flex flex-col items-center">
               <img src="/images/vitrine.png" alt="Sites vitrines" className="w-20 h-16 sm:w-28 sm:h-24 lg:w-35 lg:h-30 mb-2 sm:mb-3 lg:mb-4" />
-              <h3 className="text-sm sm:text-base lg:text-xl font-bold mb-1 sm:mb-2 text-slate-800 dark:text-white text-center">Showcase Websites</h3>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 text-center">Presenting businesses, associations, or freelancers with simple, elegant pages.</p>
+              <h3 className="text-sm sm:text-base lg:text-xl font-bold mb-1 sm:mb-2 text-slate-800 dark:text-white text-center">{t('about.services.showcase.title')}</h3>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 text-center">{t('about.services.showcase.description')}</p>
             </div>
             {/* 2. Portfolios */}
             <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-3 sm:p-4 lg:p-6 flex flex-col items-center">
               <img src="/images/portfolio.png" alt="Portfolio" className="w-20 h-16 sm:w-28 sm:h-24 lg:w-35 lg:h-30 mb-2 sm:mb-3 lg:mb-4" />
-              <h3 className="text-sm sm:text-base lg:text-xl font-bold mb-1 sm:mb-2 text-slate-800 dark:text-white text-center">Portfolios</h3>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 text-center">Highlighting personal or professional achievements, skills, and projects.</p>
+              <h3 className="text-sm sm:text-base lg:text-xl font-bold mb-1 sm:mb-2 text-slate-800 dark:text-white text-center">{t('about.services.portfolios.title')}</h3>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 text-center">{t('about.services.portfolios.description')}</p>
             </div>
             {/* 3. Blogs / Magazines */}
             <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-3 sm:p-4 lg:p-6 flex flex-col items-center">
               <img src="/images/blog.png" alt="Blog" className="w-20 h-16 sm:w-28 sm:h-24 lg:w-35 lg:h-30 mb-2 sm:mb-3 lg:mb-4" />
-              <h3 className="text-sm sm:text-base lg:text-xl font-bold mb-1 sm:mb-2 text-slate-800 dark:text-white text-center">Blogs & Magazines</h3>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 text-center">Sharing articles, news, and tutorials with categorized content and subscriptions.</p>
+              <h3 className="text-sm sm:text-base lg:text-xl font-bold mb-1 sm:mb-2 text-slate-800 dark:text-white text-center">{t('about.services.blogs.title')}</h3>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 text-center">{t('about.services.blogs.description')}</p>
             </div>
             {/* 4. E-commerce */}
             <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-3 sm:p-4 lg:p-6 flex flex-col items-center">
               <img src="/images/ecommerce.jpg" alt="E-commerce" className="w-20 h-16 sm:w-28 sm:h-24 lg:w-35 lg:h-30 mb-2 sm:mb-3 lg:mb-4" />
-              <h3 className="text-sm sm:text-base lg:text-xl font-bold mb-1 sm:mb-2 text-slate-800 dark:text-white text-center">E-commerce</h3>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 text-center">Online stores with product catalogs, shopping carts, and secure payments.</p>
+              <h3 className="text-sm sm:text-base lg:text-xl font-bold mb-1 sm:mb-2 text-slate-800 dark:text-white text-center">{t('about.services.ecommerce.title')}</h3>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 text-center">{t('about.services.ecommerce.description')}</p>
             </div>
             {/* 5. Web Apps */}
             <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-3 sm:p-4 lg:p-6 flex flex-col items-center">
               <img src="/images/webapp.jpg" alt="Web App" className="w-20 h-16 sm:w-28 sm:h-24 lg:w-35 lg:h-30 mb-2 sm:mb-3 lg:mb-4" />
-              <h3 className="text-sm sm:text-base lg:text-xl font-bold mb-1 sm:mb-2 text-slate-800 dark:text-white text-center">Web Applications</h3>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 text-center">Interactive online services with dynamic features and user spaces.</p>
+              <h3 className="text-sm sm:text-base lg:text-xl font-bold mb-1 sm:mb-2 text-slate-800 dark:text-white text-center">{t('about.services.webapps.title')}</h3>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 text-center">{t('about.services.webapps.description')}</p>
             </div>
             {/* 9. Landing Pages */}
             <div className="bg-white dark:bg-slate-900 rounded-xl shadow p-3 sm:p-4 lg:p-6 flex flex-col items-center">
               <img src="/images/landing.jpg" alt="Landing Page" className="w-20 h-16 sm:w-28 sm:h-24 lg:w-35 lg:h-30 mb-2 sm:mb-3 lg:mb-4" />
-              <h3 className="text-sm sm:text-base lg:text-xl font-bold mb-1 sm:mb-2 text-slate-800 dark:text-white text-center">Landing Pages</h3>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 text-center">Single-page campaigns for products, apps, or newsletters.</p>
+              <h3 className="text-sm sm:text-base lg:text-xl font-bold mb-1 sm:mb-2 text-slate-800 dark:text-white text-center">{t('about.services.landing.title')}</h3>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 text-center">{t('about.services.landing.description')}</p>
             </div>
           </div>
           <br></br>
@@ -143,15 +141,15 @@ const About: React.FC = () => {
               <div className="inline-block p-1 bg-gradient-to-r from-blue-500 to-purple-500 dark:from-blue-900 dark:to-purple-900 rounded-full mb-4 sm:mb-6">
                 <div className="bg-white dark:bg-slate-900 px-4 py-1 sm:px-5 sm:py-1.5 rounded-full">
                   <span className="text-xs font-semibold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
-                    Gallery
+                    {t('about.gallery.badge')}
                   </span>
                 </div>
               </div>
               <h3 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-slate-800 dark:text-white mb-6 sm:mb-12 tracking-tight">
-                My Work & Journey
+                {t('about.gallery.title')}
               </h3>
               <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed font-light mb-8">
-                A visual showcase of my projects and experiences
+                {t('about.gallery.description')}
               </p>
             </div>
 
@@ -194,7 +192,7 @@ const About: React.FC = () => {
           </div>
 
 <section className="w-full mb-12 sm:mb-16">
-  <h3 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-slate-800 dark:text-white mb-6 sm:mb-12 tracking-tight text-center">Education & Qualifications</h3>
+  <h3 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-slate-800 dark:text-white mb-6 sm:mb-12 tracking-tight text-center">{t('about.education')}</h3>
   <div className="relative max-w-2xl mx-auto">
     {/* Ligne centrale */}
     <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-400 to-purple-400"></div>

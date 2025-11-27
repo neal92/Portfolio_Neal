@@ -91,9 +91,9 @@ function App() {
       <Loader />
       <ScrollProgress />
       <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}> 
-        {/* Bouton toggle mode sombre/clair en position fixe en haut à droite */}
+        {/* Boutons toggle mode sombre/clair en position fixe en haut à droite */}
         {!isMenuOpen && (
-          <div className="fixed top-2 right-6 z-[10000]">
+          <div className="fixed top-2 right-6 z-[10000] flex items-center gap-3">
             <button
               onClick={() => setDarkMode(!darkMode)}
               className="p-3 rounded-full bg-transparent dark:bg-slate-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border-2 border-transparent dark:border-slate-700"

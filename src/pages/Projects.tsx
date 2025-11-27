@@ -29,15 +29,18 @@ const FadeInSection: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   );
 };
 import React from 'react';
-import projectsData from '../components/projectsData';
+import { getProjectsData } from '../components/projectsData';
 import { ExternalLink } from 'lucide-react';
 import ProjectCarousel from '../components/ProjectCarousel';
+import { useTranslation } from 'react-i18next';
 
 // Utilise projectsData importé
 
 const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = React.useState<number>(0);
+  const { t } = useTranslation();
 
+  const projectsData = getProjectsData(t);
   const currentProject = projectsData[selectedProject] || projectsData[0];
   
   // Protection si pas de projet
@@ -45,7 +48,7 @@ const Projects: React.FC = () => {
     return (
       <div className="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-pink-50 to-slate-50 dark:from-slate-900 dark:to-slate-800">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xl text-slate-600 dark:text-slate-400">No projects found</p>
+          <p className="text-xl text-slate-600 dark:text-slate-400">{t('projects.noProjects')}</p>
         </div>
       </div>
     );
@@ -64,15 +67,15 @@ const Projects: React.FC = () => {
             <div className="inline-block p-1 bg-gradient-to-r from-green-500 to-blue-500 dark:from-green-900 dark:to-blue-900 rounded-full mb-4 sm:mb-6">
               <div className="bg-white dark:bg-slate-900 px-4 py-1 sm:px-5 sm:py-1.5 rounded-full">
                 <span className="text-xs font-semibold bg-gradient-to-r from-green-600 to-blue-600 dark:from-green-400 dark:to-blue-400 bg-clip-text text-transparent">
-                  My work
+                  {t('projects.badge')}
                 </span>
               </div>
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-slate-800 dark:text-white mb-4 sm:mb-6 leading-tight">
-               Projects
+               {t('projects.title')}
             </h2>
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed font-light">
-              Innovative solutions that demonstrate technical excellence and creative problem-solving
+              {t('projects.description')}
             </p>
           </div>
 
@@ -180,7 +183,7 @@ const Projects: React.FC = () => {
                         style={{ boxShadow: '0 0 12px 2px #a78bfa, 0 0 4px 1px #3b82f6' }}
                       >
                         <ExternalLink size={18} className="mr-2 group-hover/btn:rotate-12 transition-transform duration-300" />
-                        Contact me for a demo
+                        {t('projects.demo')}
                       </button>
                     </div>
                   </div>

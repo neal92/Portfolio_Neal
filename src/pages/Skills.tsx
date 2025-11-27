@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 // Animation fade-in au scroll
 const FadeInSection: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const ref = React.useRef<HTMLDivElement>(null);
@@ -51,6 +52,7 @@ import vite from '/public/images/tools/vite.svg';
 
 
 const Skills: React.FC = () => {
+  const { t } = useTranslation();
   const frontendSkills = [
     { name: 'React', level: 85, color: 'from-blue-500 to-blue-600' },
     { name: 'JavaScript/TypeScript', level: 80, color: 'from-yellow-500 to-orange-500' },
@@ -97,15 +99,15 @@ const Skills: React.FC = () => {
               <div className="inline-block p-1 bg-gradient-to-r from-purple-500 to-pink-500 dark:from-purple-900 dark:to-pink-900 rounded-full mb-4 sm:mb-6">
                 <div className="bg-white dark:bg-slate-900 px-4 py-1 sm:px-5 sm:py-1.5 rounded-full">
                   <span className="text-xs font-semibold bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
-                    My expertise
+                    {t('skills.badge')}
                   </span>
                 </div>
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-slate-800 dark:text-white mb-4 sm:mb-6 leading-tight">
-                Skills & Technologies
+                {t('skills.title')}
               </h2>
               <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed font-light">
-                A comprehensive toolkit spanning the full development spectrum
+                {t('skills.description')}
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16">

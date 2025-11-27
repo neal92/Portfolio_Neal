@@ -1,0 +1,185 @@
+{
+  "hero": {
+    "title": "Bonjour, je suis",
+    "subtitle": "À la recherche d'un développeur ? Je suis votre homme !",
+    "available": "Disponible pour des opportunités",
+    "description": "Création d'expériences digitales exceptionnelles avec des technologies modernes, une architecture propre et un design pixel-perfect. Tarification abordable pour lancer votre projet sans vous ruiner.",
+    "viewWork": "Voir mon travail",
+    "getInTouch": "Me contacter"
+  },
+  "about": {
+    "badge": "Faites connaissance",
+    "title": "À propos de moi",
+    "description": "Je suis un développeur web passionné basé à Paris, spécialisé dans la création de solutions digitales modernes et de haute qualité. Mon expertise couvre une large gamme de types de sites web et d'applications : des portfolios élégants et des sites vitrines professionnels aux plateformes e-commerce dynamiques et aux puissantes applications web. Je vous offre un travail non seulement bien structuré et efficace, mais aussi créatif, convivial et adapté à vos besoins spécifiques. Avec moi, vous obtenez un partenaire fiable qui transforme vos idées en expériences digitales percutantes.",
+    "services": {
+      "showcase": {
+        "title": "Sites vitrines",
+        "description": "Présentation d'entreprises, associations ou freelances avec des pages simples et élégantes."
+      },
+      "portfolios": {
+        "title": "Portfolios",
+        "description": "Mise en valeur des réalisations personnelles ou professionnelles, compétences et projets."
+      },
+      "blogs": {
+        "title": "Blogs & Magazines",
+        "description": "Partage d'articles, actualités et tutoriels avec du contenu catégorisé et des abonnements."
+      },
+      "ecommerce": {
+        "title": "E-commerce",
+        "description": "Boutiques en ligne avec catalogues produits, paniers d'achat et paiements sécurisés."
+      },
+      "webapps": {
+        "title": "Applications Web",
+        "description": "Services en ligne interactifs avec fonctionnalités dynamiques et espaces utilisateurs."
+      },
+      "landing": {
+        "title": "Pages de destination",
+        "description": "Campagnes monopages pour produits, apps ou newsletters."
+      }
+    },
+    "education": "Éducation & Qualifications",
+    "gallery": {
+      "badge": "Galerie",
+      "title": "Mon travail & parcours",
+      "description": "Une vitrine visuelle de mes projets et expériences"
+    }
+  },
+  "projects": {
+    "badge": "Mon travail",
+    "title": "Projets",
+    "description": "Solutions innovantes qui démontrent l'excellence technique et la résolution créative de problèmes",
+    "demo": "Contactez-moi pour une démo",
+    "noProjects": "Aucun projet trouvé"
+  },
+  "projectsData": {
+    "service-booking": {
+      "title": "Saas Réservation de Services",
+      "description": "Une plateforme complète de réservation de services avec disponibilité en temps réel, gestion des utilisateurs et capacités de reporting avancées.",
+      "longDescription": "Saas Service Booking est une application web moderne qui permet aux utilisateurs de réserver des services en temps réel, gérer leurs comptes et accéder à des rapports avancés. La plateforme est construite avec React et Node.js, offrant une interface utilisateur propre, une authentification sécurisée et une architecture évolutive. Elle est idéale pour les entreprises cherchant à rationaliser leur processus de réservation et améliorer l'expérience client.",
+      "functionalities": "• Réservation en temps réel\n• Gestion des utilisateurs\n• Reporting avancé\n• Authentification sécurisée\n• Architecture évolutive"
+    },
+    "audittab-cloud": {
+      "title": "Audittab Cloud",
+      "description": "Audittab vous permet de créer, gérer et suivre vos audits sur le terrain facilement. Une solution moderne pour les équipes performantes.",
+      "longDescription": "Ceci est une description détaillée de votre nouveau projet. Expliquez quel problème il résout, les technologies utilisées et ce qui le rend unique. Ajoutez des détails sur l'architecture, les fonctionnalités et les défis que vous avez surmontés pendant le développement.",
+      "functionalities": "• Fonctionnalité 1\n• Fonctionnalité 2\n• Fonctionnalité 3\n• Fonctionnalité 4\n• Fonctionnalité 5"
+    },
+    "salon-coiffure": {
+      "title": "Site Web Salon de Coiffure",
+      "description": "Un site web moderne de salon de coiffure avec système de réservation en ligne et galerie de styles.",
+      "longDescription": "Ce site web est conçu pour un salon de coiffure, permettant aux clients de prendre rendez-vous en ligne, parcourir une galerie de styles et découvrir les services disponibles. Le site est construit avec Next.js pour des performances optimales et une expérience utilisateur fluide.",
+      "functionalities": "• Traitement de paiement sécurisé\n• Gestion des stocks\n• Analyse des clients\n• Suivi des commandes\n• Tableau de bord administrateur\n• Design responsive mobile"
+    }
+  },
+  "skills": {
+    "badge": "Mes compétences",
+    "title": "Technologies & Outils",
+    "description": "Ensemble complet de compétences pour créer des solutions web modernes et performantes"
+  },
+  "howIWork": {
+    "badge": "Comment je travaille",
+    "title": "Processus simple, résultats de qualité",
+    "description": "De la consultation initiale au lancement final, je vous guide à travers chaque étape avec transparence et professionnalisme",
+    "process": {
+      "discovery": {
+        "title": "Appel de découverte",
+        "description": "Consultation gratuite de 30 minutes pour comprendre vos besoins et objectifs"
+      },
+      "planning": {
+        "title": "Planification & Design",
+        "description": "Créer un plan de projet détaillé avec maquettes et calendrier"
+      },
+      "development": {
+        "title": "Développement",
+        "description": "Construire votre projet avec du code propre et des technologies modernes"
+      },
+      "testing": {
+        "title": "Tests & Lancement",
+        "description": "Tests rigoureux et déploiement fluide en production"
+      }
+    },
+    "pricing": {
+      "badge": "Transparent",
+      "title": "Tarification transparente",
+      "description": "Tous les prix sont négociables selon les exigences du projet et sa complexité. Discutons de vos besoins pour trouver la solution parfaite.",
+      "plans": {
+        "basic": {
+          "name": "Développement basique",
+          "pricePrefix": "à partir de",
+          "description": "Vous fournissez toutes les spécifications",
+          "features": [
+            "Développement Frontend & Backend",
+            "Intégration base de données",
+            "Basé sur vos spécifications",
+            "Design/template requis",
+            "Exigences techniques nécessaires",
+            "Pas de design ou planification inclus"
+          ],
+          "badge": "Économique"
+        },
+        "full": {
+          "name": "Service complet",
+          "pricePrefix": "à partir de",
+          "description": "Développement complet avec support",
+          "features": [
+            "Planification complète du projet",
+            "Maquette & design personnalisé",
+            "Document de spécifications inclus",
+            "Développement Frontend & Backend",
+            "Intégration base de données",
+            "Accompagnement & support complet"
+          ],
+          "badge": "Le plus populaire"
+        },
+        "custom": {
+          "name": "Projet personnalisé",
+          "price": "Contactez-moi",
+          "description": "Solutions adaptées aux besoins uniques",
+          "features": [
+            "Fonctionnalités complexes",
+            "Intégrations avancées",
+            "Applications à grande échelle",
+            "Plateformes e-commerce",
+            "Développement API personnalisé",
+            "Devis personnalisé"
+          ],
+          "badge": "Entreprise"
+        }
+      }
+    },
+    "support": {
+      "title": "Support & Hébergement complet",
+      "description": "Support garanti de 30 jours après lancement",
+      "fastDelivery": "Livraison rapide",
+      "fastDeliveryDesc": "Respect des délais et jalons",
+      "hosting": "Partenaire hébergement",
+      "hostingDesc": "Solutions d'hébergement simples et abordables incluses",
+      "hostingDetail": "Partenaire hébergement : Je collabore avec un fournisseur d'hébergement fiable pour vous offrir un hébergement simple, rapide et sécurisé à seulement 5€/mois, incluant nom de domaine et maintenance.",
+      "domain": "✓ Nom de domaine inclus",
+      "maintenance": "✓ Maintenance régulière",
+      "ssl": "✓ Certificat SSL",
+      "uptime": "✓ 99.9% de disponibilité"
+    }
+  },
+  "blog": {
+    "badge": "Dernières actualités",
+    "title": "Blog & Articles",
+    "description": "Découvrez mes derniers articles sur le développement web, les technologies et les bonnes pratiques"
+  },
+  "contact": {
+    "badge": "Contact",
+    "title": "Contact",
+    "description": "Construisons quelque chose de génial ensemble ! Envoyez-moi un message ou connectez-vous via les réseaux sociaux ci-dessous.",
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "send": "Envoyer le message",
+    "direct": "Ou contactez-moi directement :",
+    "social": "Ou contactez-moi directement :"
+  },
+  "footer": "© 2024 Neal Bristol Portfolio. Toute reproduction ou plagiat est interdite.",
+  "language": {
+    "fr": "Français",
+    "en": "English"
+  }
+}

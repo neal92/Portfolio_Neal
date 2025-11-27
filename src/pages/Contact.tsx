@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 // Animation fade-in au scroll
 const FadeInSection: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 	const ref = React.useRef<HTMLDivElement>(null);
@@ -31,6 +32,7 @@ const FadeInSection: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 };
 
 const Contact: React.FC = () => {
+	const { t } = useTranslation();
 	const [message, setMessage] = React.useState('');
 	const messageRef = React.useRef<HTMLTextAreaElement>(null);
 
@@ -63,8 +65,8 @@ const Contact: React.FC = () => {
 					<section id="contact" className="py-16 sm:py-20 px-4 bg-gradient-to-b from-gray-100 to-white dark:from-slate-900 dark:to-slate-800 pb-0">
 						<div className="max-w-2xl mx-auto">
 							<div className="glass dark:glass-dark rounded-3xl shadow-2xl p-6 sm:p-8 text-center">
-								<h2 className="text-2xl sm:text-3xl font-extrabold mb-2 sm:mb-3 text-blue-700 dark:text-blue-400 tracking-tight">Contact</h2>
-								<p className="mb-4 sm:mb-6 text-sm sm:text-base text-slate-700 dark:text-slate-300">Let's build something great together! Send me a message or connect via social networks below.</p>
+								<h2 className="text-2xl sm:text-3xl font-extrabold mb-2 sm:mb-3 text-blue-700 dark:text-blue-400 tracking-tight">{t('contact.title')}</h2>
+								<p className="mb-4 sm:mb-6 text-sm sm:text-base text-slate-700 dark:text-slate-300">{t('contact.description')}</p>
 												 <form
 													 action="https://formspree.io/f/xldwvzvg"
 													 method="POST"
@@ -99,10 +101,10 @@ const Contact: React.FC = () => {
 											onChange={(e) => setMessage(e.target.value)}
 										></textarea>
 									</div>
-									<button type="submit" className="w-full py-4 rounded-xl font-bold text-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg hover:scale-105 hover:shadow-blue-500/30 transition-all duration-300">Send Message</button>
+									<button type="submit" className="w-full py-4 rounded-xl font-bold text-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg hover:scale-105 hover:shadow-blue-500/30 transition-all duration-300">{t('contact.send')}</button>
 								</form>
 								<div className="mt-10 flex flex-col items-center gap-4">
-									<span className="text-base text-slate-500 dark:text-slate-400">Or contact me directly:</span>
+									<span className="text-base text-slate-500 dark:text-slate-400">{t('contact.direct')}</span>
 									<a href="mailto:nealbristol2002@gmail.com" className="text-blue-600 dark:text-blue-400 underline font-semibold">nealbristol2002@gmail.com</a>
 									<div className="flex gap-6 mt-4">
 										<a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-blue-100 dark:bg-slate-800 text-blue-600 dark:text-blue-400 shadow hover:scale-110 transition">

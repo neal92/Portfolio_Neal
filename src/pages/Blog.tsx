@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import blogData, { BlogPost } from '../components/blogData';
 import { Search, Tag, Calendar, Clock, ChevronDown, ChevronUp } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const FadeInSection: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const ref = React.useRef<HTMLDivElement>(null);
@@ -33,6 +34,7 @@ const FadeInSection: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 };
 
 const Blog: React.FC = () => {
+  const { t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [expandedPost, setExpandedPost] = useState<string | null>(null);
@@ -72,15 +74,15 @@ const Blog: React.FC = () => {
             <div className="inline-block p-1 bg-gradient-to-r from-blue-500 to-purple-500 dark:from-blue-900 dark:to-purple-900 rounded-full mb-6">
               <div className="bg-white dark:bg-slate-900 px-5 py-1.5 rounded-full">
                 <span className="text-xs font-semibold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
-                  Knowledge Base
+                  {t('blog.badge')}
                 </span>
               </div>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 dark:text-white mb-6">
-              Blog & Technical Q&A
+              {t('blog.title')}
             </h1>
             <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              Explore my technical insights, tutorials, and answers to common development questions
+              {t('blog.description')}
             </p>
           </div>
         </FadeInSection>

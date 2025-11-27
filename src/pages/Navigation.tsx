@@ -1,5 +1,6 @@
 import React from 'react';
 import { Menu, X } from 'lucide-react';
+import LanguageSwitcher from '../components/LanguageSwitcher';
 
 interface NavigationProps {
   activeSection: string;
@@ -40,15 +41,28 @@ export default function Navigation({ activeSection, onNavigate, darkMode, isMenu
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
+        
+        {/* Mobile: Language Switcher + Name */}
+        <div className={`md:hidden flex items-center gap-3 absolute left-1/2 transform -translate-x-1/2 ${isMenuOpen ? 'invisible' : ''}`}>
+          <LanguageSwitcher />
+          <div
+            className="text-2xl font-bold cursor-pointer transition-colors duration-300"
+            onClick={() => onNavigate('home')}
+          >
+            Neal Bristol
+          </div>
+        </div>
+        
+        {/* Desktop: Name */}
         <div
-          className={`text-2xl font-bold cursor-pointer transition-colors duration-300 md:ml-0 absolute left-1/2 transform -translate-x-1/2 md:relative md:left-0 md:transform-none ${
+          className={`hidden md:block text-2xl font-bold cursor-pointer transition-colors duration-300 md:ml-0 absolute left-1/2 transform -translate-x-1/2 md:relative md:left-0 md:transform-none ${
             scrolled
               ? darkMode ? 'text-white' : 'text-slate-800'
               : darkMode ? 'text-white' : 'text-white'
           } ${isMenuOpen ? 'invisible' : ''}`}
           onClick={() => onNavigate('home')}
         >
-        Neal Bristol
+          Neal Bristol
         </div>
         {/* Desktop Navigation */}
         <div className={`hidden md:flex space-x-8 items-center ml-auto ${isMenuOpen ? 'invisible' : ''}`}> 
