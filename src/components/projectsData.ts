@@ -39,6 +39,18 @@ const projectsData: Project[] = [
     video: '',
     functionalities: '• Feature 1\n• Feature 2\n• Feature 3\n• Feature 4\n• Feature 5',
   },
+  {
+    id: 'salon-coiffure',
+    title: 'Hair Salon Website',
+    description: 'A modern hair salon website with online booking system and style gallery.',
+    longDescription: 'This website is designed for a hair salon, allowing customers to book appointments online, browse a style gallery, and discover available services. The site is built with Next.js for optimal performance and smooth user experience.',
+    image: '/images/salon.png',
+    images: ['/images/salon.png'],
+    technologies: ['Next.js', 'PostgreSQL', 'Prisma'],
+    github: 'https://github.com/neal92/salon-coiffure',
+    video: '',
+    functionalities: '• Secure payment processing\n• Inventory management\n• Customer analytics\n• Order tracking\n• Admin dashboard\n• Mobile responsive design',
+  },
 ];
 
 export default projectsData;

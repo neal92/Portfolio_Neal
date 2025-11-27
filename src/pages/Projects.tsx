@@ -141,18 +141,18 @@ const Projects: React.FC = () => {
           </div>
 
           {/* Desktop: Show all projects in grid */}
-          <div className="hidden md:grid relative z-10 gap-6 sm:gap-12 grid-cols-1 md:grid-cols-2">
+          <div className="hidden md:grid relative z-10 gap-4 sm:gap-6 grid-cols-1 md:grid-cols-2">
             {projectsData.map((project, index) => (
               <FadeInSection key={index}>
                 <div
-                  className="group h-full bg-white text-black border-slate-200 dark:bg-slate-900 dark:text-white dark:border-slate-800 backdrop-blur-xl rounded-3xl overflow-hidden border shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col md:flex-row"
+                  className="group h-full bg-white text-black border-slate-200 dark:bg-slate-900 dark:text-white dark:border-slate-800 backdrop-blur-xl rounded-2xl overflow-hidden border shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col"
                 >
-                  <div className="w-full p-4 sm:p-5 lg:p-7 flex flex-col justify-between h-full">
+                  <div className="w-full p-3 sm:p-4 flex flex-col justify-between h-full">
                     <div>
                       <ProjectCarousel images={project.images} title={project.title} />
-                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 mt-4 group-hover:text-blue-400 transition-colors duration-300 text-black dark:text-white">{project.title}</h3>
-                      <p className="mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base text-slate-600 dark:text-slate-300">{project.description}</p>
-                      <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
+                      <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 mt-3 group-hover:text-blue-400 transition-colors duration-300 text-black dark:text-white">{project.title}</h3>
+                      <p className="mb-3 sm:mb-4 leading-relaxed text-xs sm:text-sm text-slate-600 dark:text-slate-300">{project.description}</p>
+                      <div className="flex flex-wrap gap-1 sm:gap-1.5 mb-3 sm:mb-4">
                         {project.technologies.map((tech: string, techIndex: number) => (
                           <span
                             key={techIndex}
@@ -163,7 +163,7 @@ const Projects: React.FC = () => {
                         ))}
                       </div>
                     </div>
-                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-3 sm:mt-4 z-20 relative">
+                    <div className="flex flex-col gap-2 sm:gap-3 mt-2 sm:mt-3 z-20 relative">
                       <button
                         onClick={() => {
                           sessionStorage.setItem('contactMessage', 'Hello, I would like to see a demo of your project!');
@@ -176,7 +176,7 @@ const Projects: React.FC = () => {
                             window.dispatchEvent(new CustomEvent('navigate', { detail: 'contact' }));
                           }
                         }}
-                        className="group/btn inline-flex items-center justify-center px-4 py-2 text-xs sm:text-sm bg-gradient-to-r from-purple-600 to-blue-600 border-2 border-purple-500 text-white rounded-xl font-bold shadow-lg hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105 hover:from-purple-700 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-purple-400 w-full sm:w-auto"
+                        className="group/btn inline-flex items-center justify-center px-3 py-1.5 text-xs bg-gradient-to-r from-purple-600 to-blue-600 border-2 border-purple-500 text-white rounded-lg font-bold shadow-lg hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105 hover:from-purple-700 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-purple-400 w-full"
                         style={{ boxShadow: '0 0 12px 2px #a78bfa, 0 0 4px 1px #3b82f6' }}
                       >
                         <ExternalLink size={18} className="mr-2 group-hover/btn:rotate-12 transition-transform duration-300" />

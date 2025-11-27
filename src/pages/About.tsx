@@ -21,6 +21,16 @@ const FadeInSection: React.FC<{ children: React.ReactNode }> = ({ children }) =>
     return () => observer.disconnect();
   }, []);
 
+  return (
+    <div
+      ref={ref}
+      className={`transition-opacity transition-transform duration-2000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-24'}`}
+    >
+      {children}
+    </div>
+  );
+};
+
 const About: React.FC = () => {
   const scrollContainerRef = React.useRef<HTMLDivElement>(null);
 
