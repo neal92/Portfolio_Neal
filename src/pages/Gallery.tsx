@@ -1,5 +1,55 @@
 import React from 'react';
 
+// Composant VideoPlayer optimisé pour éviter les problèmes de cache
+const VideoPlayer: React.FC<{ src: string; alt: string }> = ({ src, alt }) => {
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+  const [isVisible, setIsVisible] = React.useState(false);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          // Charger et jouer la vidéo seulement quand elle est visible
+          if (videoRef.current) {
+            videoRef.current.play().catch(() => {
+              // Gérer les erreurs de lecture silencieusement
+            });
+          }
+        } else {
+          setIsVisible(false);
+          // Mettre en pause quand elle n'est plus visible
+          if (videoRef.current) {
+            videoRef.current.pause();
+          }
+        }
+      },
+      { threshold: 0.5 } // La vidéo doit être visible à 50% pour jouer
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <video
+      ref={videoRef}
+      src={src}
+      loop
+      muted
+      playsInline
+      preload="metadata" // Précharger seulement les métadonnées, pas la vidéo entière
+      className="w-full h-full object-cover"
+      onError={(e) => {
+        console.warn('Erreur de chargement vidéo:', e);
+      }}
+    />
+  );
+};
+
 // Animation fade-in au scroll
 const FadeInSection: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const ref = React.useRef<HTMLDivElement>(null);
@@ -109,14 +159,7 @@ const Gallery: React.FC = () => {
                         className="w-full h-full object-cover"
                       />
                     ) : (
-                      <video
-                        src={item.src}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="w-full h-full object-cover"
-                      />
+                      <VideoPlayer src={item.src} alt={item.alt} />
                     )}
                     
                     {/* Indicateur type de média */}

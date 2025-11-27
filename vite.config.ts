@@ -51,4 +51,19 @@ export default defineConfig({
   define: {
     __DEV__: false, // Forcer la production
   },
+  server: {
+    headers: {
+      // Headers de cache pour les fichiers médias
+      'Cache-Control': 'public, max-age=31536000, immutable',
+    },
+    fs: {
+      // Permettre l'accès aux fichiers du répertoire public
+      allow: ['.'],
+    },
+    // Configuration spécifique pour les vidéos
+    cors: true,
+    hmr: {
+      overlay: false,
+    },
+  },
 });
