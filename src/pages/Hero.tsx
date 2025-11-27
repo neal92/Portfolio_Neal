@@ -41,7 +41,8 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             </div>
           </div>
           <p className="text-base sm:text-lg lg:text-xl text-slate-300 dark:text-slate-400 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-            Crafting exceptional digital experiences with modern technologies, clean architecture, and pixel-perfect design.
+            Crafting exceptional digital experiences with modern technologies, clean architecture, and pixel-perfect design. 
+            Affordable pricing to help you launch your project without breaking the bank.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12">
             <button

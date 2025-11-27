@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-
 import Navigation from './pages/Navigation';
 import Hero from './pages/Hero';
 import About from './pages/About';
-import Gallery from './pages/Gallery';
 import Skills from './pages/Skills';
 import Projects from './pages/Projects';
 import HowIWork from './pages/HowIWork';
@@ -39,7 +38,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'gallery', 'skills', 'projects', 'how-i-work', 'blog', 'contact'];
+      const sections = ['home', 'about', 'skills', 'projects', 'how-i-work', 'blog', 'contact'];
       const scrollPosition = window.scrollY + 100;
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -126,9 +125,6 @@ function App() {
                   </section>
                   <section id="about">
                     <About />
-                  </section>
-                  <section id="gallery">
-                    <Gallery />
                   </section>
                   <section id="skills">
                     <Skills />

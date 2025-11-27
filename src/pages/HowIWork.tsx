@@ -68,8 +68,8 @@ const HowIWork: React.FC = () => {
   const pricing = [
     {
       name: 'Basic Development',
-      price: '150€',
-      pricePrefix: 'à partir de',
+      price: '125€',
+      pricePrefix: 'as of',
       description: 'You provide all specifications',
       features: [
         'Frontend & Backend development',
@@ -84,8 +84,8 @@ const HowIWork: React.FC = () => {
     },
     {
       name: 'Full Service',
-      price: '350€',
-      pricePrefix: 'à partir de',
+      price: '250€',
+      pricePrefix: 'as of',
       description: 'Complete development with support',
       features: [
         'Complete project planning',
@@ -234,6 +234,9 @@ const HowIWork: React.FC = () => {
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-800 dark:text-white mb-8 sm:mb-12 text-center">
               Transparent Pricing
             </h3>
+            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed mb-8 text-center">
+              All prices are negotiable depending on the project requirements and complexity. Let's discuss your needs to find the perfect solution.
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
               {pricing.map((plan, index) => (
                 <div
