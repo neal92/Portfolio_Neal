@@ -105,7 +105,8 @@
       "plans": {
         "basic": {
           "name": "Basic Development",
-          "pricePrefix": "as of",
+          "price": "Contact Me",
+          "pricePrefix": "",
           "description": "You provide all specifications",
           "features": [
             "Frontend & Backend development",
@@ -119,7 +120,8 @@
         },
         "full": {
           "name": "Full Service",
-          "pricePrefix": "as of",
+          "price": "Contact Me",
+          "pricePrefix": "",
           "description": "Complete development with support",
           "features": [
             "Complete project planning",

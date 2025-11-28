@@ -70,7 +70,7 @@ const HowIWork: React.FC = () => {
   const pricing = [
     {
       name: t('howIWork.pricing.plans.basic.name'),
-      price: '125€',
+      price: t('howIWork.pricing.plans.basic.price'),
       pricePrefix: t('howIWork.pricing.plans.basic.pricePrefix') || '',
       description: t('howIWork.pricing.plans.basic.description'),
       features: t('howIWork.pricing.plans.basic.features', { returnObjects: true }) as string[],
@@ -79,7 +79,7 @@ const HowIWork: React.FC = () => {
     },
     {
       name: t('howIWork.pricing.plans.full.name'),
-      price: '250€',
+      price: t('howIWork.pricing.plans.full.price'),
       pricePrefix: t('howIWork.pricing.plans.full.pricePrefix') || '',
       description: t('howIWork.pricing.plans.full.description'),
       features: t('howIWork.pricing.plans.full.features', { returnObjects: true }) as string[],

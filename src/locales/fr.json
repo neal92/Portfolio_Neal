@@ -105,7 +105,8 @@
       "plans": {
         "basic": {
           "name": "Développement basique",
-          "pricePrefix": "à partir de",
+          "price": "Contactez-moi",
+          "pricePrefix": "",
           "description": "Vous fournissez toutes les spécifications",
           "features": [
             "Développement Frontend & Backend",
@@ -119,7 +120,8 @@
         },
         "full": {
           "name": "Service complet",
-          "pricePrefix": "à partir de",
+          "price": "Contactez-moi",
+          "pricePrefix": "",
           "description": "Développement complet avec support",
           "features": [
             "Planification complète du projet",

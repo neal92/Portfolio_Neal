@@ -13,6 +13,8 @@ import projectsData, { Project } from './components/projectsData.ts';
 import Loader from './components/Loader';
 import ScrollProgress from './components/ScrollProgress';
 import LanguageSwitcher from './components/LanguageSwitcher';
+import { I18nextProvider } from 'react-i18next';
+import i18n from './i18n';
 
 function ProjectDetailWrapper() {
   const { id } = useParams<{ id: string }>();
@@ -88,10 +90,11 @@ function App() {
   };
 
   return (
-    <Router>
-      <Loader />
-      <ScrollProgress />
-      <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}> 
+    <I18nextProvider i18n={i18n}>
+      <Router>
+        <Loader />
+        <ScrollProgress />
+        <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}> 
         {/* Boutons toggle mode sombre/clair et langue en position fixe en haut à droite (desktop uniquement) */}
         {!isMenuOpen && (
           <div className="fixed top-2 right-6 z-[10000] flex items-center gap-3">
@@ -155,11 +158,12 @@ function App() {
             />
           </Routes>
         </main>
-      <footer className="w-full py-6 bg-white dark:bg-slate-800 text-center text-slate-600 dark:text-white text-sm border-t border-slate-200 dark:border-slate-700">
-        © {new Date().getFullYear()} Neal Birstol Portfolio. Toute reproduction ou plagiat est interdite.
-      </footer>
-    </div>
-  </Router>
+        <footer className="w-full py-6 bg-white dark:bg-slate-800 text-center text-slate-600 dark:text-white text-sm border-t border-slate-200 dark:border-slate-700">
+          © {new Date().getFullYear()} Neal Birstol Portfolio. Toute reproduction ou plagiat est interdite.
+        </footer>
+      </div>
+    </Router>
+    </I18nextProvider>
   );
 }
 

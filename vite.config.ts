@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
-    exclude: ['lucide-react'],
+    include: ['react', 'react-dom', 'react-router-dom'],
   },
   build: {
     // Désactiver les source maps en production pour la sécurité
@@ -48,9 +48,6 @@ export default defineConfig({
     reportCompressedSize: false, // Ne pas afficher la taille des fichiers
   },
   // Variables d'environnement sécurisées
-  define: {
-    __DEV__: false, // Forcer la production
-  },
   server: {
     headers: {
       // Headers de cache pour les fichiers médias

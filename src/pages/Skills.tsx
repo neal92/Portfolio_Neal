@@ -32,21 +32,21 @@ const FadeInSection: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 };
 
 
-import githubLogo from '/public/images/tools/github.svg';
-import vscodeLogo from '/public/images/tools/vscode.svg';
-import figmaLogo from '/public/images/tools/figma.svg';
-import postmanLogo from '/public/images/tools/postman.svg';
-import dockerLogo from '/public/images/tools/docker.svg';
-import wordpressLogo from '/public/images/tools/wordpress.svg';
-import expressLogo from '/public/images/tools/expressjs.svg';
-import htmlLogo from '/public/images/tools/html.svg';
-import jsLogo from '/public/images/tools/javascript.svg';
-import reactLogo from '/public/images/tools/logo-react.svg';
-import tailwindLogo from '/public/images/tools/tailwind.svg';
-import restApiLogo from '/public/images/tools/restapi.png';
-import php from '/public/images/tools/php.svg';
-import postgresqlLogo from '/public/images/tools/postgresql.svg';
-import vite from '/public/images/tools/vite.svg';
+import githubLogo from '/images/tools/github.svg';
+import vscodeLogo from '/images/tools/vscode.svg';
+import figmaLogo from '/images/tools/figma.svg';
+import postmanLogo from '/images/tools/postman.svg';
+import dockerLogo from '/images/tools/docker.svg';
+import wordpressLogo from '/images/tools/wordpress.svg';
+import expressLogo from '/images/tools/expressjs.svg';
+import htmlLogo from '/images/tools/html.svg';
+import jsLogo from '/images/tools/javascript.svg';
+import reactLogo from '/images/tools/logo-react.svg';
+import tailwindLogo from '/images/tools/tailwind.svg';
+import restApiLogo from '/images/tools/restapi.png';
+import php from '/images/tools/php.svg';
+import postgresqlLogo from '/images/tools/postgresql.svg';
+import vite from '/images/tools/vite.svg';
 
 
 
